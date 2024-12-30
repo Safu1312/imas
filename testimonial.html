@@ -1,0 +1,739 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iMaster - Best Learning Platform</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cuprum:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- jquery cdn link  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="/images/hero-banner.png">
+
+</head>
+
+
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="logo">
+        <img src="images/Newlogo.png" alt="iMaster Logo" class="logo-img">
+        
+      </a>
+      
+      <!-- <a href="#" class="logo">iMaster</a> -->
+
+      <header class="header" data-header>
+        <div class="container">
+    
+          <a href="index.html" class="logo">
+            <img src="images/Newlogo.png" alt="iMaster Logo" class="logo-img">
+            
+          </a>
+          
+          <!-- <a href="#" class="logo">iMaster</a> -->
+    
+          <nav class="navbar" data-navbar>
+    
+            <div class="wrapper">
+              <img src="images/Newlogo.png" alt="iMaster Logo" class="logo-img">
+    
+              <!-- <a href="#" class="logo">iMaster</a> -->
+    
+              <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+                <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+              </button>
+            </div>
+    
+            <ul class="navbar-list">
+    
+              <li>
+                <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+              </li>
+    
+              <li>
+                <a href="about.html" class="navbar-link" data-nav-link>About Us</a>
+              </li>
+    
+              <li>
+                <a href="requestdemo.html" class="navbar-link" data-nav-link>Request Demo</a>
+              </li>
+    
+              <li>
+                <a href="blog.html" class="navbar-link" data-nav-link>Blog</a>
+              </li>
+    
+              <li>
+                <a href="contact.html" class="navbar-link" data-nav-link>Contact Us</a>
+              </li>
+    
+              <li>
+                <a href="testimonial.html" class="navbar-link-active" data-nav-link>Testimonials</a>
+              </li>
+    
+              <li>
+                <a href="careers.html" class="navbar-link" data-nav-link>Careers</a>
+              </li>
+    
+            </ul>
+    
+          </nav>
+    
+          <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+            <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+          </button>
+    
+          <a href="loginhome.html" class="btn-outline">Student/Tutor Log In</a>
+    
+          <div class="overlay" data-nav-toggler data-overlay></div>
+    
+        </div>
+    
+    
+        <div class="secondary-navbar">
+          <ul class="menu">
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle">Explore Curriculums</a>
+                  <div class="dropdown-menu">
+                      <div class="column">
+                          <h4>IGCSE</h4>
+                          <ul>
+                              <li>IGCSE Edexcel</li>
+                              <li>IGCSE Cambridge</li>
+                          </ul>
+                      </div>
+                      <div class="column">
+                          <h4>AS/AL</h4>
+                          <ul>
+                              <li>AS/AL Edexcel</li>
+                              <li>AS/AL Cambridge</li>
+                              <li>AS/AL OCR</li>
+                          </ul>
+                      </div>
+                      <div class="column">
+                          <h4>IB & Others</h4>
+                          <ul>
+                              <li>IB PYP</li>
+                              <li>IB MYP</li>
+                              <li>IB DP SL</li>
+                              <li>IB DP HL</li>
+                              <li>GCSE Edexcel</li>
+                              <li>GCSE AQA</li>
+                          </ul>
+                      </div>
+                  </div>
+              </li>
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle">Explore Subjects</a>
+                  <div class="dropdown-menu">
+                      <div class="column">
+                          <h4>Core Subjects</h4>
+                          <ul>
+                              <li>Mathematics</li>
+                              <li>Science</li>
+                              <li>Pure Mathematics</li>
+                              <li>Further Mathematics</li>
+                          </ul>
+                      </div>
+                      <div class="column">
+                          <h4>Languages</h4>
+                          <ul>
+                              <li>English Language</li>
+                              <li>English Literature</li>
+                              <li>French</li>
+                          </ul>
+                      </div>
+                      <div class="column">
+                          <h4>Others</h4>
+                          <ul>
+                              <li>ICT / CS</li>
+                              <li>Business Studies</li>
+                              <li>Economics</li>
+                              <li>Psychology</li>
+                          </ul>
+                      </div>
+                  </div>
+              </li>
+          </ul>
+      </div>
+      
+      
+      </header>
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+      <a href="loginhome.html" class="btn-outline">Student/Tutor Log In</a>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+
+<br><br><br><br><br>
+
+<!-- Testimonials Section -->
+<div id="testimonials" class="testimonial-page">
+    <div class="section-header">
+      <h2>What Our Students Have to Say</h2>
+      <p class="intro-text">Hear directly from our students about their experiences with iMaster Online Academy.</p>
+    </div>
+    <div class="testimonial-cards">
+        <div class="testimonial-card" style="--animation-delay: 0s;">
+            <div class="student-info">
+          <img src="images/testi1.jpg" alt="Gabriella Kelly">
+          <div class="student-details">
+            <p class="name">Gabriella Kelly</p>
+            <p class="location">The United Kingdom</p>
+            <div class="stars">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-text">
+          <p><strong>Review:</strong></p>
+          <p>
+            My tutor at iMaster Online Academy transformed my understanding of IGCSE Math! The engaging lessons and dedicated support helped me achieve an A* in my exams. I couldn't have done it without their guidance. Highly recommending!
+          </p>
+        </div>
+      </div>
+      <!-- Repeat for other testimonials -->
+      <div class="testimonial-card" style="--animation-delay: 0.2s;">
+        <div class="student-info">
+          <img src="images/testi2.png" alt="Roshini Riyal">
+          <div class="student-details">
+            <p class="name">Roshini Riyal</p>
+            <p class="location">The United Kingdom</p>
+            <div class="stars">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-text">
+          <p><strong>Review:</strong></p>
+          <p>
+            Easily the best tutor/teacher I’ve had! So understanding, patient, which is key in tutoring, and such a lovely person in general. I learned so much in such a small amount of time, and my skills have improved greatly all thanks to her great teaching :) Definitely recommend for anybody who needs tutoring!
+          </p>
+        </div>
+      </div>
+      <!-- Repeat for other testimonials -->
+      <div class="testimonial-card" style="--animation-delay: 0.4s;">
+        <div class="student-info">
+          <img src="images/testi3.jpg" alt="Aiden">
+          <div class="student-details">
+            <p class="name">Aiden</p>
+            <p class="location">Sri Lanka</p>
+            <div class="stars">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-text">
+          <p><strong>Review:</strong></p>
+          <p>
+            I was preparing for my IGCSE Edexcel Single Award exam, and I can recommend the tutors here to anyone.
+        </p>
+        </div>
+      </div>
+      <!-- Repeat for other testimonials -->
+      <div class="testimonial-card">
+        <div class="student-info">
+          <img src="images/testi4.png" alt="Mohamed Ibrahim">
+          <div class="student-details">
+            <p class="name">Mohamed Ibrahim</p>
+            <p class="location">Malaysia</p>
+            <div class="stars">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-text">
+          <p><strong>Review:</strong></p>
+          <p>
+            I will never forget the help I got from my tutor on IGCSE Chemistry . Thank you for all the help.
+        </p>
+        </div>
+      </div>
+      <!-- Repeat for other testimonials -->
+      <div class="testimonial-card">
+        <div class="student-info">
+          <img src="images/testi5.jpg" alt="Mohammed">
+          <div class="student-details">
+            <p class="name">Mohammed</p>
+            <p class="location">Jeddah, Saudi Arabia</p>
+            <div class="stars">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-text">
+          <p><strong>Review:</strong></p>
+          <p>
+            The expert tutors and comprehensive resources made complex concepts easy to grasp. Thanks to their support, I excelled in both subjects and achieved top grades. Truly a fantastic learning experience!" 
+        </p>
+        </div>
+      </div>
+      <!-- Repeat for other testimonials -->
+      <div class="testimonial-card">
+        <div class="student-info">
+          <img src="images/testi6.jpg" alt="Saleena">
+          <div class="student-details">
+            <p class="name">Saleena</p>
+            <p class="location">Jeddah, Saudi Arabia</p>
+            <div class="stars">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-text">
+          <p><strong>Review:</strong></p>
+          <p>
+            I could upgrade my score from B to to A* in Chemistry in 2 months of time at iMaster Online Academy. I highly recommend the tutors to anyone.
+        </p>
+        </div>
+      </div>
+      <!-- Repeat for other testimonials -->
+      <div class="testimonial-card">
+        <div class="student-info">
+          <img src="images/testi7.jpg" alt="Jude Kelly">
+          <div class="student-details">
+            <p class="name">Jude Kelly</p>
+            <p class="location">The United Kingdom</p>
+            <div class="stars">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-text">
+          <p><strong>Review:</strong></p>
+          <p>
+            My tutor is very friendly and explains the difficult concepts in a really easy and understandable manner. I like her classes.
+        </p>
+        </div>
+      </div>
+      <!-- Repeat for other testimonials -->
+      <div class="testimonial-card">
+        <div class="student-info">
+          <img src="images/testi8.jpg" alt="Pranav Muralidharan">
+          <div class="student-details">
+            <p class="name">Pranav Muralidharan</p>
+            <p class="location">Sri Lanka</p>
+            <div class="stars">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-text">
+          <p><strong>Review:</strong></p>
+          <p>
+            Online classes at iMaster were very useful for me in my comfort, and I could improve myself a lot. 
+        </p>
+        </div>
+      </div>
+      <!-- Repeat for other testimonials -->
+      <div class="testimonial-card">
+        <div class="student-info">
+          <img src="images/testi9.jpg" alt="Maya Sharafeldin">
+          <div class="student-details">
+            <p class="name">Maya Sharafeldin</p>
+            <p class="location">Jeddah, Saudi Arabia</p>
+            <div class="stars">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-text">
+          <p><strong>Review:</strong></p>
+          <p>
+            Extremely clear and easy to follow along no matter how difficult the concept is. Engaging style with constant participation which is very important online. The tutor uses class time very well to tackle your specific weaknesses while also exposing you to every possible style of exam question. Worth it if you want to insure high grades and she’s extremely nice so you’ll enjoy the classes.
+        </p>
+        </div>
+      </div>
+       <!-- Repeat for other testimonials -->
+       <div class="testimonial-card">
+        <div class="student-info">
+          <img src="images/testi10.jpg" alt="Lorna">
+          <div class="student-details">
+            <p class="name">Lorna</p>
+            <p class="location">Netherlands</p>
+            <div class="stars">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+              <img src="images/tealstar.png">
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-text">
+          <p><strong>Review:</strong></p>
+          <p>
+            I had chosen my tutor here to guide me for my IB HL exam in November 2023, The tutor was very adaptive, patience and very knowledgeable. I did  the classes only during the last 3 months and I could save the result in the exams. Honestly a class with determination and dedications.
+        </p>
+        </div>
+      </div>
+      <!-- Add more testimonials as needed -->
+    </div>
+  </div>
+  
+
+<!-- whatsapp button -->
+<a href="https://wa.me/+447761967052" target="_blank" class="whatsapp-button">
+    <img src="images/Whatsappicon.png" alt="WhatsApp" />
+  </a>
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top section">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">iMaster Online Academy</a>
+
+          <p class="footer-text">
+            Lorem ipsum dolor sit amet consecte tur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+          </p>
+
+          <form action="" class="newsletter-form">
+            <input type="email" name="email_address" placeholder="Enter your email" required class="email-field">
+
+            <button type="submit" class="form-btn">
+              <ion-icon name="paper-plane" aria-hidden="true"></ion-icon>
+            </button>
+          </form>
+
+        </div>
+<!-- 
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Courses</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Strategy & Research</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Web Development</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Web Solution</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Digital Merketing</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">App Design</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">App Development</a>
+          </li>
+
+        </ul> -->
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Company</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">About Company</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Our Services</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Our Portfolio</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Our Blog</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Latest News</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Contact Us</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Contact Us</p>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="location" aria-hidden="true"></ion-icon>
+
+            <address class="contact-link address">
+              75, Shelton Street, Covent Garden, London, WC2H 9JQ, UNITED
+KINGDOM
+            </address>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="call" aria-hidden="true"></ion-icon>
+
+            <a href="tel:+7894631546876" class="contact-link">+7894631546876</a>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="mail" aria-hidden="true"></ion-icon>
+
+            <a href="mailto:info@hoolix.com" class="contact-link">info@imaster.co.uk</a>
+          </li>
+
+          <li class="footer-item">
+            <ul class="social-list">
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-pinterest"></ion-icon>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2024 iMaster | All Rights Reserved by <a href="#" class="copyright-link">iMaster EdTech</a>
+        </p>
+
+        <ul class="footer-bottom-list">
+
+          <li>
+            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">Terms of Use</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <!-- SweetAlert2 CDN -->
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
+
+
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script type="text/javascript">
+    // Initialize EmailJS with your public key
+    (function() {
+      emailjs.init("f5gwCIoX9EQpaVr7i"); // Replace with your public key
+    })();
+  
+    // Form submission handler
+    document.getElementById("demoRequestForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent the default form submission behavior
+  
+      const serviceID = "service_ik7j9op"; // Replace with your Service ID
+      const templateID = "template_9cghgvc"; // Replace with your Template ID
+  
+      const formData = {
+        fullName: document.getElementById("fullName").value,
+        email: document.getElementById("email").value,
+        grade: document.getElementById("grade").value,
+        subject: document.getElementById("subject").value,
+        phone: document.getElementById("phone").value,
+        notes: document.getElementById("notes").value,
+      };
+
+      // Show loading spinner with SweetAlert
+      Swal.fire({
+        title: 'Sending your request...',
+        text: 'Please wait while we send your demo request.',
+        imageUrl: 'https://sweetalert2.github.io/images/loading.gif', // Optional custom spinner
+        showConfirmButton: false,
+        allowOutsideClick: false, // Disable closing the popup while the request is being sent
+        didOpen: () => {
+          Swal.showLoading(); // Start the spinner
+        },
+      });
+
+      // Send email via EmailJS
+      emailjs.send(serviceID, templateID, formData).then(
+        (response) => {
+          // Hide the spinner and show success message
+          Swal.fire({
+            title: "Success!",
+            text: "Demo request sent successfully!",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+          console.log("SUCCESS:", response.status, response.text);
+        },
+        (error) => {
+          // Hide the spinner and show error message
+          Swal.fire({
+            title: "Error!",
+            text: "Failed to send the demo request. Please try again.",
+            icon: "error",
+            confirmButtonText: "Try Again",
+          });
+          console.error("ERROR:", error);
+        }
+      );
+    });
+</script>
+
+<!-- SweetAlert2 CDN -->
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
+
+
+
+  
+
+</body>
+
+</html>

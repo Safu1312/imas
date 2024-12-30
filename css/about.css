@@ -1,0 +1,204 @@
+/* About, Vision, Mission, and Founder Section Styles */
+
+/* General Section Styles */
+#about_section,
+#vision_section,
+#mission_section,
+.founder-section {
+    padding: 50px 30px;
+    background-color: #f2fefe; /* Light Teal Background */
+    margin: 30px 0;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideIn 1s ease-out forwards;
+    position: relative;
+    overflow: hidden;
+}
+
+#about_section:hover,
+#vision_section:hover,
+#mission_section:hover,
+.founder-section:hover {
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+    transform: translateY(-5px); /* Slight upward movement */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Section Title Styling */
+#about_section .section-title,
+#vision_section .section-title,
+#mission_section .section-title,
+.founder-section .founder-title {
+    font-size: 3rem;  /* Increased title size */
+    color: #008080; /* Deep Teal */
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+#about_section .section-title::after,
+#vision_section .section-title::after,
+#mission_section .section-title::after,
+.founder-section .founder-title::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background-color: #00b3b3; /* Lighter Teal */
+    transform: scaleX(0);
+    transition: transform 0.4s ease-out;
+}
+
+#about_section .section-title:hover::after,
+#vision_section .section-title:hover::after,
+#mission_section .section-title:hover::after,
+.founder-section .founder-title:hover::after {
+    transform: scaleX(1);
+}
+
+/* Section Text Styling */
+#about_section .section-text,
+#vision_section .section-text,
+#mission_section .section-text {
+    font-size: 1.6rem;  /* Increased font size for better readability */
+    line-height: 1.7;    /* Adjusted line height for better text spacing */
+    color: #555;
+    text-align: justify; /* Justify the text */
+    margin-bottom: 20px;
+    max-width: 750px;     /* Limit the width of the text to avoid it stretching too wide */
+    margin-left: auto;
+    margin-right: auto;   /* Center the text block */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+
+
+.founder-section .founder-description{
+    font-size: 1.5rem;  /* Increased font size for better readability */
+    line-height: 1.6;    /* Adjusted line height for better text spacing */
+    color: #555;
+    text-align: justify;
+    margin-bottom: 20px;
+    max-width: 800px;     /* Limit the width of the text to avoid it stretching too wide */
+    margin-left: auto;
+    margin-right: auto;   /* Center the text block */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Founder Section Styling */
+.founder-section {
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 30px 30px; /* Reduced padding for tighter spacing */
+    text-align: center;
+    margin-top: 0px;
+}
+
+/* Founder Title */
+.founder-title {
+    font-size: 2.5rem;
+    color: #008080;
+    font-weight: 700;
+    margin-bottom: 5px; /* Reduced margin-bottom for less space */
+    text-transform: uppercase;
+}
+
+/* Founder Details (Image + Text Cards) */
+.founder-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Reduced gap for tighter alignment */
+    flex-wrap: wrap;
+    margin-top: 10px; /* Reduced space between title and details */
+}
+
+/* Founder Image Card */
+.founder-image-card {
+    width: auto;
+    height: 450px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.founder-image-card:hover {
+    transform: scale(1.05); /* Slight zoom on image hover */
+}
+
+.founder-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Founder Text Card */
+.founder-text-card {
+    max-width: 750px;
+    width: 300px; /* Set a fixed width */
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    color: #333;
+    text-align: justify;
+    flex: 1;
+}
+
+/* Founder Text Styling */
+.founder-text-card h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #008080;
+}
+
+.founder-text-card p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+
+/* Animation for Fade In Up */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide In Animation for Sections */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

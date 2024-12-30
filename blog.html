@@ -1,0 +1,570 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iMaster - Best Learning Platform</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cuprum:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- jquery cdn link  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="/images/hero-banner.png">
+
+  <style>
+    .fb-page-container {
+    background-color: #f9f9f9; /* Light background for contrast */
+    border: 2px solid #ddd; /* Subtle border for a clean look */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Inner spacing */
+    max-width: 90%; /* Limits width for responsiveness */
+    margin: 20px auto; /* Centers the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Centers heading and content */
+}
+
+.fb-page-container h2 {
+    font-family: Arial, sans-serif; /* Clean font */
+    color: #333; /* Neutral text color */
+    margin-bottom: 15px; /* Space below heading */
+    font-size: 24px; /* Slightly larger heading text */
+}
+
+  </style>
+
+</head>
+
+
+
+<body>
+
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v21.0"></script>
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="logo">
+        <img src="images/Newlogo.png" alt="iMaster Logo" class="logo-img">
+        
+      </a>
+      
+      <!-- <a href="#" class="logo">iMaster</a> -->
+
+      <header class="header" data-header>
+        <div class="container">
+    
+          <a href="index.html" class="logo">
+            <img src="images/Newlogo.png" alt="iMaster Logo" class="logo-img">
+            
+          </a>
+          
+          <!-- <a href="#" class="logo">iMaster</a> -->
+    
+          <nav class="navbar" data-navbar>
+    
+            <div class="wrapper">
+              <img src="images/Newlogo.png" alt="iMaster Logo" class="logo-img">
+    
+              <!-- <a href="#" class="logo">iMaster</a> -->
+    
+              <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+                <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+              </button>
+            </div>
+    
+            <ul class="navbar-list">
+    
+              <li>
+                <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+              </li>
+    
+              <li>
+                <a href="about.html" class="navbar-link" data-nav-link>About Us</a>
+              </li>
+    
+              <li>
+                <a href="requestdemo.html" class="navbar-link" data-nav-link>Request Demo</a>
+              </li>
+    
+              <li>
+                <a href="blog.html" class="navbar-link-active" data-nav-link>Blog</a>
+              </li>
+    
+              <li>
+                <a href="contact.html" class="navbar-link" data-nav-link>Contact Us</a>
+              </li>
+    
+              <li>
+                <a href="testimonial.html" class="navbar-link" data-nav-link>Testimonials</a>
+              </li>
+    
+              <li>
+                <a href="careers.html" class="navbar-link" data-nav-link>Careers</a>
+              </li>
+    
+            </ul>
+    
+          </nav>
+    
+          <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+            <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+          </button>
+    
+          <a href="loginhome.html" class="btn-outline">Student/Tutor Log In</a>
+    
+          <div class="overlay" data-nav-toggler data-overlay></div>
+    
+        </div>
+    
+    
+        <div class="secondary-navbar">
+          <ul class="menu">
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle">Explore Curriculums</a>
+                  <div class="dropdown-menu">
+                      <div class="column">
+                          <h4>IGCSE</h4>
+                          <ul>
+                              <li>IGCSE Edexcel</li>
+                              <li>IGCSE Cambridge</li>
+                          </ul>
+                      </div>
+                      <div class="column">
+                          <h4>AS/AL</h4>
+                          <ul>
+                              <li>AS/AL Edexcel</li>
+                              <li>AS/AL Cambridge</li>
+                              <li>AS/AL OCR</li>
+                          </ul>
+                      </div>
+                      <div class="column">
+                          <h4>IB & Others</h4>
+                          <ul>
+                              <li>IB PYP</li>
+                              <li>IB MYP</li>
+                              <li>IB DP SL</li>
+                              <li>IB DP HL</li>
+                              <li>GCSE Edexcel</li>
+                              <li>GCSE AQA</li>
+                          </ul>
+                      </div>
+                  </div>
+              </li>
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle">Explore Subjects</a>
+                  <div class="dropdown-menu">
+                      <div class="column">
+                          <h4>Core Subjects</h4>
+                          <ul>
+                              <li>Mathematics</li>
+                              <li>Science</li>
+                              <li>Pure Mathematics</li>
+                              <li>Further Mathematics</li>
+                          </ul>
+                      </div>
+                      <div class="column">
+                          <h4>Languages</h4>
+                          <ul>
+                              <li>English Language</li>
+                              <li>English Literature</li>
+                              <li>French</li>
+                          </ul>
+                      </div>
+                      <div class="column">
+                          <h4>Others</h4>
+                          <ul>
+                              <li>ICT / CS</li>
+                              <li>Business Studies</li>
+                              <li>Economics</li>
+                              <li>Psychology</li>
+                          </ul>
+                      </div>
+                  </div>
+              </li>
+          </ul>
+      </div>
+      
+      
+      </header>
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+      <a href="loginhome.html" class="btn-outline">Student/Tutor Log In</a>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+
+<br><br><br><br><br>
+<!-- Social Media Section -->
+<div class="social-media-container">
+    <h2 class="follow-us-text">Follow Us On Social Media</h2>
+    <div class="social-icons">
+        <a href="https://www.facebook.com/iMasterOnline" target="_blank" class="social-icon facebook">
+            <img src="images/fbicon.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/imaster_online_academy/" target="_blank" class="social-icon instagram">
+            <img src="images/instaicon.png" alt="Instagram">
+        </a>
+        <a href="https://www.linkedin.com/company/imaster-edtech/" target="_blank" class="social-icon linkedin">
+            <img src="images/linkedinicon.png" alt="LinkedIn">
+        </a>
+        <a href="https://www.tiktok.com/@imaster370?_t=8mvBWeF1BYt&_r=1" target="_blank" class="social-icon tiktok">
+            <img src="images/tiktokicon.png" alt="TikTok">
+        </a>
+        <a href="https://www.youtube.com/@iMaster_Online_Academy" target="_blank" class="social-icon youtube">
+            <img src="images/youtubeicon.png" alt="YouTube">
+        </a>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Facebook Feed Container -->
+<div class="fb-page-container">
+    <h2>Follow Us on Facebook</h2>
+    <div class="fb-page" 
+         data-href="https://www.facebook.com/iMasterOnline" 
+         data-tabs="timeline" 
+         data-width="1500" 
+         data-height="1500" 
+         data-small-header="false" 
+         data-adapt-container-width="true" 
+         data-hide-cover="false" 
+         data-show-facepile="true">
+        <blockquote cite="https://www.facebook.com/iMasterOnline" class="fb-xfbml-parse-ignore">
+            <a href="https://www.facebook.com/iMasterOnline">IMaster Online Academy</a>
+        </blockquote>
+    </div>
+</div>
+
+
+<!-- whatsapp button -->
+<a href="https://wa.me/+447761967052" target="_blank" class="whatsapp-button">
+    <img src="images/Whatsappicon.png" alt="WhatsApp" />
+  </a>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top section">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">iMaster Online Academy</a>
+
+          <p class="footer-text">
+            Lorem ipsum dolor sit amet consecte tur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+          </p>
+
+          <form action="" class="newsletter-form">
+            <input type="email" name="email_address" placeholder="Enter your email" required class="email-field">
+
+            <button type="submit" class="form-btn">
+              <ion-icon name="paper-plane" aria-hidden="true"></ion-icon>
+            </button>
+          </form>
+
+        </div>
+<!-- 
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Courses</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Strategy & Research</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Web Development</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Web Solution</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Digital Merketing</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">App Design</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">App Development</a>
+          </li>
+
+        </ul> -->
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Company</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">About Company</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Our Services</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Our Portfolio</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Our Blog</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Latest News</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Contact Us</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Contact Us</p>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="location" aria-hidden="true"></ion-icon>
+
+            <address class="contact-link address">
+              75, Shelton Street, Covent Garden, London, WC2H 9JQ, UNITED
+KINGDOM
+            </address>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="call" aria-hidden="true"></ion-icon>
+
+            <a href="tel:+7894631546876" class="contact-link">+7894631546876</a>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="mail" aria-hidden="true"></ion-icon>
+
+            <a href="mailto:info@hoolix.com" class="contact-link">info@imaster.co.uk</a>
+          </li>
+
+          <li class="footer-item">
+            <ul class="social-list">
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-pinterest"></ion-icon>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2024 iMaster | All Rights Reserved by <a href="#" class="copyright-link">iMaster EdTech</a>
+        </p>
+
+        <ul class="footer-bottom-list">
+
+          <li>
+            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">Terms of Use</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <!-- SweetAlert2 CDN -->
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
+
+
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script type="text/javascript">
+    // Initialize EmailJS with your public key
+    (function() {
+      emailjs.init("f5gwCIoX9EQpaVr7i"); // Replace with your public key
+    })();
+  
+    // Form submission handler
+    document.getElementById("demoRequestForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent the default form submission behavior
+  
+      const serviceID = "service_ik7j9op"; // Replace with your Service ID
+      const templateID = "template_9cghgvc"; // Replace with your Template ID
+  
+      const formData = {
+        fullName: document.getElementById("fullName").value,
+        email: document.getElementById("email").value,
+        grade: document.getElementById("grade").value,
+        subject: document.getElementById("subject").value,
+        phone: document.getElementById("phone").value,
+        notes: document.getElementById("notes").value,
+      };
+
+      // Show loading spinner with SweetAlert
+      Swal.fire({
+        title: 'Sending your request...',
+        text: 'Please wait while we send your demo request.',
+        imageUrl: 'https://sweetalert2.github.io/images/loading.gif', // Optional custom spinner
+        showConfirmButton: false,
+        allowOutsideClick: false, // Disable closing the popup while the request is being sent
+        didOpen: () => {
+          Swal.showLoading(); // Start the spinner
+        },
+      });
+
+      // Send email via EmailJS
+      emailjs.send(serviceID, templateID, formData).then(
+        (response) => {
+          // Hide the spinner and show success message
+          Swal.fire({
+            title: "Success!",
+            text: "Demo request sent successfully!",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+          console.log("SUCCESS:", response.status, response.text);
+        },
+        (error) => {
+          // Hide the spinner and show error message
+          Swal.fire({
+            title: "Error!",
+            text: "Failed to send the demo request. Please try again.",
+            icon: "error",
+            confirmButtonText: "Try Again",
+          });
+          console.error("ERROR:", error);
+        }
+      );
+    });
+</script>
+
+<!-- SweetAlert2 CDN -->
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
+
+
+
+  
+
+</body>
+
+</html>

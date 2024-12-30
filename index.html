@@ -1,0 +1,1196 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iMaster - Best Learning Platform</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cuprum:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- jquery cdn link  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="/images/hero-banner.png">
+
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="logo">
+        <img src="images/Newlogo.png" alt="iMaster Logo" class="logo-img">
+        
+      </a>
+      
+      <!-- <a href="#" class="logo">iMaster</a> -->
+
+      <nav class="navbar" data-navbar>
+
+        <div class="wrapper">
+          <img src="images/Newlogo.png" alt="iMaster Logo" class="logo-img">
+
+          <!-- <a href="#" class="logo">iMaster</a> -->
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="index.html" class="navbar-link-active" data-nav-link>Home</a>
+          </li>
+
+          <li>
+            <a href="about.html" class="navbar-link" data-nav-link>About Us</a>
+          </li>
+
+          <li>
+            <a href="requestdemo.html" class="navbar-link" data-nav-link>Request Demo</a>
+          </li>
+
+          <li>
+            <a href="blog.html" class="navbar-link" data-nav-link>Blog</a>
+          </li>
+
+          <li>
+            <a href="contact.html" class="navbar-link" data-nav-link>Contact Us</a>
+          </li>
+
+          <li>
+            <a href="testimonial.html" class="navbar-link" data-nav-link>Testimonials</a>
+          </li>
+
+          <li>
+            <a href="careers.html" class="navbar-link" data-nav-link>Careers</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+      <a href="loginhome.html" class="btn-outline">Student/Tutor Log In</a>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+
+
+    <div class="secondary-navbar">
+      <ul class="menu">
+          <li class="dropdown">
+              <a href="#" class="dropdown-toggle">Explore Curriculums</a>
+              <div class="dropdown-menu">
+                  <div class="column">
+                      <h4>IGCSE</h4>
+                      <ul>
+                          <li>IGCSE Edexcel</li>
+                          <li>IGCSE Cambridge</li>
+                      </ul>
+                  </div>
+                  <div class="column">
+                      <h4>AS/AL</h4>
+                      <ul>
+                          <li>AS/AL Edexcel</li>
+                          <li>AS/AL Cambridge</li>
+                          <li>AS/AL OCR</li>
+                      </ul>
+                  </div>
+                  <div class="column">
+                      <h4>IB & Others</h4>
+                      <ul>
+                          <li>IB PYP</li>
+                          <li>IB MYP</li>
+                          <li>IB DP SL</li>
+                          <li>IB DP HL</li>
+                          <li>GCSE Edexcel</li>
+                          <li>GCSE AQA</li>
+                      </ul>
+                  </div>
+              </div>
+          </li>
+          <li class="dropdown">
+              <a href="#" class="dropdown-toggle">Explore Subjects</a>
+              <div class="dropdown-menu">
+                  <div class="column">
+                      <h4>Core Subjects</h4>
+                      <ul>
+                          <li>Mathematics</li>
+                          <li>Science</li>
+                          <li>Pure Mathematics</li>
+                          <li>Further Mathematics</li>
+                      </ul>
+                  </div>
+                  <div class="column">
+                      <h4>Languages</h4>
+                      <ul>
+                          <li>English Language</li>
+                          <li>English Literature</li>
+                          <li>French</li>
+                      </ul>
+                  </div>
+                  <div class="column">
+                      <h4>Others</h4>
+                      <ul>
+                          <li>ICT / CS</li>
+                          <li>Business Studies</li>
+                          <li>Economics</li>
+                          <li>Psychology</li>
+                      </ul>
+                  </div>
+              </div>
+          </li>
+      </ul>
+  </div>
+  
+  
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero" id="home" aria-label="hero">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <p class="hero-subtitle has-before">Welcome to iMaster Online Academy</p>
+
+            <h1 class="h1 hero-title" id="animated-heading"></h1>
+
+            <p class="hero-text">
+              At iMaster, we offer personalized one-on-one and small group classes tailored to your unique needs. Our expert tutors create engaging lessons that help you succeed, no matter your learning style. Join us and experience the difference of education designed just for you!
+
+
+
+            </p>
+
+            <div class="btn-group">
+              <a href="requestdemo.html" class="btn btn-primary">Request a Demo Session</a>
+
+              <button class="flex-btn">
+                <div class="btn-icon">
+                  <ion-icon name="play" aria-hidden="true"></ion-icon>
+                </div>
+
+                <span class="span">How it works</span>
+              </button>
+            </div>
+
+          </div>
+
+          <figure class="hero-banner has-before img-holder" style="--width: 650; --height: 650;">
+            <img src="images/learnpic.jpg" width="650" height="650" alt="hero banner" class="img-cover">
+          </figure>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" id="about" aria-label="about">
+        <div class="container">
+
+          <figure class="about-banner">
+            <img src="images/Teachingpic.png" width="802" height="654" loading="lazy" alt="About Teaching"
+              class="w-100">
+          </figure>
+
+          <div class="about-content">
+
+            <h2 class="h2-sm section-title">Tailored Support for Every Student’s Success!</h2>
+
+            <p class="section-text">
+              Our Tailored Support Program is designed to meet each student's unique learning needs, ensuring personalized tutoring for maximum success.
+
+            </p>
+
+            <ul class="about-list">
+
+              <li class="has-before">Personalized one-on-one and small group classes</li>
+              <li class="has-before">Expert tutors who customize lessons to your strengths</li>
+              <li class="has-before">Engaging, effective learning for academic excellence</li>
+              <li class="has-before">Flexible schedules to fit your lifestyle and needs</li>
+              <li class="has-before">Progress tracking to ensure measurable improvement</li>
+              <li class="has-before">Boost confidence and foster a love for learning</li>
+              
+            </ul>
+
+            <div class="btn-group">
+              <a href="#" class="btn btn-primary">Enroll Now</a>
+
+              <button class="flex-btn">
+                <div class="btn-icon">
+                  <ion-icon name="medal-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <span class="span">08+ Years Experience</span>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 
+        - Curriculam offered
+      -->
+
+      <h1 class="h1-sm section-title">Curriculum We Offer</h1>
+
+<div class="curriculum-cards">
+  <div class="card">
+    <h3>IGCSE Edexcel</h3>
+  </div>
+  <div class="card">
+    <h3>IGCSE Cambridge</h3>
+  </div>
+  <div class="card">
+    <h3>Edexcel AS Level</h3>
+  </div>
+  <div class="card">
+    <h3>Edexcel A Level</h3>
+  </div>
+  <div class="card">
+    <h3>Cambridge AS Level</h3>
+  </div>
+  <div class="card">
+    <h3>Cambridge A Level</h3>
+  </div>
+  <div class="card">
+    <h3>IB PYP</h3>
+  </div>
+  <div class="card">
+    <h3>IB MYP</h3>
+  </div>
+  <div class="card">
+    <h3>IB Diploma</h3>
+  </div>
+  <div class="card">
+    <h3>GCSE AQA</h3>
+  </div>
+  <div class="card">
+    <h3>GCSE Edexcel</h3>
+  </div>
+  <div class="card">
+    <h3>AQA A Level</h3>
+  </div>
+  <div class="card">
+    <h3>OCR A Level</h3>
+  </div>
+</div>
+
+
+
+      <!-- 
+        - #SERVICE
+      -->
+
+      <!-- <section class="section service" id="services" aria-label="service">
+        <div class="container">
+
+          <p class="section-subtitle text-center">-What We Offer-</p>
+
+          <h2 class="h2 section-title text-center">Best Courses</h2>
+
+          <p class="section-text text-center">
+            Get Certified in the most trending courses with Certificate.
+          </p>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="service-card has-after">
+
+                <figure class="card-icon">
+                  <img src="images/service-1.png" width="140" height="140" loading="lazy"
+                    alt="UI/UX Creative Design" class="img">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">Web Development</h3>
+
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adi piscing semper turpis. Nullam eget luctlie gula and
+                    adipiscing elit.
+                  </p>
+
+                  <a href="#" class="btn-link">
+                    <span class="span">Start</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card has-after">
+
+                <figure class="card-icon">
+                  <img src="images/service-2.png" width="140" height="140" loading="lazy" alt="App Development"
+                    class="img">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">App Development</h3>
+
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adi piscing semper turpis. Nullam eget luctlie gula and
+                    adipiscing elit.
+                  </p>
+
+                  <a href="#" class="btn-link">
+                    <span class="span">Start</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card has-after">
+
+                <figure class="card-icon">
+                  <img src="images/service-3.png" width="140" height="140" loading="lazy"
+                    alt="Professional Content Writer" class="img">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">Professional Content Writer</h3>
+
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adi piscing semper turpis. Nullam eget luctlie gula and
+                    adipiscing elit.
+                  </p>
+
+                  <a href="#" class="btn-link">
+                    <span class="span">Start</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card has-after">
+
+                <figure class="card-icon">
+                  <img src="images/service-4.png" width="140" height="140" loading="lazy" alt="Graphic Design"
+                    class="img">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">Graphic Design</h3>
+
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adi piscing semper turpis. Nullam eget luctlie gula and
+                    adipiscing elit.
+                  </p>
+
+                  <a href="#" class="btn-link">
+                    <span class="span">Start</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+            <li>
+              <div class="service-card has-after">
+
+                <figure class="card-icon">
+                  <img src="images/service-4.png" width="140" height="140" loading="lazy" alt="Graphic Design"
+                    class="img">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">Graphic Design</h3>
+
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adi piscing semper turpis. Nullam eget luctlie gula and
+                    adipiscing elit.
+                  </p>
+
+                  <a href="#" class="btn-link">
+                    <span class="span">Start</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+            <li>
+              <div class="service-card has-after">
+
+                <figure class="card-icon">
+                  <img src="images/service-4.png" width="140" height="140" loading="lazy" alt="Graphic Design"
+                    class="img">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">Graphic Design</h3>
+
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adi piscing semper turpis. Nullam eget luctlie gula and
+                    adipiscing elit.
+                  </p>
+
+                  <a href="#" class="btn-link">
+                    <span class="span">Start</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+            <li>
+              <div class="service-card has-after">
+
+                <figure class="card-icon">
+                  <img src="images/service-4.png" width="140" height="140" loading="lazy" alt="Graphic Design"
+                    class="img">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">Graphic Design</h3>
+
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adi piscing semper turpis. Nullam eget luctlie gula and
+                    adipiscing elit.
+                  </p>
+
+                  <a href="#" class="btn-link">
+                    <span class="span">Start</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+            <li>
+              <div class="service-card has-after">
+
+                <figure class="card-icon">
+                  <img src="images/service-4.png" width="140" height="140" loading="lazy" alt="Graphic Design"
+                    class="img">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">Graphic Design</h3>
+
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adi piscing semper turpis. Nullam eget luctlie gula and
+                    adipiscing elit.
+                  </p>
+
+                  <a href="#" class="btn-link">
+                    <span class="span">Start</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+          </ul>
+
+          <a href="#" class="btn btn-primary" id="load-more">Load More</a>
+
+        </div>
+      </section> -->
+
+      <!-- whatsapp button -->
+      <a href="https://wa.me/+447761967052" target="_blank" class="whatsapp-button">
+        <img src="images/Whatsappicon.png" alt="WhatsApp" />
+      </a>
+      
+
+
+      <!-- 
+        - #FEATURES
+      -->
+
+      <section class="section features" id="features" aria-label="features">
+        <div class="container">
+
+          <p class="section-subtitle text-center">-Why Choose Us-</p>
+
+          <h2 class="h2 section-title text-center">Reasons to Choose Us</h2>
+
+          <!-- <p class="section-text text-center">
+            You will get Free and Paid Courses with or without Certificate.You can Link your certificate with your Linkedin Profile.
+          </p> -->
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="features-card">
+
+                <data class="card-number" value="01">01</data>
+
+                <h3 class="h3 card-title">Personalized Learning Experience</h3>
+
+                <p class="card-text">
+                  We offer one-on-one and small group classes tailored to each student's unique needs, learning styles, and strengths, ensuring effective and engaging lessons that promote academic success.
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="features-card">
+
+                <data class="card-number" value="02">02</data>
+
+                <h3 class="h3 card-title">Expert Tutors</h3>
+
+                <p class="card-text">
+                  Our tutors are highly qualified and experienced in delivering customized lessons for a variety of curricula, including Cambridge, Edexcel, and IB, ensuring a high-quality educational experience.
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="features-card">
+
+                <data class="card-number" value="03">03</data>
+
+                <h3 class="h3 card-title">Tailored Support Program</h3>
+
+                <p class="card-text">
+                  We provide a personalized support program that adapts to each student's individual learning requirements, helping them overcome challenges and achieve their academic goals.
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="features-card">
+
+                <data class="card-number" value="04">04</data>
+
+                <h3 class="h3 card-title">Global Reach</h3>
+
+                <p class="card-text">
+                  iMaster Online Academy offers accessible education to students worldwide, breaking geographical barriers and providing high-quality learning opportunities for all.
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="features-card">
+
+                <data class="card-number" value="05">05</data>
+
+                <h3 class="h3 card-title">Curriculum-Aligned Education</h3>
+
+                <p class="card-text">
+                  Our lessons are designed to align with internationally recognized curricula, ensuring students receive a comprehensive and structured learning experience.
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="features-card">
+
+                <data class="card-number" value="06">06</data>
+
+                <h3 class="h3 card-title">Engaging Platform</h3>
+
+                <p class="card-text">
+                  Our online platform fosters critical thinking and creativity, preparing students for success in the modern, interconnected world through engaging and interactive learning experiences.
+                </p>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+      <!-- PORTFOLIO -->
+	<div class="diffSection" id="portfolio_section">
+		
+		<div class="content">
+			
+		</div>
+	</div>
+	<div class="extra">
+		<p>We Are Increasing This Data Every Year</p>
+		<div class="smbox">
+      <span><center><div class="data">10,000+</div><div class="det">Hours Taught</div></center></span>
+		<span><center><div class="data">2000+</div><div class="det">Students</div></center></span>
+		<span><center><div class="data">30+</div><div class="det">Available Tutors</div></center></span>
+		<span><center><div class="data">20+</div><div class="det">Subjects Taught</div></center></span>
+		
+		</div>
+	</div>
+
+  <!-- Reviews by Students -->
+<div id="makeitfull">
+	<a href="#review_section"><img src="images/downarrow.png"></a>
+</div>
+<div class="review">
+	<div class="diffSection" id="review_section">
+		<center><p style="font-size: 40px; padding: 100px; padding-bottom: 40px; color: #2E3D49;">What the Students Say About Us?</p></center>
+	</div>
+	<div class="rev-container">
+		<div class="rev-card">
+			<div class="identity">
+				<img src="images/testi1.jpg"><p>Gabriella Kelly</p>
+				<h6>The United Kingdom</h6>
+				<div class="rating"><img src="images/tealstar.png"><img src="images/tealstar.png"><img src="images/tealstar.png"><img src="images/tealstar.png"><img src="images/tealstar.png"></div>
+			</div>
+			<div class="rev-cont">
+				<p id="title">Review:</p>
+				<p id="content">
+          My tutor at iMaster Online Academy transformed my understanding of IGCSE Math! The engaging lessons and dedicated support helped me achieve an A* in my exams. I couldn't have done it without their guidance. Highly recommending!
+				</p>
+			</div>
+		</div>
+		<div class="rev-card">
+			<div class="identity">
+				<img src="images/testi2.png"><p>Roshini Riyal</p>
+				<h6>The United Kingdom</h6>
+				<div class="rating"><img src="images/tealstar.png"><img src="images/tealstar.png"><img src="images/tealstar.png"><img src="images/tealstar.png"><img src="images/tealstar.png"></div>
+			</div>
+			<div class="rev-cont">
+				<p id="title">Review:</p>
+				<p id="content">
+          Easily the best tutor/teacher i’ve had! , so understanding , patient which is key in tutoring and such a lovely person in general . I learnt so much in such a small amount of time , and my skills have improved greatly all thanks to her great teaching :) . Definitely recommend for anybody who needs tutoring!
+        </p>
+			</div>
+		</div>
+		<div class="rev-card">
+			<div class="identity">
+				<img src="images/testi3.jpg"><p>Aidan</p>
+				<h6>Sri Lanka</h6>
+				<div class="rating"><img src="images/tealstar.png"><img src="images/tealstar.png"><img src="images/tealstar.png"><img src="images/tealstar.png"><img src="images/tealstar.png"></div>
+			</div>
+			<div class="rev-cont">
+				<p id="title">Review:</p>
+				<p id="content">
+          I was preparing for my IGCSE Edexcel Single Award exam, and I can recommend the tutors here to anyone.
+        </p>
+			</div>
+		</div>
+		<div class="rev-card">
+			<div class="identity">
+				<img src="images/testi4.png"><p>Mohamed Ibrahim</p>
+				<h6>Malaysia</h6>
+				<div class="rating"><img src="images/tealstar.png"><img src="images/tealstar.png"><img src="images/tealstar.png"><img src="images/tealstar.png"><img src="images/tealstar.png"></div>
+			</div>
+			<div class="rev-cont">
+				<p id="title">Review:</p>
+				<p id="content">
+          I will never forget the help I got from my tutor on IGCSE Chemistry. Thank you for all the help.
+        </p>
+			</div>
+		</div>
+	</div>
+</div>
+
+      <!-- 
+        - #FAQ
+      -->
+
+      <section class="section faq" aria-label="frequently asked questions">
+        <div class="container">
+
+          <div class="title-wrapper">
+            <h2 class="h2 section-title">Discover Frequently Asked Questions?</h2>
+
+            <a href="#" class="btn btn-primary">Work Together</a>
+          </div>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="faq-card">
+
+                <button class="card-action" data-accordion-action>
+                  <h3 class="h3 card-title">
+                    01. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deleniti fugiat in ut porro!
+                  </h3>
+
+                  <div class="action-icon">
+                    <ion-icon name="add-outline" aria-hidden="true" class="open"></ion-icon>
+                    <ion-icon name="remove-outline" aria-hidden="true" class="close"></ion-icon>
+                  </div>
+                </button>
+
+                <div class="card-content">
+                  <p>
+                    Morbi aliquam quis quam in luctus. Nullam tincidunt pulvinar imperdiet. Sed varius, diam vitae
+                    posuere semper, libero ex
+                    hendrerit nunc, ac sagittis eros metus ut diam. Donec a nibh in libero maximus vehicula. Etiam sit
+                    amet condimentum
+                    erat. Pellentesque ultrices sagittis turpis, quis tempus ante viverra et.Morbi aliquam quis quam in
+                    luctus. Nullam
+                    tincidunt pulvinar imperdiet. Sed varius, diam vitae posuere semper, tincidunt pulvinar imperdiet.
+                    Sed varius, diam
+                    vitae posuere semper.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="faq-card">
+
+                <button class="card-action" data-accordion-action>
+                  <h3 class="h3 card-title">
+                    02. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero laboriosam tempore atque nisi eum.
+                  </h3>
+
+                  <div class="action-icon">
+                    <ion-icon name="add-outline" aria-hidden="true" class="open"></ion-icon>
+                    <ion-icon name="remove-outline" aria-hidden="true" class="close"></ion-icon>
+                  </div>
+                </button>
+
+                <div class="card-content">
+                  <p>
+                    Morbi aliquam quis quam in luctus. Nullam tincidunt pulvinar imperdiet. Sed varius, diam vitae
+                    posuere semper, libero ex
+                    hendrerit nunc, ac sagittis eros metus ut diam. Donec a nibh in libero maximus vehicula. Etiam sit
+                    amet condimentum
+                    erat. Pellentesque ultrices sagittis turpis, quis tempus ante viverra et.Morbi aliquam quis quam in
+                    luctus. Nullam
+                    tincidunt pulvinar imperdiet. Sed varius, diam vitae posuere semper, tincidunt pulvinar imperdiet.
+                    Sed varius, diam
+                    vitae posuere semper.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="faq-card">
+
+                <button class="card-action" data-accordion-action>
+                  <h3 class="h3 card-title">
+                    03. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti fugit obcaecati reprehenderit hic ipsum!
+                  </h3>
+
+                  <div class="action-icon">
+                    <ion-icon name="add-outline" aria-hidden="true" class="open"></ion-icon>
+                    <ion-icon name="remove-outline" aria-hidden="true" class="close"></ion-icon>
+                  </div>
+                </button>
+
+                <div class="card-content">
+                  <p>
+                    Morbi aliquam quis quam in luctus. Nullam tincidunt pulvinar imperdiet. Sed varius, diam vitae
+                    posuere semper, libero ex
+                    hendrerit nunc, ac sagittis eros metus ut diam. Donec a nibh in libero maximus vehicula. Etiam sit
+                    amet condimentum
+                    erat. Pellentesque ultrices sagittis turpis, quis tempus ante viverra et.Morbi aliquam quis quam in
+                    luctus. Nullam
+                    tincidunt pulvinar imperdiet. Sed varius, diam vitae posuere semper, tincidunt pulvinar imperdiet.
+                    Sed varius, diam
+                    vitae posuere semper.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="faq-card">
+
+                <button class="card-action" data-accordion-action>
+                  <h3 class="h3 card-title">
+                    04. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur provident sunt ut deleniti possimus?
+                  </h3>
+
+                  <div class="action-icon">
+                    <ion-icon name="add-outline" aria-hidden="true" class="open"></ion-icon>
+                    <ion-icon name="remove-outline" aria-hidden="true" class="close"></ion-icon>
+                  </div>
+                </button>
+
+                <div class="card-content">
+                  <p>
+                    Morbi aliquam quis quam in luctus. Nullam tincidunt pulvinar imperdiet. Sed varius, diam vitae
+                    posuere semper, libero ex
+                    hendrerit nunc, ac sagittis eros metus ut diam. Donec a nibh in libero maximus vehicula. Etiam sit
+                    amet condimentum
+                    erat. Pellentesque ultrices sagittis turpis, quis tempus ante viverra et.Morbi aliquam quis quam in
+                    luctus. Nullam
+                    tincidunt pulvinar imperdiet. Sed varius, diam vitae posuere semper, tincidunt pulvinar imperdiet.
+                    Sed varius, diam
+                    vitae posuere semper.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="faq-card">
+
+                <button class="card-action" data-accordion-action>
+                  <h3 class="h3 card-title">
+                    05. Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic libero repellendus officia id commodi.
+                  </h3>
+
+                  <div class="action-icon">
+                    <ion-icon name="add-outline" aria-hidden="true" class="open"></ion-icon>
+                    <ion-icon name="remove-outline" aria-hidden="true" class="close"></ion-icon>
+                  </div>
+                </button>
+
+                <div class="card-content">
+                  <p>
+                    Morbi aliquam quis quam in luctus. Nullam tincidunt pulvinar imperdiet. Sed varius, diam vitae
+                    posuere semper, libero ex
+                    hendrerit nunc, ac sagittis eros metus ut diam. Donec a nibh in libero maximus vehicula. Etiam sit
+                    amet condimentum
+                    erat. Pellentesque ultrices sagittis turpis, quis tempus ante viverra et.Morbi aliquam quis quam in
+                    luctus. Nullam
+                    tincidunt pulvinar imperdiet. Sed varius, diam vitae posuere semper, tincidunt pulvinar imperdiet.
+                    Sed varius, diam
+                    vitae posuere semper.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top section">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">iMaster Online Academy</a>
+
+          <p class="footer-text">
+            Lorem ipsum dolor sit amet consecte tur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+          </p>
+
+          <form action="" class="newsletter-form">
+            <input type="email" name="email_address" placeholder="Enter your email" required class="email-field">
+
+            <button type="submit" class="form-btn">
+              <ion-icon name="paper-plane" aria-hidden="true"></ion-icon>
+            </button>
+          </form>
+
+        </div>
+<!-- 
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Courses</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Strategy & Research</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Web Development</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Web Solution</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Digital Merketing</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">App Design</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">App Development</a>
+          </li>
+
+        </ul> -->
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Company</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">About Company</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Our Services</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Our Portfolio</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Our Blog</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Latest News</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Contact Us</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Contact Us</p>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="location" aria-hidden="true"></ion-icon>
+
+            <address class="contact-link address">
+              75, Shelton Street, Covent Garden, London, WC2H 9JQ, UNITED
+KINGDOM
+            </address>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="call" aria-hidden="true"></ion-icon>
+
+            <a href="tel:+7894631546876" class="contact-link">+7894631546876</a>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="mail" aria-hidden="true"></ion-icon>
+
+            <a href="mailto:info@hoolix.com" class="contact-link">info@imaster.co.uk</a>
+          </li>
+
+          <li class="footer-item">
+            <ul class="social-list">
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-pinterest"></ion-icon>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2024 iMaster | All Rights Reserved by <a href="#" class="copyright-link">iMaster EdTech</a>
+        </p>
+
+        <ul class="footer-bottom-list">
+
+          <li>
+            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">Terms of Use</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+  
+
+  
+  <script>
+    const phrases = [
+    "Master Education, Your Way",
+    "Best Learning Online Platform",
+    "Empower Learning, Anywhere, Anytime",
+    "Join the Future of Learning Today!"
+];
+
+const heading = document.getElementById('animated-heading');
+let currentIndex = 0;
+
+function showPhrase() {
+    heading.textContent = phrases[currentIndex];
+    heading.classList.add('fade-in');
+    setTimeout(() => {
+        heading.classList.remove('fade-in');
+        heading.classList.add('fade-out');
+        setTimeout(() => {
+            heading.classList.remove('fade-out');
+            currentIndex = (currentIndex + 1) % phrases.length;
+            showPhrase();
+        }, 1000); // Time for fade-out
+    }, 3000); // Time for fade-in + display duration
+}
+
+showPhrase();
+
+  </script>
+</body>
+
+</html>

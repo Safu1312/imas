@@ -1,0 +1,715 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iMaster - Best Learning Platform</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="css/main.css">
+
+
+
+<!-- Include CSS for intl-tel-input -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.10/css/intlTelInput.min.css">
+
+<!-- Include JS for intl-tel-input -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.10/js/intlTelInput.min.js"></script>
+
+
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cuprum:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- jquery cdn link  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="/images/hero-banner.png">
+
+
+  <style>
+   /* Style for the dropdown instruction text outside the dropdown */
+label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+  font-weight: bold;
+}
+
+/* Optional: Add styles for the "Select Country" option to make it stand out */
+.iti__divider {
+  font-weight: bold;
+  color: #888;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.iti__divider:hover {
+  background-color: #f5f5f5;
+}
+
+/* Custom styling for the input fields */
+input[type="tel"] {
+  width: 165%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+  </style>
+
+</head>
+
+
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="logo">
+        <img src="images/Newlogo.png" alt="iMaster Logo" class="logo-img">
+        
+      </a>
+      
+      <!-- <a href="#" class="logo">iMaster</a> -->
+
+      <nav class="navbar" data-navbar>
+
+        <div class="wrapper">
+          <img src="images/Newlogo.png" alt="iMaster Logo" class="logo-img">
+
+          <!-- <a href="#" class="logo">iMaster</a> -->
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <header class="header" data-header>
+          <div class="container">
+      
+            <a href="index.html" class="logo">
+              <img src="images/Newlogo.png" alt="iMaster Logo" class="logo-img">
+              
+            </a>
+            
+            <!-- <a href="#" class="logo">iMaster</a> -->
+      
+            <nav class="navbar" data-navbar>
+      
+              <div class="wrapper">
+                <img src="images/Newlogo.png" alt="iMaster Logo" class="logo-img">
+      
+                <!-- <a href="#" class="logo">iMaster</a> -->
+      
+                <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+                  <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+                </button>
+              </div>
+      
+              <ul class="navbar-list">
+      
+                <li>
+                  <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+                </li>
+      
+                <li>
+                  <a href="about.html" class="navbar-link" data-nav-link>About Us</a>
+                </li>
+      
+                <li>
+                  <a href="requestdemo.html" class="navbar-link-active" data-nav-link>Request Demo</a>
+                </li>
+      
+                <li>
+                  <a href="blog.html" class="navbar-link" data-nav-link>Blog</a>
+                </li>
+      
+                <li>
+                  <a href="contact.html" class="navbar-link" data-nav-link>Contact Us</a>
+                </li>
+      
+                <li>
+                  <a href="testimonial.html" class="navbar-link" data-nav-link>Testimonials</a>
+                </li>
+      
+                <li>
+                  <a href="careers.html" class="navbar-link" data-nav-link>Careers</a>
+                </li>
+      
+              </ul>
+      
+            </nav>
+      
+            <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+              <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+            </button>
+      
+            <a href="loginhome.html" class="btn-outline">Student/Tutor Log In</a>
+      
+            <div class="overlay" data-nav-toggler data-overlay></div>
+      
+          </div>
+      
+      
+          <div class="secondary-navbar">
+            <ul class="menu">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Explore Curriculums</a>
+                    <div class="dropdown-menu">
+                        <div class="column">
+                            <h4>IGCSE</h4>
+                            <ul>
+                                <li>IGCSE Edexcel</li>
+                                <li>IGCSE Cambridge</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h4>AS/AL</h4>
+                            <ul>
+                                <li>AS/AL Edexcel</li>
+                                <li>AS/AL Cambridge</li>
+                                <li>AS/AL OCR</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h4>IB & Others</h4>
+                            <ul>
+                                <li>IB PYP</li>
+                                <li>IB MYP</li>
+                                <li>IB DP SL</li>
+                                <li>IB DP HL</li>
+                                <li>GCSE Edexcel</li>
+                                <li>GCSE AQA</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Explore Subjects</a>
+                    <div class="dropdown-menu">
+                        <div class="column">
+                            <h4>Core Subjects</h4>
+                            <ul>
+                                <li>Mathematics</li>
+                                <li>Science</li>
+                                <li>Pure Mathematics</li>
+                                <li>Further Mathematics</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h4>Languages</h4>
+                            <ul>
+                                <li>English Language</li>
+                                <li>English Literature</li>
+                                <li>French</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h4>Others</h4>
+                            <ul>
+                                <li>ICT / CS</li>
+                                <li>Business Studies</li>
+                                <li>Economics</li>
+                                <li>Psychology</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        
+        </header>
+  
+
+      </nav>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+      <a href="loginhome.html" class="btn-outline">Student/Tutor Log In</a>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+
+<br><br><br><br><br>
+
+<<section class="section newdemo" id="demo" aria-label="newdemo">
+  <div class="demo-request-form">
+    <h2>Request a Demo Session</h2>
+    <form id="demoRequestForm">
+      
+      <label for="fullName">Name</label>
+      <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+      
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="Select country and enter your phone number" required>
+      
+      <label for="whatsapp">WhatsApp</label>
+      <input type="tel" id="whatsapp" name="whatsapp" placeholder="Select country and enter your whatsapp number" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      
+      <label for="level">Level</label>
+      <select id="level" name="level" required>
+        <option value="Primary">Primary</option>
+        <option value="Secondary">Secondary</option>
+        <option value="University Level">University Level</option>
+      </select>
+      
+      <label for="grade">Grade</label>
+      <select id="grade" name="grade" required>
+        <option value="Grade 1">Grade 1</option>
+        <option value="Grade 2">Grade 2</option>
+        <option value="Grade 3">Grade 3</option>
+        <option value="Grade 4">Grade 4</option>
+        <option value="Grade 5">Grade 5</option>
+        <option value="Grade 6">Grade 6</option>
+        <option value="Grade 7">Grade 7</option>
+        <option value="Grade 8">Grade 8</option>
+        <option value="Grade 9">Grade 9</option>
+        <option value="Grade 10">Grade 10</option>
+        <option value="Grade 11">Grade 11</option>
+        <option value="Grade 12">Grade 12</option>
+        <option value="Grade 13">Grade 13</option>
+      </select>
+      
+      <label for="performance">Student Performance</label>
+      <select id="performance" name="performance" required>
+        <option value="Below Average">Below Average</option>
+        <option value="Average">Average</option>
+        <option value="Above Average">Above Average</option>
+      </select>
+      
+      <label for="curriculum">Curriculum</label>
+      <select id="curriculum" name="curriculum" required>
+        <option value="IGCSE Edexcel">IGCSE Edexcel</option>
+        <option value="IGCSE Cambridge">IGCSE Cambridge</option>
+        <option value="IAS/IAL Edexcel">IAS/IAL Edexcel</option>
+        <option value="IAS/IAL Cambridge">IAS/IAL Cambridge</option>
+        <option value="IB PYP">IB PYP</option>
+        <option value="IB MYP">IB MYP</option>
+        <option value="IB DP SL">IB DP SL</option>
+        <option value="IB DP HL">IB DP HL</option>
+        <option value="GCSE Edexcel">GCSE Edexcel</option>
+        <option value="GCSE AQA">GCSE AQA</option>
+        <option value="AS/AL Edexcel">AS/AL Edexcel</option>
+        <option value="AS/AL Cambridge">AS/AL Cambridge</option>
+        <option value="AS/AL OCR">AS/AL OCR</option>
+        <option value="Other">Other</option>
+      </select>
+      
+      <label for="subject">Preferred Subject</label>
+      <select id="subject" name="subject" required>
+        <option value="Mathematics">Mathematics</option>
+        <option value="Science">Science</option>
+        <option value="Pure Mathematics">Pure Mathematics</option>
+        <option value="Further Mathematics">Further Mathematics</option>
+        <option value="English Language">English Language</option>
+        <option value="English Literature">English Literature</option>
+        <option value="Social Studies/Sociology">Social Studies/Sociology</option>
+        <option value="ICT / CS">ICT / CS</option>
+        <option value="Environmental Studies">Environmental Studies</option>
+        <option value="Biology">Biology</option>
+        <option value="Chemistry">Chemistry</option>
+        <option value="Physics">Physics</option>
+        <option value="French">French</option>
+        <option value="Geography">Geography</option>
+        <option value="History">History</option>
+        <option value="Business Studies">Business Studies</option>
+        <option value="Economics">Economics</option>
+        <option value="Accounting">Accounting</option>
+        <option value="Psychology">Psychology</option>
+        <option value="Other">Other</option>
+      </select>
+      
+      <label for="notes">Any Other Notes</label>
+      <textarea id="notes" name="notes" placeholder="Any special requests or notes"></textarea>
+      
+      <button type="submit" class="submit-btn">Request a Demo Session</button>
+    </form>
+  </div>
+</section>
+
+
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Initialize intl-tel-input for phone and WhatsApp inputs
+  const phoneInput = document.querySelector("#phone");
+  const whatsappInput = document.querySelector("#whatsapp");
+
+  // Initialize the intl-tel-input plugin for Phone Input
+  const iti = window.intlTelInput(phoneInput, {
+    initialCountry: "auto", // Automatically detects the user's country
+    separateDialCode: true,  // Shows the country code in a separate field
+    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.10/js/utils.js", // Optional: Enables phone number validation and formatting
+    nationalMode: false, // Force international dialing
+    preferredCountries: ["us", "gb", "in", "ca", "au"], // Optional: Preferred countries at the top
+  });
+
+  // Insert a "Select Country" option inside the country dropdown
+  const countryDropdown = document.querySelector('.iti__country-list');
+  const selectCountryOption = document.createElement("li");
+  selectCountryOption.classList.add('iti__option', 'iti__divider');
+  selectCountryOption.textContent = "Select Country";
+  
+  // Prepend the "Select Country" option to the dropdown list
+  countryDropdown.insertBefore(selectCountryOption, countryDropdown.firstChild);
+
+  // Optional: Initialize WhatsApp input with the same settings
+  window.intlTelInput(whatsappInput, {
+    initialCountry: "auto",
+    separateDialCode: true,
+    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.10/js/utils.js",
+    nationalMode: false,
+  });
+
+  // Form submission handling
+  document.getElementById("demoRequestForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Get the full phone number including the country code
+    const fullPhoneNumber = iti.getNumber(); // Get the full phone number with the country code
+    const fullWhatsappNumber = whatsappInput.value;
+
+    console.log("Full Phone Number:", fullPhoneNumber);
+    console.log("Full WhatsApp Number:", fullWhatsappNumber);
+    
+    // Proceed with form submission (e.g., send via AJAX or display on the screen)
+  });
+});
+
+</script>
+
+
+  
+
+
+<!-- whatsapp button -->
+<a href="https://wa.me/+447761967052" target="_blank" class="whatsapp-button">
+    <img src="images/Whatsappicon.png" alt="WhatsApp" />
+  </a>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top section">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">iMaster Online Academy</a>
+
+          <p class="footer-text">
+            Lorem ipsum dolor sit amet consecte tur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+          </p>
+
+          <form action="" class="newsletter-form">
+            <input type="email" name="email_address" placeholder="Enter your email" required class="email-field">
+
+            <button type="submit" class="form-btn">
+              <ion-icon name="paper-plane" aria-hidden="true"></ion-icon>
+            </button>
+          </form>
+
+        </div>
+<!-- 
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Courses</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Strategy & Research</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Web Development</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Web Solution</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Digital Merketing</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">App Design</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">App Development</a>
+          </li>
+
+        </ul> -->
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Company</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">About Company</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Our Services</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Our Portfolio</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Our Blog</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Latest News</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Contact Us</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Contact Us</p>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="location" aria-hidden="true"></ion-icon>
+
+            <address class="contact-link address">
+              75, Shelton Street, Covent Garden, London, WC2H 9JQ, UNITED
+KINGDOM
+            </address>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="call" aria-hidden="true"></ion-icon>
+
+            <a href="tel:+7894631546876" class="contact-link">+7894631546876</a>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="mail" aria-hidden="true"></ion-icon>
+
+            <a href="mailto:info@hoolix.com" class="contact-link">info@imaster.co.uk</a>
+          </li>
+
+          <li class="footer-item">
+            <ul class="social-list">
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-pinterest"></ion-icon>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2024 iMaster | All Rights Reserved by <a href="#" class="copyright-link">iMaster EdTech</a>
+        </p>
+
+        <ul class="footer-bottom-list">
+
+          <li>
+            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">Terms of Use</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <!-- SweetAlert2 CDN -->
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
+
+
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script type="text/javascript">
+    // Initialize EmailJS with your public key
+    (function() {
+      emailjs.init("f5gwCIoX9EQpaVr7i"); // Replace with your public key
+    })();
+  
+    // Form submission handler
+    document.getElementById("demoRequestForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent the default form submission behavior
+  
+      const serviceID = "service_ik7j9op"; // Replace with your Service ID
+      const templateID = "template_9cghgvc"; // Replace with your Template ID
+  
+      const formData = {
+        fullName: document.getElementById("fullName").value,
+        email: document.getElementById("email").value,
+        grade: document.getElementById("grade").value,
+        subject: document.getElementById("subject").value,
+        phone: document.getElementById("phone").value,
+        notes: document.getElementById("notes").value,
+      };
+
+      // Show loading spinner with SweetAlert
+      Swal.fire({
+        title: 'Sending your request...',
+        text: 'Please wait while we send your demo request.',
+        imageUrl: 'https://sweetalert2.github.io/images/loading.gif', // Optional custom spinner
+        showConfirmButton: false,
+        allowOutsideClick: false, // Disable closing the popup while the request is being sent
+        didOpen: () => {
+          Swal.showLoading(); // Start the spinner
+        },
+      });
+
+      // Send email via EmailJS
+      emailjs.send(serviceID, templateID, formData).then(
+        (response) => {
+          // Hide the spinner and show success message
+          Swal.fire({
+            title: "Success!",
+            text: "Demo request sent successfully!",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+          console.log("SUCCESS:", response.status, response.text);
+        },
+        (error) => {
+          // Hide the spinner and show error message
+          Swal.fire({
+            title: "Error!",
+            text: "Failed to send the demo request. Please try again.",
+            icon: "error",
+            confirmButtonText: "Try Again",
+          });
+          console.error("ERROR:", error);
+        }
+      );
+    });
+</script>
+
+<!-- SweetAlert2 CDN -->
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
+
+
+
+  
+
+</body>
+
+</html>
