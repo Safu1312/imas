@@ -571,10 +571,242 @@
 	color: #057e63;	
 }
 .smbox .det {
-	font-size: 20px;
+	font-size: 15px;
 	color: #272529;
 	font-family: cursive;
 }
+
+
+/* New testi homepage */
+
+.testimonials-section * {
+  font-family: Nunito, sans-serif;
+}
+
+.testimonials-section .btn {
+  width: 95%;
+  height: auto;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  top: 370px;
+  cursor: pointer;
+  max-width: 1700px;
+}
+
+.testimonials-section .text-blk {
+  margin: 0;
+  padding: 10px;
+  line-height: 25px;
+}
+
+.testimonials-section .responsive-container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: flex-start;
+}
+
+.testimonials-section .responsive-container-block.bg {
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  max-width: 1700px;
+}
+
+.testimonials-section .text-blk.title {
+  font-size: 46px;
+  line-height: 10px;
+  font-weight: 900;
+  margin: 0 0 5px 0;
+}
+
+.testimonials-section .container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 100%;
+  padding: 10px;
+  display: block;
+}
+
+.testimonials-section .swiper-container {
+  width: 85%;
+  max-width: 1520px;
+  height: auto;
+  overflow: hidden;
+}
+
+.testimonials-section .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.3;
+  height: fit-content;
+}
+
+
+
+.testimonials-section .swiper-slide.swiper-slide-next {
+  opacity: 1;
+}
+
+.testimonials-section .swiper-slide.swiper-slide-next .content .quotes {
+  color: teal;
+}
+
+.testimonials-section .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonials-section .responsive-container-block.content {
+  flex-direction: column;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 20px 7px;
+  border-radius: 2px;
+  padding: 10px 20px;
+  position: relative;
+  margin: 40px 20px 120px 20px;
+}
+
+.testimonials-section .text-blk.name {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 900;
+  padding: 10px 10px 0 10px;
+}
+
+.testimonials-section .text-blk.desig {
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0 0 10px 0;
+}
+
+.testimonials-section .text-blk.info {
+  max-width: 550px;
+  margin: 0 0 25px 0;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.testimonials-section .text-blk.quotes {
+  position: absolute;
+  left: 20px;
+  font-size: 144px;
+  top: 17px;
+  font-weight: 900;
+  color: rgb(0, 0, 0);
+}
+
+.testimonials-section .container-block.swiper-button-prevs,
+.testimonials-section .container-block.swiper-button-nexts {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonials-section .profile-img {
+  width: auto;
+  max-width: 130px;
+  margin: 20px 0 15px 0;
+  border-radius: 50%;
+  min-height: 130px;
+}
+
+.testimonials-section .swiper-slide img.review {
+  width: 125px;
+}
+
+.testimonials-section .pagination-button {
+  width: 36px;
+  height: 36px;
+}
+
+.testimonials-section .swiper-pagination {
+  min-height: auto;
+  position: relative;
+}
+
+.testimonials-section .content {
+  margin: 40px 20px 120px 20px;
+}
+.testimonials-section .swiper-slide {
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .testimonials-section .swiper-slide {
+    opacity: 0.3;
+  }
+
+  .testimonials-section .swiper-slide.swiper-slide-next .content .quotes {
+    color: rgb(0, 0, 0);
+  }
+
+  .testimonials-section .swiper-slide.swiper-slide-next {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-section .btn {
+    width: 98%;
+  }
+
+  .testimonials-section .text-blk.title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 500px) {
+  .testimonials-section .btn {
+    width: 99%;
+    display: none;
+  }
+
+  .testimonials-section .text-blk.info {
+    font-size: 17px;
+    line-height: 28px;
+  }
+
+  .testimonials-section .text-blk.name {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .testimonials-section .text-blk.desig {
+    font-size: 17px;
+    line-height: 28px;
+  }
+
+  .testimonials-section .responsive-container-block.content {
+    margin: 40px 20px 80px 20px;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap');
+
+.testimonials-section *,
+.testimonials-section *:before,
+.testimonials-section *:after {
+  box-sizing: border-box;
+}
+
+.testimonials-section body {
+  margin: 0;
+}
+
 
 /*-----------------------------------*\
     #Demo Pafe
@@ -609,7 +841,7 @@
 }
 
 .demo-request-form .submit-btn {
-  background-color: #4CAF50;
+  background-color: teal;
   color: white;
   padding: 15px 20px;
   border: none;
@@ -641,7 +873,7 @@
   width: 70px;
 }
 .review {
-  background: var(--teal);
+  
   width: 100%;
 }
 .rev-container {
@@ -745,20 +977,11 @@
 @keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
   }
 }
 
@@ -771,27 +994,54 @@
   }
 }
 
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes cardHover {
+  from {
+    transform: scale(1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  }
+  to {
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  }
+}
+
 /* Testimonials Section */
 .testimonial-page {
-  background: var(--teal);
-  color: #102c32;
-  padding: 60px 5%;
+  background: #367588;
+  color: #333;
+  padding: 80px 5%;
   text-align: center;
-  border-radius: 15px;
+  border-radius: 20px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
 .section-header h2 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 15px;
   animation: slideIn 1s ease-in-out;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
 }
 
 .section-header p {
   font-size: 1.3rem;
   margin-bottom: 40px;
   animation: slideIn 1.2s ease-in-out;
+  color: #fff;
+  font-weight: 500;
 }
 
 .testimonial-cards {
@@ -817,42 +1067,62 @@
 .testimonial-card {
   background: #fff;
   color: #333;
-  border-radius: 15px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: slideIn 0.8s ease-in-out forwards;
-  transform: translateY(50px);
-  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
 }
 
 .testimonial-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: cardHover 0.3s forwards;
+}
+
+.student-info {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .student-info img {
-  width: 100%;
-  height: 350px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
   object-fit: cover;
-  animation: pulse 2s infinite ease-in-out;
+  border: 4px solid #00b4d8;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover .student-info img {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.testimonial-card:hover .testimonial-text {
+  opacity: 1; /* Keep testimonial text visible when hovering */
 }
 
 .student-details {
-  padding: 25px;
-  background: #f7f7f7;
+  padding: 20px;
+  text-align: center;
 }
 
 .student-details .name {
   font-size: 1.8rem;
   font-weight: bold;
   color: #333;
+  margin-bottom: 10px;
 }
 
 .student-details .location {
   font-size: 1.2rem;
   color: #777;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+}
+
+.student-details .occupation {
+  font-size: 1rem;
+  color: #777;
+  font-style: italic;
 }
 
 /* Star Rating */
@@ -863,29 +1133,31 @@
 }
 
 .stars img {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   margin: 0 5px;
   transition: transform 0.3s ease, filter 0.3s ease;
+  border: none;
 }
 
 .stars img:hover {
-  transform: scale(1.2);
+  transform: scale(1.3);
   filter: brightness(1.4);
 }
 
 /* Testimonial Text */
 .testimonial-text {
-  padding: 25px;
+  padding: 20px;
   font-size: 1.2rem;
-  line-height: 1.7;
+  line-height: 1.6;
   background: #fff;
-  text-align: left;
+  text-align: center;
   color: #333;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
+  margin-top: 20px;
 }
 
 .testimonial-card:hover .testimonial-text {
@@ -898,13 +1170,14 @@
 
 /* Animated Hover Effect for Star Rating */
 .stars img {
-  transition: transform 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .stars img:hover {
   transform: scale(1.3);
   filter: brightness(1.5);
 }
+
 
 
 
@@ -1466,12 +1739,11 @@ Social Media Section Blog Page
 
 
 
- /*-----------------------------------*\
-Curriculum
-  \*-----------------------------------*/
- 
- /* Curriculum */
+ /*-----------------------------------*\  
+Curriculum Section Styling
+\*-----------------------------------*/
 
+/* Title styling */
 .h1-sm {
   font-size: 2rem;
   color: #2c3e50;
@@ -1480,48 +1752,51 @@ Curriculum
   font-weight: bold;
 }
 
+/* Grid container for curriculum cards */
 .curriculum-cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
-  gap: 30px;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row on larger screens */
+  gap: 15px; /* Reduced gap between cards */
   margin-top: 40px;
   justify-items: center;
   padding: 0 10px;
 }
 
+/* Individual card styling */
 .card {
   background: linear-gradient(135deg, #00bfae, #4db6ac); /* Vibrant gradient background */
   color: #fff;
-  border-radius: 15px;
-  padding: 20px;
+  border-radius: 10px;
+  padding: 15px;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: bold;
   position: relative;
-  height: 250px; /* Fixed height for all cards */
+  height: 180px; /* Adjusted height */
   display: flex;
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, filter 0.3s ease, border 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, filter 0.3s ease;
   cursor: pointer;
   width: 100%; /* Full width of grid item */
-  min-width: 200px; /* Prevent shrinking */
-  max-width: 250px; /* Prevent growing too large */
+  min-width: 220px; /* Prevent shrinking */
+  max-width: 240px; /* Prevent growing too large */
   overflow: hidden; /* Ensure content stays within the card */
 }
 
 .card h3 {
-  font-size: 1.6rem;
-  letter-spacing: 1.5px;
+  font-size: 2rem;
+  letter-spacing: 1px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   margin: 0;
 }
 
+/* Hover effect for cards */
 .card:hover {
   transform: scale(1.05); /* Zoom-in effect */
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Larger shadow */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3); /* Larger shadow */
   background: linear-gradient(135deg, #00bfae, #00d1b2); /* Slight background color shift */
   filter: brightness(1.1); /* Lighten the card */
   border: 3px solid #fff; /* White border on hover */
@@ -1532,9 +1807,9 @@ Curriculum
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 150%; /* Slightly reduced width */
-  height: 150%; /* Slightly reduced height */
-  background-color: rgba(255, 255, 255, 0.15); /* Softer shine effect */
+  width: 140%; /* Slightly reduced width */
+  height: 140%; /* Slightly reduced height */
+  background-color: rgba(255, 255, 255, 0.1); /* Softer shine effect */
   transition: width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease;
   border-radius: 50%;
   z-index: 0;
@@ -1543,8 +1818,8 @@ Curriculum
 }
 
 .card:hover::before {
-  width: 180%; /* Slightly larger on hover */
-  height: 180%; /* Slightly larger on hover */
+  width: 160%; /* Slightly larger on hover */
+  height: 160%; /* Slightly larger on hover */
   top: -50%;
   left: -50%;
 }
@@ -1554,6 +1829,19 @@ Curriculum
   transform: translateY(-5px);
 }
 
+/* Centering the last card on the last row */
+.curriculum-cards::after {
+  content: "";
+  grid-column: span 4; /* Makes sure it occupies the whole row */
+  display: block;
+  visibility: hidden;
+}
+
+.curriculum-cards .card:nth-last-child(1) {
+  justify-self: center; /* Center the last card in the row */
+}
+
+/* Responsive design for tablets and smaller screens */
 @media (max-width: 1024px) {
   .curriculum-cards {
     grid-template-columns: repeat(2, 1fr); /* 2 cards per row on medium screens */
@@ -1565,6 +1853,7 @@ Curriculum
     grid-template-columns: 1fr; /* 1 card per row on small screens */
   }
 }
+
 
  /*-----------------------------------*\
     #Whatsapp Button 

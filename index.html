@@ -51,6 +51,11 @@
   -->
   <link rel="preload" as="image" href="/images/hero-banner.png">
 
+  <link href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 </head>
 
 <body>
@@ -716,15 +721,154 @@
 	<div class="extra">
 		<p>We Are Increasing This Data Every Year</p>
 		<div class="smbox">
-      <span><center><div class="data">10,000+</div><div class="det">Hours Taught</div></center></span>
+      <span><center><div class="data">30,000+</div><div class="det">Hours Taught</div></center></span>
 		<span><center><div class="data">2000+</div><div class="det">Students</div></center></span>
 		<span><center><div class="data">30+</div><div class="det">Available Tutors</div></center></span>
-		<span><center><div class="data">20+</div><div class="det">Subjects Taught</div></center></span>
+		<span><center><div class="data">07+</div><div class="det">Years in the industry</div></center></span>
 		
 		</div>
 	</div>
 
-  <!-- Reviews by Students -->
+
+        <!--Testimonials -->
+
+
+
+  
+  <div class="testimonials-section responsive-container-block bg">
+
+  <div class="responsive-container-block bg">
+    <p class="text-blk title">
+      What Our Student’s Say About Us?
+    </p>
+    <div class="btn">
+      <div class="container-block swiper-button-prevs">
+        <img class="image-block pagination-button" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/t33.png">
+      </div>
+      <div class="container-block swiper-button-nexts">
+        <img class="image-block pagination-button" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/t32.png">
+      </div>
+    </div>
+    <div class="swiper-container mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="responsive-container-block content">
+            <p class="text-blk quotes">
+              “
+            </p>
+            <img class="profile-img" src="images/Aiden.jpg">
+            <p class="text-blk info">
+              I was preparing for my IGCSE Edexcel Single Award exam, and I can recommend the tutors here to anyone.
+            </p>
+            <img class="image-block review" src="images/rvstars.png">
+            <p class="text-blk name">
+              Aiden
+            </p>
+            <p class="text-blk desig">
+              Sri Lanka
+            </p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="responsive-container-block content">
+            <p class="text-blk quotes">
+              “
+            </p>
+            <img class="profile-img" src="images/Mohammed.jpg">
+            <p class="text-blk info">
+              The expert tutors and comprehensive resources made complex concepts easy to grasp. Thanks to their support, I excelled in both subjects and achieved top grades. Truly a fantastic learning experience!"
+            </p>
+            <img class="image-block review" src="images/rvstars.png">
+            <p class="text-blk name">
+              Mohammed
+            </p>
+            <p class="text-blk desig">
+              Jeddah, Saudi Arabia
+            </p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="responsive-container-block content">
+            <p class="text-blk quotes">
+              “
+            </p>
+            <img class="profile-img image-block" src="images/Pranav.jpg">
+            <p class="text-blk info">
+              Online classes at iMaster were very useful for me in my comfort, and I could improve myself a lot.
+            </p>
+            <img class="image-block review" src="images/rvstars.png">
+            <p class="text-blk name">
+              Pranav Muralidharan
+            </p>
+            <p class="text-blk desig">
+              Sri Lanka
+            </p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="responsive-container-block content">
+            <p class="text-blk quotes">
+              “
+            </p>
+            <img class="profile-img" src="images/testi1.jpg">
+            <p class="text-blk info">
+              My tutor at iMaster Online Academy transformed my understanding of IGCSE Math! The engaging lessons and dedicated support helped me achieve an A* in my exams. I couldn't have done it without their guidance. Highly recommending!
+            </p>
+            <img class="image-block review" src="images/rvstars.png">
+            <p class="text-blk name">
+              Gabriella Kelly
+            </p>
+            <p class="text-blk desig">
+              The United Kingdom
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination container-block">
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 5,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-nexts",
+      prevEl: ".swiper-button-prevs",
+    },
+    mousewheel: true,
+    keyboard: true,
+    loop: true,
+    breakpoints: {
+      300: {
+        slidesPerView: 1
+      },
+      501: {
+        slidesPerView: 1
+      },
+      769: {
+        slidesPerView: 3,
+        spaceBetween: 10
+      },
+      1025: {
+        slidesPerView: 3,
+        spaceBetween: 10
+      },
+    }
+  });
+});
+
+  </script>
+
+  
+  <!-- Reviews by Students
 <div id="makeitfull">
 	<a href="#review_section"><img src="images/downarrow.png"></a>
 </div>
@@ -786,7 +930,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 
       <!-- 
         - #FAQ
@@ -1192,6 +1336,9 @@ function showPhrase() {
 showPhrase();
 
   </script>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 </body>
 
 </html>
