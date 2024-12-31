@@ -1016,7 +1016,7 @@
 
 /* Testimonials Section */
 .testimonial-page {
-  background: #367588;
+  background: var(--teal);
   color: #333;
   padding: 80px 5%;
   text-align: center;
@@ -1030,7 +1030,7 @@
   font-size: 3.5rem;
   margin-bottom: 15px;
   animation: slideIn 1s ease-in-out;
-  color: #fff;
+  color: black;
   text-transform: uppercase;
   font-weight: bold;
   text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
@@ -1040,7 +1040,7 @@
   font-size: 1.3rem;
   margin-bottom: 40px;
   animation: slideIn 1.2s ease-in-out;
-  color: #fff;
+  color: black;
   font-weight: 500;
 }
 
