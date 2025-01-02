@@ -545,51 +545,88 @@
 
 
   
-  
-  /*PORTFOLIO*/
+ /* Portfolio */
 .extra {
-	width: 100%;
-  
+  width: 100%;
+  height: 100vh; /* Make it full screen on mobile */
 }
+
 .extra p {
-	padding: 5px;
-	padding-bottom: 165px;
-	font-size: 50px;
-	text-align: center;
-	color: white;
-	background-image: linear-gradient(rgba(0, 255, 255, 0.5), rgba(0, 128, 128, 0.8)),url("../images/smartpic.png");
-	background-size: cover;
-	background-attachment: fixed;
-	font-family: var(--ff-poppins);
-	z-index: -9;
+  padding: 5px;
+  padding-bottom: 165px;
+  font-size: 50px;
+  text-align: center;
+  color: white;
+  background-image: linear-gradient(rgba(0, 255, 255, 0.5), rgba(0, 128, 128, 0.8)), url("../images/smartpic.png");
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: var(--ff-poppins);
+  z-index: -9;
 }
+
 .smbox {
-	display: flex;
-	flex-wrap: wrap;
-	transform: translateY(-100px);
-	justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  transform: translateY(-100px);
+  justify-content: center;
+  margin: 0 auto; /* Ensure centered alignment */
 }
+
 .smbox span {
-	margin: 1%;
-	background: #fff;
-	box-shadow: inset 0px 0px 25px rgba(0,0,0,0.2),
-						0 0 40px rgba(0,0,0,0.3);
-	border-radius: 10px;
-	padding: 30px 45px;
-	cursor: pointer;
+  margin: 1%;
+  background: #fff;
+  box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 30px 45px;
+  cursor: pointer;
+  flex: 1 1 30%; /* Ensures the cards are responsive */
 }
+
 .smbox span:hover {
-	transform: scale(1.3);
-	transition: .5s ease;
+  transform: scale(1.3);
+  transition: .5s ease;
 }
+
 .smbox .data {
-	font-size: 80px;
-	color: #057e63;	
+  font-size: 80px;
+  color: #057e63;
 }
+
 .smbox .det {
-	font-size: 15px;
-	color: #272529;
-	font-family: cursive;
+  font-size: 30px;
+  color: #057e63;
+  font-family: var(--ff-poppins);
+}
+
+/* Responsive for phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .extra {
+    height: 100vh; /* Full height on mobile */
+  }
+
+  .extra p {
+    font-size: 25px; /* Adjust text size for small screens */
+    padding-bottom: 100px; /* Adjust padding for better spacing */
+  }
+
+  .smbox {
+    flex-direction: column; /* Stack the cards vertically on small screens */
+    justify-content: center;
+  }
+
+  .smbox span {
+    width: 100%; /* Make the cards full-width on mobile */
+    margin-bottom: 20px; /* Space between cards */
+    padding: 20px; /* Adjust padding for mobile */
+  }
+
+  .smbox .data {
+    font-size: 60px; /* Reduce the size of the text */
+  }
+
+  .smbox .det {
+    font-size: 25px; /* Adjust the font size for better readability */
+  }
 }
 
 
@@ -625,6 +662,7 @@
   flex-wrap: wrap;
   margin: 0 auto;
   justify-content: flex-start;
+  margin-top: 75px;
 }
 
 .testimonials-section .responsive-container-block.bg {
@@ -1788,7 +1826,7 @@ Curriculum Section Styling
 
 /* Title styling */
 .h1-sm {
-  font-size: 2rem;
+  font-size: 4rem;
   color: #2c3e50;
   margin-bottom: 30px;
   text-align: center;
