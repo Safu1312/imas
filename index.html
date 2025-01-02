@@ -831,10 +831,10 @@
 </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+   document.addEventListener("DOMContentLoaded", function() {
   var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 3,
-    spaceBetween: 5,
+    slidesPerView: 1, // Ensures one slide per view on mobile
+    spaceBetween: 10,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -848,18 +848,18 @@
     loop: true,
     breakpoints: {
       300: {
-        slidesPerView: 1
+        slidesPerView: 1,
       },
       501: {
-        slidesPerView: 1
+        slidesPerView: 1,
       },
       769: {
-        slidesPerView: 3,
-        spaceBetween: 10
+        slidesPerView: 1, // Show one slide on small screens
+        spaceBetween: 10,
       },
       1025: {
         slidesPerView: 3,
-        spaceBetween: 10
+        spaceBetween: 10,
       },
     }
   });

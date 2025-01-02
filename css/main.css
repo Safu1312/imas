@@ -638,7 +638,7 @@
   font-size: 46px;
   line-height: 10px;
   font-weight: 900;
-  margin: 0 0 5px 0;
+  margin: 0 0 20px 0; /* Added margin at the bottom */
 }
 
 .testimonials-section .container-block {
@@ -650,8 +650,7 @@
 }
 
 .testimonials-section .swiper-container {
-  width: 85%;
-  max-width: 1520px;
+  width: 100%;
   height: auto;
   overflow: hidden;
 }
@@ -663,14 +662,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0.3;
-  height: fit-content;
-}
-
-
-
-.testimonials-section .swiper-slide.swiper-slide-next {
   opacity: 1;
+  height: fit-content;
 }
 
 .testimonials-section .swiper-slide.swiper-slide-next .content .quotes {
@@ -756,6 +749,7 @@
 .testimonials-section .content {
   margin: 40px 20px 120px 20px;
 }
+
 .testimonials-section .swiper-slide {
   transition: transform 0.5s ease-in-out;
 }
@@ -763,7 +757,7 @@
 /* Media Queries */
 @media (max-width: 1024px) {
   .testimonials-section .swiper-slide {
-    opacity: 0.3;
+    opacity: 1;
   }
 
   .testimonials-section .swiper-slide.swiper-slide-next .content .quotes {
@@ -782,6 +776,32 @@
 
   .testimonials-section .text-blk.title {
     font-size: 32px;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 10px; /* Increased margin to avoid overlap */
+  }
+
+  .testimonials-section .swiper-container {
+    width: 100%;
+  }
+
+  .testimonials-section .swiper-slide {
+    padding: 20px;
+  }
+
+  .testimonials-section .text-blk.info {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .testimonials-section .text-blk.name {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .testimonials-section .text-blk.desig {
+    font-size: 16px;
+    line-height: 24px;
   }
 }
 
@@ -809,18 +829,22 @@
   .testimonials-section .responsive-container-block.content {
     margin: 40px 20px 80px 20px;
   }
+
+  .testimonials-section .swiper-pagination {
+    display: block;
+  }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap');
+/* New Rule for Large Mobile screens */
+@media (max-width: 400px) {
+  .testimonials-section .swiper-pagination {
+    display: none;
+  }
 
-.testimonials-section *,
-.testimonials-section *:before,
-.testimonials-section *:after {
-  box-sizing: border-box;
-}
-
-.testimonials-section body {
-  margin: 0;
+  .testimonials-section .swiper-button-prevs,
+  .testimonials-section .swiper-button-nexts {
+    display: none;
+  }
 }
 
 
@@ -1775,7 +1799,7 @@ Curriculum Section Styling
 .curriculum-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 cards per row on larger screens */
-  gap: 15px; /* Gap between cards */
+  gap: 15px; /* Reduced gap between cards */
   margin-top: 40px;
   justify-items: center;
   padding: 0 10px;
@@ -1864,38 +1888,45 @@ Curriculum Section Styling
 @media (max-width: 1024px) {
   .curriculum-cards {
     grid-template-columns: repeat(2, 1fr); /* 2 cards per row on medium screens */
-    gap: 20px; /* Increase gap on tablets */
+    gap: 15px;
   }
 }
 
-/* Responsive design for mobile */
+/* Responsive design for mobile (use Flexbox instead of grid for 1 column) */
 @media (max-width: 768px) {
   .curriculum-cards {
-    grid-template-columns: 1fr !important; /* Force 1 card per row on mobile */
-    gap: 15px; /* Gap for small screens */
+    display: flex; /* Switch to flexbox */
+    flex-direction: column; /* Stack the cards in a single column */
+    gap: 15px; /* Space between cards */
+    padding: 0; /* Remove padding for better use of space */
   }
 
   .card {
-    height: 160px; /* Adjust card height */
-    font-size: 1rem; /* Smaller text for small screens */
+    height: auto; /* Let the card height adjust to content */
+    font-size: 1rem; /* Smaller text for mobile */
+    width: 100%; /* Ensure cards fill the available space */
+    margin: 5px 0; /* Small margin between cards */
   }
 
   .card h3 {
-    font-size: 1rem; /* Smaller heading font size */
+    font-size: 1rem; /* Adjust heading font size for mobile */
   }
 }
 
 /* Additional responsive tweaks for extra small screens */
 @media (max-width: 480px) {
   .curriculum-cards {
-    grid-template-columns: 1fr !important; /* Ensure 1 column on very small screens */
-    gap: 10px; /* Tighten the gap on small screens */
+    flex-direction: column; /* Force column layout */
+    gap: 10px;
+    padding: 0 10px; /* Add small padding for better spacing */
   }
 
   .card {
-    min-width: 180px; /* Prevent cards from being too small */
+    width: 100%; /* Full width of the card */
+    min-width: 0; /* Remove min-width on small screens */
+    max-width: 100%; /* Full width of the screen */
     font-size: 0.9rem; /* Smaller font for very small screens */
-    height: auto; /* Let the card height adjust to content */
+    height: auto; /* Let the height of the card adjust to the content */
   }
 
   .card h3 {
