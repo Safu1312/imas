@@ -173,25 +173,32 @@
                       
                       <ul>
                         <li>Science</li>
-                          <li>Mathematics</li>
-                          <li>Pure Mathematics</li>
-                          <li>Further Mathematics</li>
+                          <li>Chemistry</li>
+                          <li>Physics</li>
+                          <li>Biology</li>
+                          <li>ICT / CS</li>
                       </ul>
                   </div>
                   <div class="column">
                      
                       <ul>
-                          <li>English Language</li>
-                          <li>English Literature</li>
-                          <li>French</li>
-                          <li>ICT / CS</li>
+                        <li>Mathematics</li>
+                        <li>Pure Mathematics</li>
+                        <li>Further Mathematics</li>
+                        <li>Business Studies</li>
+                        <li>Economics</li>
+
+
+                          
                       </ul>
                   </div>
                   
                       
                       <ul>
-                          <li>Business Studies</li>
-                          <li>Economics</li>
+                        
+                        <li>English Language</li>
+                          <li>English Literature</li>
+                          <li>French</li>
                           <li>Psychology</li>
                       </ul>
                   </div>
@@ -714,24 +721,57 @@
 
 
       <!-- PORTFOLIO -->
-	<div class="diffSection" id="portfolio_section">
-		
-		<div class="content">
-			
-		</div>
-	</div>
-	<div class="extra">
-		<p>We Are Increasing This Data Every Year</p>
-		<div class="smbox">
-      <span><center><div class="data">30,000+</div><div class="det">Hours Taught</div></center></span>
-		<span><center><div class="data">2000+</div><div class="det">Students</div></center></span>
-		<span><center><div class="data">30+</div><div class="det">Available Tutors</div></center></span>
-		<span><center><div class="data">07+ Years In The Industry</div></center></span>
-		
-		</div>
-	</div>
+      <div class="extra">
+        <p>We Are Increasing This Data Every Year</p>
+        <div class="smbox">
+          <span><center><div class="data" data-count="30000">0</div><div class="det">Hours Taught</div></center></span>
+          <span><center><div class="data" data-count="2000">0</div><div class="det">Students</div></center></span>
+          <span><center><div class="data" data-count="30">0</div><div class="det">Available Tutors</div></center></span>
+          <span><center><div class="data" data-count="7">0</div><div class="det">Years In The Industry</div></center></span>
+        </div>
+      </div>
+      
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const counters = document.querySelectorAll('.data');
+  
+  // Function to reset and count up
+  const countUp = (element) => {
+    const target = +element.getAttribute('data-count');
+    let current = 0;
+    const increment = target / 100; // Adjust the increment for faster/slower count
+
+    const interval = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        element.innerText = target.toLocaleString() + "+"; // Add + sign when count reaches the target
+        clearInterval(interval);
+      } else {
+        element.innerText = Math.floor(current).toLocaleString() + "+"; // Add + sign during the counting process
+      }
+    }, 10);
+  };
+
+  const observerOptions = {
+    root: null,
+    threshold: 0.5 // Trigger when 50% of the element is visible
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Reset the number back to 0 when it becomes visible
+        entry.target.innerText = '0';
+        countUp(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  counters.forEach(counter => observer.observe(counter));
+});
 
 
+</script>
         <!--Testimonials -->
 
 
