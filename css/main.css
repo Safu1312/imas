@@ -1860,7 +1860,7 @@ Curriculum Section Styling
   justify-self: center; /* Center the last card in the row */
 }
 
-/* Responsive design for tablets and smaller screens */
+/* Responsive design for tablets */
 @media (max-width: 1024px) {
   .curriculum-cards {
     grid-template-columns: repeat(2, 1fr); /* 2 cards per row on medium screens */
@@ -1868,15 +1868,16 @@ Curriculum Section Styling
   }
 }
 
+/* Responsive design for mobile */
 @media (max-width: 768px) {
   .curriculum-cards {
-    grid-template-columns: 1fr; /* 1 card per row on small screens */
-    gap: 20px; /* Standard gap for small screens */
+    grid-template-columns: 1fr !important; /* Force 1 card per row on mobile */
+    gap: 15px; /* Gap for small screens */
   }
 
   .card {
-    height: 160px; /* Adjusted height on small screens */
-    font-size: 1rem; /* Smaller text on small screens */
+    height: 160px; /* Adjust card height */
+    font-size: 1rem; /* Smaller text for small screens */
   }
 
   .card h3 {
@@ -1884,21 +1885,21 @@ Curriculum Section Styling
   }
 }
 
-/* Add more flexibility and avoid stretching on smaller screens */
+/* Additional responsive tweaks for extra small screens */
 @media (max-width: 480px) {
   .curriculum-cards {
-    grid-template-columns: 1fr; /* Stack cards on extra-small screens */
-    gap: 10px; /* Tighten the gap */
+    grid-template-columns: 1fr !important; /* Ensure 1 column on very small screens */
+    gap: 10px; /* Tighten the gap on small screens */
   }
 
   .card {
-    min-width: 200px; /* Prevent too much shrinking on small devices */
-    font-size: 0.9rem; /* Even smaller text for very small screens */
-    height: auto; /* Allow height to adjust to content */
+    min-width: 180px; /* Prevent cards from being too small */
+    font-size: 0.9rem; /* Smaller font for very small screens */
+    height: auto; /* Let the card height adjust to content */
   }
 
   .card h3 {
-    font-size: 0.9rem; /* Adjust heading size */
+    font-size: 0.9rem; /* Smaller heading size */
   }
 }
 
