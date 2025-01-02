@@ -1695,10 +1695,8 @@
   }
 }
 
- /*-----------------------------------*\
-Social Media Section Blog Page
-  \*-----------------------------------*/
  
+
 /* Container for Social Media Section */
 .social-media-container {
   text-align: center;
@@ -1808,7 +1806,7 @@ Curriculum Section Styling
 }
 
 .card h3 {
-  font-size: 2rem;
+  font-size: 1.2rem;
   letter-spacing: 1px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   margin: 0;
@@ -1866,12 +1864,23 @@ Curriculum Section Styling
 @media (max-width: 1024px) {
   .curriculum-cards {
     grid-template-columns: repeat(2, 1fr); /* 2 cards per row on medium screens */
+    gap: 20px; /* Increased gap on tablets */
   }
 }
 
 @media (max-width: 768px) {
   .curriculum-cards {
     grid-template-columns: 1fr; /* 1 card per row on small screens */
+    gap: 15px; /* Standard gap for small screens */
+  }
+
+  .card {
+    height: 150px; /* Adjusted height on small screens */
+    font-size: 1rem; /* Smaller text on small screens */
+  }
+
+  .card h3 {
+    font-size: 1rem; /* Smaller heading font size */
   }
 }
 
