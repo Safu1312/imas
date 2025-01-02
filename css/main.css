@@ -16,6 +16,8 @@
 
 :root {
 
+  
+
     /**
      * colors
      */
@@ -271,6 +273,10 @@
     transition: var(--transition-1);
   }
   
+
+ 
+
+
   
   
   
@@ -384,8 +390,10 @@
   color: #fff;
   font-family:var(--ff-poppins);
   border-bottom: 3px solid teal;
-  margin-top: -25px; /* Ensures there is no extra space between header and navbar */
+  margin-top: -30px; /* Ensures there is no extra space between header and navbar */
 }
+
+
 
 .secondary-navbar .menu {
   display: flex;
@@ -393,6 +401,14 @@
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.secondary-navbar.sticky, 
+.secondary-navbar.fixed {
+  position: relative !important; /* Prevent sticky or fixed positioning */
+  top: auto !important; /* Ensure it does not stick */
+  left: auto !important;
+  right: auto !important;
 }
 
 .secondary-navbar li {
@@ -821,6 +837,11 @@
 }
 
 .demo-request-form h2 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.demo-request-form h6 {
   text-align: center;
   margin-bottom: 20px;
 }

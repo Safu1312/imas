@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iMaster - Best Learning Platform</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="css/main.css">
+
+
+
+<!-- Include CSS for intl-tel-input -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.10/css/intlTelInput.min.css">
+
+<!-- Include JS for intl-tel-input -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.10/js/intlTelInput.min.js"></script>
+
+
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cuprum:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- jquery cdn link  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="/images/hero-banner.png">
+
+
+  <style>
+    body {
+      
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .thank-you-container {
+      background-color: #ffffff;
+      text-align: center;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 1000px;
+    }
+    .thank-you-container h1 {
+      font-size: 36px;
+      color: #2c3e50;
+    }
+    .thank-you-container p {
+      font-size: 18px;
+      color: #7f8c8d;
+      margin: 20px 0;
+    }
+    .thank-you-container .contact-info {
+      font-size: 16px;
+      color: #34495e;
+      margin-top: 20px;
+    }
+    .contact-info a {
+      color: #2980b9;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .thank-you-container .btn {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 30px;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #3498db;
+    }
+  </style>
+
+</head>
+
+
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="logo">
+        <img src="images/Newlogo.png" alt="iMaster Logo" class="logo-img">
+        
+      </a>
+      
+      <!-- <a href="#" class="logo">iMaster</a> -->
+
+      <nav class="navbar" data-navbar>
+
+        <div class="wrapper">
+          <img src="images/Newlogo.png" alt="iMaster Logo" class="logo-img">
+
+          <!-- <a href="#" class="logo">iMaster</a> -->
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <header class="header" data-header>
+          <div class="container">
+      
+            <a href="index.html" class="logo">
+              <img src="images/Newlogo.png" alt="iMaster Logo" class="logo-img">
+              
+            </a>
+            
+            <!-- <a href="#" class="logo">iMaster</a> -->
+      
+            <nav class="navbar" data-navbar>
+      
+              <div class="wrapper">
+                <img src="images/Newlogo.png" alt="iMaster Logo" class="logo-img">
+      
+                <!-- <a href="#" class="logo">iMaster</a> -->
+      
+                <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+                  <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+                </button>
+              </div>
+      
+              <ul class="navbar-list">
+      
+                <li>
+                  <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+                </li>
+      
+                <li>
+                  <a href="about.html" class="navbar-link" data-nav-link>About Us</a>
+                </li>
+      
+                <li>
+                  <a href="requestdemo.html" class="navbar-link-active" data-nav-link>Request Demo</a>
+                </li>
+      
+                <li>
+                  <a href="blog.html" class="navbar-link" data-nav-link>Blog</a>
+                </li>
+      
+                <li>
+                  <a href="contact.html" class="navbar-link" data-nav-link>Contact Us</a>
+                </li>
+      
+                <li>
+                  <a href="testimonial.html" class="navbar-link" data-nav-link>Testimonials</a>
+                </li>
+      
+                <li>
+                  <a href="careers.html" class="navbar-link" data-nav-link>Careers</a>
+                </li>
+      
+              </ul>
+      
+            </nav>
+      
+            <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+              <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+            </button>
+      
+            <a href="loginhome.html" class="btn-outline">Student/Tutor Log In</a>
+      
+            <div class="overlay" data-nav-toggler data-overlay></div>
+      
+          </div>
+      
+      
+          <div class="secondary-navbar">
+            <ul class="menu">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Explore Curriculums</a>
+                    <div class="dropdown-menu">
+                        <div class="column">
+                            <h4>IGCSE</h4>
+                            <ul>
+                                <li>IGCSE Edexcel</li>
+                                <li>IGCSE Cambridge</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h4>AS/AL</h4>
+                            <ul>
+                                <li>AS/AL Edexcel</li>
+                                <li>AS/AL Cambridge</li>
+                                <li>AS/AL OCR</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h4>IB & Others</h4>
+                            <ul>
+                                <li>IB PYP</li>
+                                <li>IB MYP</li>
+                                <li>IB DP SL</li>
+                                <li>IB DP HL</li>
+                                <li>GCSE Edexcel</li>
+                                <li>GCSE AQA</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Explore Subjects</a>
+                    <div class="dropdown-menu">
+                        <div class="column">
+                            
+                            <ul>
+                              <li>Science</li>
+                                <li>Mathematics</li>
+                                <li>Pure Mathematics</li>
+                                <li>Further Mathematics</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                           
+                            <ul>
+                                <li>English Language</li>
+                                <li>English Literature</li>
+                                <li>French</li>
+                                <li>ICT / CS</li>
+                            </ul>
+                        </div>
+                        
+                            
+                            <ul>
+                                <li>Business Studies</li>
+                                <li>Economics</li>
+                                <li>Psychology</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        
+        </header>
+  
+
+      </nav>
+
+
+      <br><br><br><br><br>
+      
+     
+
+<div class="thank-you-container">
+    <h1>Thank You for Your Demo Session Request!</h1>
+    <p>Your request has been successfully submitted. We will get in touch with you shortly to schedule your demo session. Stay tuned!</p>
+    
+    <div class="contact-info">
+      <p>If you have any further or urgent queries, feel free to reach out to us:</p>
+      <p>Email: <a href="mailto:support@imaster.uk">support@imaster.uk</a></p>
+      <p>Phone: <a href="tel:+447761967052">+44 7761 967052</a></p>
+    </div>
+    
+    <a href="index.html" class="btn">Back to Home</a>
+  </div>
+  
+
+
+<!-- whatsapp button -->
+<a href="https://wa.me/+447761967052" target="_blank" class="whatsapp-button">
+    <img src="images/Whatsappicon.png" alt="WhatsApp" />
+  </a>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <!-- SweetAlert2 CDN -->
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
+
+
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+ 
+
+<!-- SweetAlert2 CDN -->
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
+
+
+
+  
+
+</body>
+
+</html>

@@ -71,29 +71,7 @@ label {
   font-weight: bold;
 }
 
-/* Optional: Add styles for the "Select Country" option to make it stand out */
-.iti__divider {
-  font-weight: bold;
-  color: #888;
-  padding: 10px;
-  text-align: center;
-  cursor: pointer;
-}
 
-.iti__divider:hover {
-  background-color: #f5f5f5;
-}
-
-/* Custom styling for the input fields */
-input[type="tel"] {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-}
 
   </style>
 
@@ -275,29 +253,35 @@ input[type="tel"] {
 <section class="section newdemo" id="demo" aria-label="newdemo">
   <div class="demo-request-form">
     <h2>Request a Demo Session</h2>
-    <form id="demoRequestForm">
+    <h6>Please complete the form below for the demo session. After you complete the form, someone from the iMaster team will contact you to schedule your demo session.</h6>
+    <form id="demoRequestForm" action="https://formsubmit.co/7c2d519f0b5bddd8152e7ec3b4f06678 " method="POST">
       
       <label for="fullName">Name</label>
-      <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+      <input type="text" id="fullName" name="Full Name" placeholder="Enter your full name" required>
       
+      <label for="country">Your Country</label>
+      <input type="text" id="country" name="Country" placeholder="Enter Your Country" required>
+
       <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" placeholder="Select country & enter number" required>
+      <input type="tel" id="phone" name="Phone Number" placeholder="Enter your Phone Number" required>
       
       <label for="whatsapp">WhatsApp</label>
-      <input type="tel" id="whatsapp" name="whatsapp" placeholder="Select country & enter number" required>
+      <input type="tel" id="whatsapp" name="Whatsapp Number" placeholder="Enter your Whatsapp Number" required>
 
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      <input type="email" id="email" name="Email Address" placeholder="Enter your email" required>
       
       <label for="level">Level</label>
-      <select id="level" name="level" required>
+      <select id="level" name="Level" required>
+        <option value="Primary">Select Your Level</option>
         <option value="Primary">Primary</option>
         <option value="Secondary">Secondary</option>
         <option value="University Level">University Level</option>
       </select>
       
       <label for="grade">Grade</label>
-      <select id="grade" name="grade" required>
+      <select id="grade" name="Grade" required>
+        <option value="select">Select Your Grade</option>
         <option value="Grade 1">Grade 1</option>
         <option value="Grade 2">Grade 2</option>
         <option value="Grade 3">Grade 3</option>
@@ -322,6 +306,7 @@ input[type="tel"] {
       
       <label for="curriculum">Curriculum</label>
       <select id="curriculum" name="curriculum" required>
+        <option value="selectcu">Select The Curriculam</option>
         <option value="IGCSE Edexcel">IGCSE Edexcel</option>
         <option value="IGCSE Cambridge">IGCSE Cambridge</option>
         <option value="IAS/IAL Edexcel">IAS/IAL Edexcel</option>
@@ -340,6 +325,7 @@ input[type="tel"] {
       
       <label for="subject">Preferred Subject</label>
       <select id="subject" name="subject" required>
+        <option value="selectsub">Select The Subject</option>
         <option value="Mathematics">Mathematics</option>
         <option value="Science">Science</option>
         <option value="Pure Mathematics">Pure Mathematics</option>
@@ -365,65 +351,13 @@ input[type="tel"] {
       <label for="notes">Any Other Notes</label>
       <textarea id="notes" name="notes" placeholder="Any special requests or notes"></textarea>
       
+      <input type="hidden" name="_next" value="http://127.0.0.1:5501/thankyou.html">
+      <input type="hidden" name="_subject" value="New Demo Session Request">
+
       <button type="submit" class="submit-btn">Request a Demo Session</button>
     </form>
   </div>
 </section>
-
-
-
-
-
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  // Initialize intl-tel-input for phone and WhatsApp inputs
-  const phoneInput = document.querySelector("#phone");
-  const whatsappInput = document.querySelector("#whatsapp");
-
-  // Initialize the intl-tel-input plugin for Phone Input
-  const iti = window.intlTelInput(phoneInput, {
-    initialCountry: "auto", // Automatically detects the user's country
-    separateDialCode: true,  // Shows the country code in a separate field
-    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.10/js/utils.js", // Optional: Enables phone number validation and formatting
-    nationalMode: false, // Force international dialing
-    preferredCountries: ["us", "gb", "in", "ca", "au"], // Optional: Preferred countries at the top
-  });
-
-  // Insert a "Select Country" option inside the country dropdown
-  const countryDropdown = document.querySelector('.iti__country-list');
-  const selectCountryOption = document.createElement("li");
-  selectCountryOption.classList.add('iti__option', 'iti__divider');
-  selectCountryOption.textContent = "Select Country";
-  
-  // Prepend the "Select Country" option to the dropdown list
-  countryDropdown.insertBefore(selectCountryOption, countryDropdown.firstChild);
-
-  // Optional: Initialize WhatsApp input with the same settings
-  window.intlTelInput(whatsappInput, {
-    initialCountry: "auto",
-    separateDialCode: true,
-    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.10/js/utils.js",
-    nationalMode: false,
-  });
-
-  // Form submission handling
-  document.getElementById("demoRequestForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    // Get the full phone number including the country code
-    const fullPhoneNumber = iti.getNumber(); // Get the full phone number with the country code
-    const fullWhatsappNumber = whatsappInput.value;
-
-    console.log("Full Phone Number:", fullPhoneNumber);
-    console.log("Full WhatsApp Number:", fullWhatsappNumber);
-    
-    // Proceed with form submission (e.g., send via AJAX or display on the screen)
-  });
-});
-
-</script>
-
 
   
 
@@ -631,65 +565,7 @@ KINGDOM
 
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-  <script type="text/javascript">
-    // Initialize EmailJS with your public key
-    (function() {
-      emailjs.init("f5gwCIoX9EQpaVr7i"); // Replace with your public key
-    })();
-  
-    // Form submission handler
-    document.getElementById("demoRequestForm").addEventListener("submit", function (e) {
-      e.preventDefault(); // Prevent the default form submission behavior
-  
-      const serviceID = "service_ik7j9op"; // Replace with your Service ID
-      const templateID = "template_9cghgvc"; // Replace with your Template ID
-  
-      const formData = {
-        fullName: document.getElementById("fullName").value,
-        email: document.getElementById("email").value,
-        grade: document.getElementById("grade").value,
-        subject: document.getElementById("subject").value,
-        phone: document.getElementById("phone").value,
-        notes: document.getElementById("notes").value,
-      };
-
-      // Show loading spinner with SweetAlert
-      Swal.fire({
-        title: 'Sending your request...',
-        text: 'Please wait while we send your demo request.',
-        imageUrl: 'https://sweetalert2.github.io/images/loading.gif', // Optional custom spinner
-        showConfirmButton: false,
-        allowOutsideClick: false, // Disable closing the popup while the request is being sent
-        didOpen: () => {
-          Swal.showLoading(); // Start the spinner
-        },
-      });
-
-      // Send email via EmailJS
-      emailjs.send(serviceID, templateID, formData).then(
-        (response) => {
-          // Hide the spinner and show success message
-          Swal.fire({
-            title: "Success!",
-            text: "Demo request sent successfully!",
-            icon: "success",
-            confirmButtonText: "Ok",
-          });
-          console.log("SUCCESS:", response.status, response.text);
-        },
-        (error) => {
-          // Hide the spinner and show error message
-          Swal.fire({
-            title: "Error!",
-            text: "Failed to send the demo request. Please try again.",
-            icon: "error",
-            confirmButtonText: "Try Again",
-          });
-          console.error("ERROR:", error);
-        }
-      );
-    });
-</script>
+ 
 
 <!-- SweetAlert2 CDN -->
 <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css" rel="stylesheet">
