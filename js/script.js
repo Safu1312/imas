@@ -113,5 +113,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
  
+function toggleMenu() {
+  const menu = document.querySelector('.secondary-navbar .menu');
+  menu.classList.toggle('active');
+}
 
 

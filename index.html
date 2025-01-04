@@ -134,78 +134,73 @@
 
 
     <div class="secondary-navbar">
-      <ul class="menu">
-          <li class="dropdown">
-              <a href="#" class="dropdown-toggle">Explore Curriculums</a>
-              <div class="dropdown-menu">
-                  <div class="column">
-                      <h4>IGCSE</h4>
-                      <ul>
-                          <li>IGCSE Edexcel</li>
-                          <li>IGCSE Cambridge</li>
-                      </ul>
-                  </div>
-                  <div class="column">
-                      <h4>AS/AL</h4>
-                      <ul>
-                          <li>AS/AL Edexcel</li>
-                          <li>AS/AL Cambridge</li>
-                          <li>AS/AL OCR</li>
-                      </ul>
-                  </div>
-                  <div class="column">
-                      <h4>IB & Others</h4>
-                      <ul>
-                          <li>IB PYP</li>
-                          <li>IB MYP</li>
-                          <li>IB DP SL</li>
-                          <li>IB DP HL</li>
-                          <li>GCSE Edexcel</li>
-                          <li>GCSE AQA</li>
-                      </ul>
-                  </div>
-              </div>
-          </li>
-          <li class="dropdown">
-              <a href="#" class="dropdown-toggle">Explore Subjects</a>
-              <div class="dropdown-menu">
-                  <div class="column">
-                      
-                      <ul>
-                        <li>Science</li>
-                          <li>Chemistry</li>
-                          <li>Physics</li>
-                          <li>Biology</li>
-                          <li>ICT / CS</li>
-                      </ul>
-                  </div>
-                  <div class="column">
-                     
-                      <ul>
-                        <li>Mathematics</li>
-                        <li>Pure Mathematics</li>
-                        <li>Further Mathematics</li>
-                        <li>Business Studies</li>
-                        <li>Economics</li>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <ul class="menu">
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle">Explore Curriculums</a>
+      <div class="dropdown-menu">
+        <div class="column">
+          <h4>IGCSE</h4>
+          <ul>
+            <li>IGCSE Edexcel</li>
+            <li>IGCSE Cambridge</li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4>AS/AL</h4>
+          <ul>
+            <li>AS/AL Edexcel</li>
+            <li>AS/AL Cambridge</li>
+            <li>AS/AL OCR</li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4>IB & Others</h4>
+          <ul>
+            <li>IB PYP</li>
+            <li>IB MYP</li>
+            <li>IB DP SL</li>
+            <li>IB DP HL</li>
+            <li>GCSE Edexcel</li>
+            <li>GCSE AQA</li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle">Explore Subjects</a>
+      <div class="dropdown-menu">
+        <div class="column">
+          <ul>
+            <li>Science</li>
+            <li>Chemistry</li>
+            <li>Physics</li>
+            <li>Biology</li>
+            <li>ICT / CS</li>
+          </ul>
+        </div>
+        <div class="column">
+          <ul>
+            <li>Mathematics</li>
+            <li>Pure Mathematics</li>
+            <li>Further Mathematics</li>
+            <li>Business Studies</li>
+            <li>Economics</li>
+          </ul>
+        </div>
+        <div class="column">
+          <ul>
+            <li>English Language</li>
+            <li>English Literature</li>
+            <li>French</li>
+            <li>Psychology</li>
+          </ul>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
 
-
-                          
-                      </ul>
-                  </div>
-                  
-                      
-                      <ul>
-                        
-                        <li>English Language</li>
-                          <li>English Literature</li>
-                          <li>French</li>
-                          <li>Psychology</li>
-                      </ul>
-                  </div>
-              </div>
-          </li>
-      </ul>
-  </div>
   
   
   </header>
@@ -726,7 +721,7 @@
         <div class="smbox">
           <span><center><div class="data" data-count="30000">0</div><div class="det">Hours Taught</div></center></span>
           <span><center><div class="data" data-count="2000">0</div><div class="det">Students</div></center></span>
-          <span><center><div class="data" data-count="30">0</div><div class="det">Available Tutors</div></center></span>
+          <span><center><div class="data" data-count="30">0</div><div class="det">Tutors Available/div></center></span>
           <span><center><div class="data" data-count="7">0</div><div class="det">Years In The Industry</div></center></span>
         </div>
       </div>
@@ -982,9 +977,8 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="container">
 
           <div class="title-wrapper">
-            <h2 class="h2 section-title">Discover Frequently Asked Questions?</h2>
+            <h2 class="h2 section-title">Our Frequently Asked Questions</h2>
 
-            <a href="#" class="btn btn-primary">Work Together</a>
           </div>
 
           <ul class="grid-list">
@@ -994,7 +988,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 <button class="card-action" data-accordion-action>
                   <h3 class="h3 card-title">
-                    01. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deleniti fugiat in ut porro!
+                    Q1: What is iMaster Online Academy?
                   </h3>
 
                   <div class="action-icon">
@@ -1005,15 +999,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 <div class="card-content">
                   <p>
-                    Morbi aliquam quis quam in luctus. Nullam tincidunt pulvinar imperdiet. Sed varius, diam vitae
-                    posuere semper, libero ex
-                    hendrerit nunc, ac sagittis eros metus ut diam. Donec a nibh in libero maximus vehicula. Etiam sit
-                    amet condimentum
-                    erat. Pellentesque ultrices sagittis turpis, quis tempus ante viverra et.Morbi aliquam quis quam in
-                    luctus. Nullam
-                    tincidunt pulvinar imperdiet. Sed varius, diam vitae posuere semper, tincidunt pulvinar imperdiet.
-                    Sed varius, diam
-                    vitae posuere semper.
+                    iMaster Online Academy is a premier online learning platform offering one-on-one and small-group classes tailored to Cambridge, Edexcel, and IB curricula. We also provide interactive self-learning courses for students seeking flexibility and personalized education.
                   </p>
                 </div>
 
@@ -1025,7 +1011,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 <button class="card-action" data-accordion-action>
                   <h3 class="h3 card-title">
-                    02. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero laboriosam tempore atque nisi eum.
+                    Q2: Do you offer classes for both Cambridge, Edexcel, and IB curricula?
                   </h3>
 
                   <div class="action-icon">
@@ -1036,15 +1022,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 <div class="card-content">
                   <p>
-                    Morbi aliquam quis quam in luctus. Nullam tincidunt pulvinar imperdiet. Sed varius, diam vitae
-                    posuere semper, libero ex
-                    hendrerit nunc, ac sagittis eros metus ut diam. Donec a nibh in libero maximus vehicula. Etiam sit
-                    amet condimentum
-                    erat. Pellentesque ultrices sagittis turpis, quis tempus ante viverra et.Morbi aliquam quis quam in
-                    luctus. Nullam
-                    tincidunt pulvinar imperdiet. Sed varius, diam vitae posuere semper, tincidunt pulvinar imperdiet.
-                    Sed varius, diam
-                    vitae posuere semper.
+                    Yes, we specialize in providing expert tutoring for Cambridge, Edexcel, and IB programs with customized teaching approaches for each curriculum.
                   </p>
                 </div>
 
@@ -1056,7 +1034,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 <button class="card-action" data-accordion-action>
                   <h3 class="h3 card-title">
-                    03. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti fugit obcaecati reprehenderit hic ipsum!
+                    Q3: Are your classes live or pre-recorded?
                   </h3>
 
                   <div class="action-icon">
@@ -1067,15 +1045,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 <div class="card-content">
                   <p>
-                    Morbi aliquam quis quam in luctus. Nullam tincidunt pulvinar imperdiet. Sed varius, diam vitae
-                    posuere semper, libero ex
-                    hendrerit nunc, ac sagittis eros metus ut diam. Donec a nibh in libero maximus vehicula. Etiam sit
-                    amet condimentum
-                    erat. Pellentesque ultrices sagittis turpis, quis tempus ante viverra et.Morbi aliquam quis quam in
-                    luctus. Nullam
-                    tincidunt pulvinar imperdiet. Sed varius, diam vitae posuere semper, tincidunt pulvinar imperdiet.
-                    Sed varius, diam
-                    vitae posuere semper.
+                    Our core offerings are live, interactive classes, but we also provide self-learning courses with pre-recorded content for flexible study options.
                   </p>
                 </div>
 
@@ -1087,7 +1057,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 <button class="card-action" data-accordion-action>
                   <h3 class="h3 card-title">
-                    04. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur provident sunt ut deleniti possimus?
+                    Q4: Can I request a demo class before enrolling?
                   </h3>
 
                   <div class="action-icon">
@@ -1098,15 +1068,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 <div class="card-content">
                   <p>
-                    Morbi aliquam quis quam in luctus. Nullam tincidunt pulvinar imperdiet. Sed varius, diam vitae
-                    posuere semper, libero ex
-                    hendrerit nunc, ac sagittis eros metus ut diam. Donec a nibh in libero maximus vehicula. Etiam sit
-                    amet condimentum
-                    erat. Pellentesque ultrices sagittis turpis, quis tempus ante viverra et.Morbi aliquam quis quam in
-                    luctus. Nullam
-                    tincidunt pulvinar imperdiet. Sed varius, diam vitae posuere semper, tincidunt pulvinar imperdiet.
-                    Sed varius, diam
-                    vitae posuere semper.
+                    Yes, we offer a free demo class so you can experience our teaching style before making a commitment.
                   </p>
                 </div>
 
@@ -1118,7 +1080,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 <button class="card-action" data-accordion-action>
                   <h3 class="h3 card-title">
-                    05. Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic libero repellendus officia id commodi.
+                    Q5: Can students interact with tutors during live classes?
                   </h3>
 
                   <div class="action-icon">
@@ -1129,15 +1091,72 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 <div class="card-content">
                   <p>
-                    Morbi aliquam quis quam in luctus. Nullam tincidunt pulvinar imperdiet. Sed varius, diam vitae
-                    posuere semper, libero ex
-                    hendrerit nunc, ac sagittis eros metus ut diam. Donec a nibh in libero maximus vehicula. Etiam sit
-                    amet condimentum
-                    erat. Pellentesque ultrices sagittis turpis, quis tempus ante viverra et.Morbi aliquam quis quam in
-                    luctus. Nullam
-                    tincidunt pulvinar imperdiet. Sed varius, diam vitae posuere semper, tincidunt pulvinar imperdiet.
-                    Sed varius, diam
-                    vitae posuere semper.
+                    Yes, our live sessions are fully interactive, allowing students to ask questions, participate in discussions, and receive real-time feedback from tutors.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+            <li>
+              <div class="faq-card">
+
+                <button class="card-action" data-accordion-action>
+                  <h3 class="h3 card-title">
+                    Q6: What tools or software do I need for online classes?
+                  </h3>
+
+                  <div class="action-icon">
+                    <ion-icon name="add-outline" aria-hidden="true" class="open"></ion-icon>
+                    <ion-icon name="remove-outline" aria-hidden="true" class="close"></ion-icon>
+                  </div>
+                </button>
+
+                <div class="card-content">
+                  <p>
+                    You’ll need a computer or tablet with a stable internet connection, a webcam, and access to our learning platform. Headphones with a microphone are recommended for the best experience.                  </p>
+                </div>
+
+              </div>
+            </li>
+            <li>
+              <div class="faq-card">
+
+                <button class="card-action" data-accordion-action>
+                  <h3 class="h3 card-title">
+                    Q7: What if I have technical difficulties during a class?
+                  </h3>
+
+                  <div class="action-icon">
+                    <ion-icon name="add-outline" aria-hidden="true" class="open"></ion-icon>
+                    <ion-icon name="remove-outline" aria-hidden="true" class="close"></ion-icon>
+                  </div>
+                </button>
+
+                <div class="card-content">
+                  <p>
+                    Our technical support team is available to assist with any issues to ensure a smooth learning experience.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+            <li>
+              <div class="faq-card">
+
+                <button class="card-action" data-accordion-action>
+                  <h3 class="h3 card-title">
+                    Q8: Do you offer flexible scheduling for classes?
+                  </h3>
+
+                  <div class="action-icon">
+                    <ion-icon name="add-outline" aria-hidden="true" class="open"></ion-icon>
+                    <ion-icon name="remove-outline" aria-hidden="true" class="close"></ion-icon>
+                  </div>
+                </button>
+
+                <div class="card-content">
+                  <p>
+                    Yes, we offer flexible scheduling options to accommodate different time zones and student preferences.
                   </p>
                 </div>
 
@@ -1269,7 +1288,7 @@ KINGDOM
           <li class="footer-item">
             <ion-icon name="mail" aria-hidden="true"></ion-icon>
 
-            <a href="mailto:info@hoolix.com" class="contact-link">info@imaster.co.uk</a>
+            <a href="mailto:info@hoolix.com" class="contact-link">support@imaster.uk</a>
           </li>
 
           <li class="footer-item">

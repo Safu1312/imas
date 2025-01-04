@@ -1539,7 +1539,7 @@
   }
   
   .faq-card .card-action {
-    --action-bg: var(--go-green_8);
+    --action-bg: (var(--teal));
     --color: var(--granite-gray);
   
     background-color: var(--action-bg);

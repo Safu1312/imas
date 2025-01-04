@@ -52,47 +52,110 @@
   <link rel="preload" as="image" href="/images/hero-banner.png">
 
   <style>
-/* Open Positions Section */
-#open-positions {
-    padding: 50px 20px;
-    background-color: hsl(180, 50%, 95%);
-}
-
-/* Introductory Message */
-#open-positions .intro-message {
+/* Banner */
+.banner {
+    background-color: teal;
+    padding: 20px;
     text-align: center;
-    margin-bottom: 30px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-out forwards;
 }
 
-#open-positions .intro-message h2 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 10px;
+.text {
+    font-size: 3rem;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    animation: blinkText 1.5s infinite alternate;
 }
 
-#open-positions .intro-message p {
-    font-size: 1.2rem;
-    color: #7f8c8d;
-    margin-bottom: 30px;
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-/* Job Listing Styling */
-.job-listing {
+/* Blinking Effect */
+@keyframes blinkText {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Job Listing with Image */
+.job-listing-tutor {
+    display: flex;
+    gap: 20px;
     background-color: #ffffff;
     padding: 20px;
     margin: 20px 0;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards 0.5s;
 }
 
-.job-listing h3 {
-    font-size: 1.8rem;
+.job-listing-tutor:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.job-image {
+    flex: 1;
+    animation: fadeIn 1s ease-out forwards 0.5s;
+}
+
+.job-content {
+    flex: 2;
+}
+
+.job-listing-image {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.job-listing-image:hover {
+    transform: scale(1.05);
+}
+
+.job-content h3 {
+    font-size: 2rem;
     margin-bottom: 10px;
     color: hsl(190, 33%, 47%);
+    font-weight: bold;
 }
 
-.job-listing p {
+.job-content p {
     font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+.job-content h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+.job-content ul {
+    padding-left: 20px;
     margin-bottom: 15px;
     color: #7f8c8d;
 }
@@ -105,12 +168,53 @@
     font-weight: bold;
     border-radius: 5px;
     text-align: center;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
 }
 
 .apply-btn:hover {
     background-color: #2980b9;
+    transform: scale(1.05);
 }
+
+.apply-btn:focus {
+    outline: none;
+}
+
+.job-content ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+    color: #7f8c8d;
+    list-style-type: disc; /* Default bullets */
+}
+
+.job-content ul li {
+    margin-bottom: 10px; /* Adds space between list items */
+}
+
+/* Custom Bullet Style */
+.job-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.job-content ul li::before {
+    content: '•'; /* Bullet symbol */
+    color: hsl(190, 33%, 47%); /* Color of the bullet */
+    font-size: 1.2rem; /* Size of the bullet */
+    margin-right: 10px; /* Space between bullet and text */
+}
+
+/* Animation for Fade-In Effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 
   </style>
@@ -265,36 +369,45 @@
 <br><br><br><br><br>
 
 
-
-
- <!-- Open Positions Section -->
- <div id="open-positions" class="open-positions">
-    <div class="intro-message">
-        <h2>Join Our Team</h2>
-        <p>We are always looking for talented individuals who are passionate about education and technology. Explore our open positions below!</p>
-    </div>
-
-    <div class="job-listing">
-        <h3>Online Tutor (Various Subjects)</h3>
-        <p>Responsibilities: Provide personalized lessons, engage with students, assess performance.</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe115T8VvkOW2MiLonOZkGzRPEsvUKhFe6R1GuZhoLRXj-3Qg/viewform" class="apply-btn">Apply Now</a>
-    </div>
-    <div class="job-listing">
-        <h3>Content Developer (Curriculum Design)</h3>
-        <p>Responsibilities: Develop interactive and engaging course content, work with subject experts.</p>
-        <a href="#" class="apply-btn">Apply Now</a>
-    </div>
-    <div class="job-listing">
-        <h3>Web Developer</h3>
-        <p>Responsibilities: Build and maintain our website, integrate third-party tools.</p>
-        <a href="#" class="apply-btn">Apply Now</a>
-    </div>
-    <div class="job-listing">
-        <h3>Customer Support Specialist</h3>
-        <p>Responsibilities: Assist students and tutors, respond to inquiries, provide troubleshooting.</p>
-        <a href="#" class="apply-btn">Apply Now</a>
-    </div>
+<div class="banner">
+  <div class="text"> We Are Hiring! Join Our Team! </div>
 </div>
+
+<!-- Online Tutor Position -->
+<div class="job-listing-tutor">
+  <div class="job-image">
+      <img src="images/tutimg.png" alt="Online Tutor Position" class="job-listing-image">
+  </div>
+  <div class="job-content">
+      <h3>Online Tutor (Various Subjects)</h3>
+      <p>Are you ready to inspire the next generation of learners? Join iMaster Online Academy as an <strong>Online Tutor</strong> and make a lasting impact through personalized and engaging lessons.</p>
+      <h4>Why You'll Love This Role:</h4>
+      <ul>
+          <li>Flexible scheduling to fit your lifestyle</li>
+          <li>Competitive hourly rates</li>
+          <li>Access to teaching resources and continuous training</li>
+          <li>A collaborative and innovative teaching environment</li>
+      </ul>
+      <h4>Your Key Responsibilities:</h4>
+      <ul>
+          <li>Deliver personalized one-on-one and small group lessons</li>
+          <li>Engage students and make learning interactive</li>
+          <li>Monitor and assess student performance to ensure progress</li>
+          <li>Collaborate with parents and the academy's quality team</li>
+      </ul>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe115T8VvkOW2MiLonOZkGzRPEsvUKhFe6R1GuZhoLRXj-3Qg/viewform" class="apply-btn">Apply Now</a>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
 
 
 
