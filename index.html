@@ -60,6 +60,7 @@
 
 <body>
 
+  
   <!-- 
     - #HEADER
   -->
@@ -86,16 +87,16 @@
           </button>
         </div>
 
-        <ul class="navbar-list">
-
+        <ul class="navbar-list primary-navbar">
           <li>
             <a href="index.html" class="navbar-link-active" data-nav-link>Home</a>
           </li>
-
+        
           <li>
             <a href="about.html" class="navbar-link" data-nav-link>About Us</a>
           </li>
 
+        
           <li>
             <a href="requestdemo.html" class="navbar-link" data-nav-link>Request Demo</a>
           </li>
@@ -105,20 +106,22 @@
           </li>
 
           <li>
-            <a href="contact.html" class="navbar-link" data-nav-link>Contact Us</a>
-          </li>
-
-          <li>
             <a href="testimonial.html" class="navbar-link" data-nav-link>Testimonials</a>
           </li>
-
-          <li>
-            <a href="careers.html" class="navbar-link" data-nav-link>Careers</a>
+        
+          <li class="dropdown">
+            <a href="contact.html" class="navbar-link" data-nav-link>Contact Us</a>
+            <ul class="dropdown-menu">
+              <li><a href="careers.html" class="navbar-link">Careers</a></li>
+            </ul>
           </li>
-
+        
           
-
         </ul>
+        
+        
+        
+        
 
       </nav>
 
@@ -126,7 +129,7 @@
         <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
       </button>
 
-      <a href="loginhome.html" class="btn-outline">Student/Tutor Log In</a>
+      <a href="loginhome.html" class="btn-outline">Login</a>
 
       <div class="overlay" data-nav-toggler data-overlay></div>
 
@@ -199,6 +202,9 @@
       </div>
     </li>
   </ul>
+  <div class="border-wrapper">
+    <!-- Your content here -->
+  </div>
 </div>
 
   
@@ -306,13 +312,83 @@
         </div>
       </section>
 
+<!-- Curriculum -->
+<section class="curriculum">
+  <div class="curriculum-header">
+    <h1>Our Curriculum Offerings</h1>
+    <p>Explore a wide range of internationally recognized programs.</p>
+  </div>
+  <div class="row">
+    <div class="curriculum-col">
+      <div class="front">
+        <h3>IGCSE</h3>
+      </div>
+      <div class="back">
+        <ul>
+          <li>Edexcel</li>
+          <li>Cambridge</li>
+        </ul>
+      </div>
+    </div>
+    <div class="curriculum-col">
+      <div class="front">
+        <h3>IAS/IAL</h3>
+      </div>
+      <div class="back">
+        <ul>
+          <li>Edexcel</li>
+          <li>Cambridge</li>
+        </ul>
+      </div>
+    </div>
+    <div class="curriculum-col">
+      <div class="front">
+        <h3>IB</h3>
+      </div>
+      <div class="back">
+        <ul>
+          <li>PYP</li>
+          <li>MYP</li>
+          <li>DP SL</li>
+          <li>DP HL</li>
+        </ul>
+      </div>
+    </div>
+    <div class="curriculum-col">
+      <div class="front">
+        <h3>GCSE</h3>
+      </div>
+      <div class="back">
+        <ul>
+          <li>Edexcel</li>
+          <li>AQA</li>
+        </ul>
+      </div>
+    </div>
+    <div class="curriculum-col">
+      <div class="front">
+        <h3>AS/AL</h3>
+      </div>
+      <div class="back">
+        <ul>
+          <li>Edexcel</li>
+          <li>Cambridge</li>
+          <li>OCR</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
       <!-- 
         - Curriculam offered
       -->
 
-      <h1 class="h1-sm section-title">Curriculum We Offer</h1>
+      <!-- <h1 class="h1-sm section-title">Curriculum We Offer</h1> -->
 
-      <div class="curriculum-cards">
+      <!-- <div class="curriculum-cards">
         <div class="card">
           <h3>IGCSE Edexcel</h3>
         </div>
@@ -352,7 +428,7 @@
         <div class="card">
           <h3>AS/AL OCR</h3>
         </div>
-      </div>
+      </div> -->
       
 
 
@@ -607,112 +683,122 @@
       
 
 
-      <!-- 
-        - #FEATURES
-      -->
-
       <section class="section features" id="features" aria-label="features">
         <div class="container">
-
+      
           <p class="section-subtitle text-center">-Why Choose Us-</p>
-
+      
           <h2 class="h2 section-title text-center">Reasons to Choose Us</h2>
-
-          <!-- <p class="section-text text-center">
-            You will get Free and Paid Courses with or without Certificate.You can Link your certificate with your Linkedin Profile.
-          </p> -->
-
+      
           <ul class="grid-list">
-
+      
             <li>
               <div class="features-card">
-
-                <data class="card-number" value="01">01</data>
-
-                <h3 class="h3 card-title">Personalized Learning Experience</h3>
-
-                <p class="card-text">
-                  We offer one-on-one and small group classes tailored to each student's unique needs, learning styles, and strengths, ensuring effective and engaging lessons that promote academic success.
-                </p>
-
+                <div class="card-inner">
+                  <div class="card-front">
+                    <div class="card-number">01</div>
+                    <img src="images/PeronLine.png" alt="Personalized Learning Experience">
+                    <h3 class="card-title">Personalized Learning Experience</h3>
+                  </div>
+                  <div class="card-back">
+                    <p class="card-text">
+                      We offer one-on-one and small group classes tailored to each student's unique needs, learning styles, and strengths, ensuring effective and engaging lessons that promote academic success.
+                    </p>
+                  </div>
+                </div>
               </div>
             </li>
-
+      
             <li>
               <div class="features-card">
-
-                <data class="card-number" value="02">02</data>
-
-                <h3 class="h3 card-title">Expert Tutors</h3>
-
-                <p class="card-text">
-                  Our tutors are highly qualified and experienced in delivering customized lessons for a variety of curricula, including Cambridge, Edexcel, and IB, ensuring a high-quality educational experience.
-                </p>
-
+                <div class="card-inner">
+                  <div class="card-front">
+                    <div class="card-number">02</div>
+                    <img src="images/Experttutors.png" alt="Expert Tutors">
+                    <h3 class="card-title">Expert Tutors</h3>
+                  </div>
+                  <div class="card-back">
+                    <p class="card-text">
+                      Our tutors are highly qualified and experienced in delivering customized lessons for a variety of curricula, including Cambridge, Edexcel, and IB, ensuring a high-quality educational experience.
+                    </p>
+                  </div>
+                </div>
               </div>
             </li>
-
+      
             <li>
               <div class="features-card">
-
-                <data class="card-number" value="03">03</data>
-
-                <h3 class="h3 card-title">Tailored Support Program</h3>
-
-                <p class="card-text">
-                  We provide a personalized support program that adapts to each student's individual learning requirements, helping them overcome challenges and achieve their academic goals.
-                </p>
-
+                <div class="card-inner">
+                  <div class="card-front">
+                    <div class="card-number">03</div>
+                    <img src="images/TailoredSup.png" alt="Tailored Support Program">
+                    <h3 class="card-title">Tailored Support Program</h3>
+                  </div>
+                  <div class="card-back">
+                    <p class="card-text">
+                      We provide a personalized support program that adapts to each student's individual learning requirements, helping them overcome challenges and achieve their academic goals.
+                    </p>
+                  </div>
+                </div>
               </div>
             </li>
-
+      
             <li>
               <div class="features-card">
-
-                <data class="card-number" value="04">04</data>
-
-                <h3 class="h3 card-title">Global Reach</h3>
-
-                <p class="card-text">
-                  iMaster Online Academy offers accessible education to students worldwide, breaking geographical barriers and providing high-quality learning opportunities for all.
-                </p>
-
+                <div class="card-inner">
+                  <div class="card-front">
+                    <div class="card-number">04</div>
+                    <img src="images/Globalreach.png" alt="Global Reach">
+                    <h3 class="card-title">Global Reach</h3>
+                  </div>
+                  <div class="card-back">
+                    <p class="card-text">
+                      iMaster Online Academy offers accessible education to students worldwide, breaking geographical barriers and providing high-quality learning opportunities for all.
+                    </p>
+                  </div>
+                </div>
               </div>
             </li>
-
+      
             <li>
               <div class="features-card">
-
-                <data class="card-number" value="05">05</data>
-
-                <h3 class="h3 card-title">Curriculum-Aligned Education</h3>
-
-                <p class="card-text">
-                  Our lessons are designed to align with internationally recognized curricula, ensuring students receive a comprehensive and structured learning experience.
-                </p>
-
+                <div class="card-inner">
+                  <div class="card-front">
+                    <div class="card-number">05</div>
+                    <img src="images/Curriculamal.png" alt="Curriculum-Aligned Education">
+                    <h3 class="card-title">Curriculum-Aligned Education</h3>
+                  </div>
+                  <div class="card-back">
+                    <p class="card-text">
+                      Our lessons are designed to align with internationally recognized curricula, ensuring students receive a comprehensive and structured learning experience.
+                    </p>
+                  </div>
+                </div>
               </div>
             </li>
-
+      
             <li>
               <div class="features-card">
-
-                <data class="card-number" value="06">06</data>
-
-                <h3 class="h3 card-title">Engaging Platform</h3>
-
-                <p class="card-text">
-                  Our online platform fosters critical thinking and creativity, preparing students for success in the modern, interconnected world through engaging and interactive learning experiences.
-                </p>
-
+                <div class="card-inner">
+                  <div class="card-front">
+                    <div class="card-number">06</div>
+                    <img src="images/engagingon.png" alt="Engaging Platform">
+                    <h3 class="card-title">Engaging Platform</h3>
+                  </div>
+                  <div class="card-back">
+                    <p class="card-text">
+                      Our online platform fosters critical thinking and creativity, preparing students for success in the modern, interconnected world through engaging and interactive learning experiences.
+                    </p>
+                  </div>
+                </div>
               </div>
             </li>
-
+      
           </ul>
-
+      
         </div>
       </section>
-
+      
 
 
       <!-- PORTFOLIO -->
@@ -721,7 +807,7 @@
         <div class="smbox">
           <span><center><div class="data" data-count="30000">0</div><div class="det">Hours Taught</div></center></span>
           <span><center><div class="data" data-count="2000">0</div><div class="det">Students</div></center></span>
-          <span><center><div class="data" data-count="30">0</div><div class="det">Tutors Available/div></center></span>
+          <span><center><div class="data" data-count="30">0</div><div class="det">Tutors Available</div></center></span>
           <span><center><div class="data" data-count="7">0</div><div class="det">Years In The Industry</div></center></span>
         </div>
       </div>
@@ -767,6 +853,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 </script>
+
+<div class="floating-banner">
+  <p><strong>Not Sure Where to Start?</strong> Book a Free Demo Now!</p>
+  <a href="requestdemo.html" class="cta-button">Book Now</a>
+</div>
+
+
+
+
+
         <!--Testimonials -->
 
 

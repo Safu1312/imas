@@ -279,9 +279,70 @@
 
   
   
+/* Small Floating Banner Styles */
+.floating-banner {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, rgba(54, 117, 136, 0.9), rgba(54, 117, 136, 0.7));  /* Gradient background */
+  color: white;
+  padding: 8px 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 30px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+  height: 50px; /* Adjusted height */
+}
+
+/* Blink-in, blink-out animation */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.floating-banner p {
+  margin: 0;
+  flex-grow: 1;
+  font-size: 13px;
+}
+
+.cta-button {
+  background-color: teal;  /* Blue button */
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;  /* Darker blue on hover */
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .floating-banner {
+    display: none;  /* Hide the banner on mobile */
+  }
+}
+
   
-  
-  /*-----------------------------------*\
+/*-----------------------------------*\
     #HEADER
 \*-----------------------------------*/
 
@@ -382,18 +443,17 @@
   opacity: 1;
 }
 
+
 /* Secondary Navigation Bar Styling */
 .secondary-navbar {
   display: flex;
   justify-content: center;
   padding: 2px 20px; /* Reduced padding for smaller height */
-  color: #fff;
-  font-family:var(--ff-poppins);
+  color: var(--teal);
+  font-family: var(--ff-poppins);
   border-bottom: 3px solid teal;
   margin-top: -30px; /* Ensures there is no extra space between header and navbar */
 }
-
-
 
 .secondary-navbar .menu {
   display: flex;
@@ -428,7 +488,7 @@
   color: teal;
 }
 
-.dropdown-menu {
+.secondary-navbar .dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
@@ -447,13 +507,13 @@
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.dropdown-menu .column {
+.secondary-navbar .dropdown-menu .column {
   flex: 1;
   min-width: 150px;
   margin-right: 10px;
 }
 
-.dropdown-menu h4 {
+.secondary-navbar .dropdown-menu h4 {
   font-size: 14px;
   font-weight: bold;
   color: teal;
@@ -463,13 +523,13 @@
   text-align: center;
 }
 
-.dropdown-menu ul {
+.secondary-navbar .dropdown-menu ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.dropdown-menu li {
+.secondary-navbar .dropdown-menu li {
   font-size: 13px;
   padding: 5px 0;
   color: #333;
@@ -478,13 +538,13 @@
   text-align: center;
 }
 
-.dropdown-menu li:hover {
+.secondary-navbar .dropdown-menu li:hover {
   color: #004aad;
   background: rgba(0, 74, 173, 0.1);
   border-radius: 4px;
 }
 
-.dropdown:hover .dropdown-menu {
+.secondary-navbar .dropdown:hover .dropdown-menu {
   display: flex;
   opacity: 1;
   visibility: visible;
@@ -517,7 +577,7 @@
     align-items: center; /* Center the items in each column */
   }
 
-  .dropdown-menu ul {
+  .secondary-navbar .dropdown-menu ul {
     padding: 10px 0; /* Add padding for proper spacing */
   }
 }
@@ -534,10 +594,49 @@
     align-items: center; /* Center the items in each column */
   }
 
-  .dropdown-menu ul {
+  .secondary-navbar .dropdown-menu ul {
     padding: 10px 0; /* Add padding for proper spacing */
   }
 }
+
+/* Primary Navigation Bar Styling (For dropdowns) */
+.primary-navbar .dropdown {
+  position: relative;
+}
+
+.primary-navbar .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+  background-color: white; /* Added background color */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Optional: Add shadow */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  opacity: 1;
+  visibility: visible;
+}
+
+.primary-navbar .dropdown-menu li {
+  padding: 10px 15px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.primary-navbar .dropdown-menu li:hover {
+  background-color: #f0f0f0; /* Light hover background */
+  color: #004aad; /* Change text color on hover */
+}
+
+.primary-navbar .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
+
 
 
 
@@ -548,7 +647,7 @@
  /* Portfolio */
 .extra {
   width: 100%;
-  height: 100vh; /* Make it full screen on mobile */
+  height: 70vh; /* Make it full screen on mobile */
 }
 
 .extra p {
@@ -577,23 +676,23 @@
   background: #fff;
   box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  padding: 30px 45px;
+  padding: 20px 30px; /* Reduced padding for smaller cards */
   cursor: pointer;
-  flex: 1 1 30%; /* Ensures the cards are responsive */
+  flex: 1 1 22%; /* Decrease the card width */
 }
 
 .smbox span:hover {
-  transform: scale(1.3);
-  transition: .5s ease;
+  transform: scale(1.1); /* Reduced hover scale for a smaller effect */
+  transition: .3s ease; /* Reduced transition duration */
 }
 
 .smbox .data {
-  font-size: 80px;
+  font-size: 60px; /* Reduced font size */
   color: #057e63;
 }
 
 .smbox .det {
-  font-size: 30px;
+  font-size: 25px; /* Adjusted for a smaller appearance */
   color: #057e63;
   font-family: var(--ff-poppins);
 }
@@ -617,15 +716,15 @@
   .smbox span {
     width: 100%; /* Make the cards full-width on mobile */
     margin-bottom: 20px; /* Space between cards */
-    padding: 20px; /* Adjust padding for mobile */
+    padding: 15px; /* Adjust padding for mobile */
   }
 
   .smbox .data {
-    font-size: 60px; /* Reduce the size of the text */
+    font-size: 50px; /* Reduce the size of the text */
   }
 
   .smbox .det {
-    font-size: 25px; /* Adjust the font size for better readability */
+    font-size: 20px; /* Adjust the font size for better readability */
   }
 }
 
@@ -884,6 +983,140 @@
     display: none;
   }
 }
+
+
+/* curriculum */
+.curriculum {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  padding: 50px 0;
+  background: #f0f8ff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.curriculum-header {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.curriculum-header h1 {
+  font-size: 3rem;
+  color: #367588;
+  font-weight: 700;
+  letter-spacing: 2px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.curriculum-header h1::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 4px;
+  background: #1aa6b7;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.curriculum-header p {
+  font-size: 1.25rem;
+  color: #555;
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.6;
+  font-weight: 400;
+  text-transform: capitalize;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.curriculum-col {
+  flex: 1 1 calc(30% - 10px);
+  height: 250px;
+  perspective: 1200px;
+  position: relative;
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.front {
+  background: linear-gradient(135deg, #367588, #1aa6b7);
+  background-size: 300% 300%;
+  animation: gradientMove 5s infinite alternate;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back {
+  background: rgba(255, 255, 255, 0.95);
+  transform: rotateY(180deg);
+  color: #333;
+  font-size: 16px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.curriculum-col:hover .front {
+  transform: rotateY(180deg);
+}
+
+.curriculum-col:hover .back {
+  transform: rotateY(0deg);
+}
+
+.back ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.back li {
+  margin: 5px 0;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
 
 
 /*-----------------------------------*\
@@ -1463,51 +1696,147 @@
   
   
   
-  /*-----------------------------------*\
-    #FEATURES
-  \*-----------------------------------*/
-  
-  .features .section-text { margin-block: 15px 50px; }
-  
-  .features-card {
-    position: relative;
-    background-color: var(--white);
-    padding: 25px;
-    padding-block-start: 40px;
-    margin-block-start: 24px;
-    border-radius: 1rem;
-    box-shadow: var(--shadow-1);
-    transition: var(--transition-2);
-  }
-  
-  .features-card:hover { background-color: var(--go-green); }
-  
-  .features-card .card-number {
-    position: absolute;
-    top: 0;
-    left: 25px;
-    transform: translateY(-50%);
-    background-color: var(--cultured);
-    font-size: var(--fs-7);
-    font-weight: var(--fw-600);
-    padding-block: 5px;
-    min-width: 50px;
-    text-align: center;
-    border-radius: var(--radius-5);
-    transition: var(--transition-1);
-  }
-  
-  .features-card:hover .card-number { color: var(--go-green); }
-  
-  .features-card .card-title {
-    font-size: var(--fs-6);
-    margin-block-end: 5px;
-  }
-  
-  .features-card :is(.card-title, .card-text) { transition: var(--transition-1); }
-  
-  .features-card:hover :is(.card-title, .card-text) { color: var(--white); }
-  
+/*-----------------------------------*\ 
+  #FEATURES
+\*-----------------------------------*/
+
+.features-card {
+  position: relative;
+  width: 100%;
+  max-width: 300px;  /* Adjusted width */
+  margin: 0 auto 30px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 300px;  /* Adjusted height */
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.features-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card-front {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  padding: 20px;
+  box-shadow: var(--shadow-1);
+}
+
+.card-front img {
+  width: 100%;
+  height: 180px;  /* Adjust image height */
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.card-number {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--cultured);
+  color: var(--go-green);
+  font-size: 2rem;  /* Larger number font size */
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.features-card:hover .card-number {
+  background-color: var(--go-green);
+  color: var(--white);
+  transform: scale(1.1);
+}
+
+.card-title {
+  font-size: 1.5rem;  /* Larger title font size */
+  color: var(--black);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.card-back {
+  background-color: var(--go-green);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transform: rotateY(180deg);
+}
+
+.card-text {
+  font-size: 1.1rem;  /* Larger text inside the card */
+  text-align: center;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.features-card:hover .card-front {
+  opacity: 0.8;
+}
+
+.features-card .card-number {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--cultured);
+  color: var(--go-green);
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.features-card:hover .card-number {
+  background-color: var(--go-green);
+  color: var(--white);
+  transform: scale(1.1);
+}
+
+.features-card :is(.card-title, .card-text) {
+  transition: var(--transition-1);
+}
+
+.features-card:hover :is(.card-title, .card-text) {
+  color: var(--white);
+}
+
   
   
   
