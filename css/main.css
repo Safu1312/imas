@@ -1726,22 +1726,7 @@
 }
 
 /* Additional styles you might need */
-.btn {
-    background: var(--go-green);
-    color: var(--white);
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-}
 
-.flex-btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
 
 .img-holder {
     max-width: 650px;
@@ -1798,6 +1783,155 @@
 }
 
 
+/* Services home */
+
+/* Specific styling for Services Section */
+.services {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+}
+
+.services-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.services-banner {
+  flex: 1;
+  max-width: 50%;
+  margin-right: 30px;
+}
+
+.services-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.services-text-content {
+  flex: 1;
+  max-width: 50%;
+}
+
+.services-title {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.services-text {
+  font-size: 1.125rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.services-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.services-list li {
+  font-size: 1.125rem;
+  color: #333;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 30px; /* Increased left padding to make space for the bullets */
+  list-style-position: inside; /* Ensures bullets are inside the content area */
+}
+
+.services-list li::before {
+  content: "\2022";
+  font-size: 1.5rem; /* Reduced size of bullet to fit better */
+  color: teal;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%); /* Centers the bullet vertically */
+}
+
+.btn-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+
+
+.btn-icon {
+  margin-right: -15px;
+}
+
+.span {
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .services-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services-banner {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .services-text-content {
+    max-width: 100%;
+  }
+
+  .services-title {
+    font-size: 2rem;
+  }
+
+  .services-list li {
+    font-size: 1rem;
+  }
+
+  .btn-group {
+    flex-direction: column;
+  }
+
+  .services-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-title {
+    font-size: 1.8rem;
+  }
+
+  .services-list li {
+    font-size: 0.95rem;
+  }
+
+  .btn-primary {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+
+  .flex-btn {
+    padding: 10px 20px;
+  }
+
+  .span {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* services home */
+
+/* about home */
   
   
 .about-master {

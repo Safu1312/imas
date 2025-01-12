@@ -417,12 +417,12 @@ function nextSlide() {
 }
 
 // Auto advance slides every 5 seconds
-let slideInterval = setInterval(nextSlide, 7000);
+let slideInterval = setInterval(nextSlide, 6000);
 
 // Reset interval when manually changing slides
 function resetInterval() {
     clearInterval(slideInterval);
-    slideInterval = setInterval(nextSlide, 7000);
+    slideInterval = setInterval(nextSlide, 6000);
 }
 
 // Add click handlers with interval reset
@@ -445,50 +445,49 @@ showSlide(0);
         - #ABOUT
       -->
 
-      <section class="section about" id="about" aria-label="about">
+      <section class="section services" id="services" aria-label="services">
         <div class="container">
-
-          <figure class="about-banner">
-            <img src="images/Teachingpic.png" width="802" height="654" loading="lazy" alt="About Teaching"
-              class="w-100">
-          </figure>
-
-          <div class="about-content">
-
-            <h2 class="h2-sm section-title">Tailored Support for Every Student’s Success!</h2>
-
-            <p class="section-text">
-              Our Tailored Support Program is designed to meet each student's unique learning needs, ensuring personalized tutoring for maximum success.
-
-            </p>
-
-            <ul class="about-list">
-
-              <li class="has-before">Personalized one-on-one and small group classes</li>
-              <li class="has-before">Expert tutors who customize lessons to your strengths</li>
-              <li class="has-before">Engaging, effective learning for academic excellence</li>
-              <li class="has-before">Flexible schedules to fit your lifestyle and needs</li>
-              <li class="has-before">Progress tracking to ensure measurable improvement</li>
-              <li class="has-before">Boost confidence and foster a love for learning</li>
-              
-            </ul>
-
-            <div class="btn-group">
-              <a href="#" class="btn btn-primary">Enroll Now</a>
-
-              <button class="flex-btn">
-                <div class="btn-icon">
-                  <ion-icon name="medal-outline" aria-hidden="true"></ion-icon>
+            <div class="services-content">
+                <!-- Image on the left -->
+                <figure class="services-banner">
+                    <img src="images/Teachingpic.png" width="802" height="654" loading="lazy" alt="Services Teaching" class="w-100">
+                </figure>
+    
+                <!-- Text content on the right -->
+                <div class="services-text-content">
+                    <h2 class="h2-sm section-title">Tailored Support for Every Student’s Success!</h2>
+    <br>
+                    <p class="section-text">
+                        Our Services are designed to meet each student's unique learning needs, ensuring personalized tutoring for maximum success.
+                    </p>
+                    
+                    <br>
+    
+                    <ul class="services-list">
+                        <li class="has-before">Personalized one-on-one and small group classes</li>
+                        <li class="has-before">Expert tutors who customize lessons to your strengths</li>
+                        <li class="has-before">Engaging, effective learning for academic excellence</li>
+                        <li class="has-before">Flexible schedules to fit your lifestyle and needs</li>
+                        <li class="has-before">Progress tracking to ensure measurable improvement</li>
+                        <li class="has-before">Boost confidence and foster a love for learning</li>
+                    </ul>
+    
+                    <div class="btn-group">
+                        <a href="#" class="btn btn-primary">Request a Demo</a>
+    
+                        <button class="flex-btn">
+                            <div class="btn-icon">
+                                <ion-icon name="medal-outline" aria-hidden="true"></ion-icon>
+                            </div>
+    
+                            <span class="span">08+ Years Experience</span>
+                        </button>
+                    </div>
                 </div>
-
-                <span class="span">08+ Years Experience</span>
-              </button>
             </div>
-
-          </div>
-
         </div>
-      </section>
+    </section>
+    
 
 <!-- Curriculum -->
 <section class="ant-curriculum-section">
