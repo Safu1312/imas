@@ -347,6 +347,12 @@
             </div>
         </div>
 
+        <!-- Add this right after your slides and before the dot navigation -->
+<div class="slider-nav-buttons">
+  <button class="nav-button prev" onclick="prevSlide()" aria-label="Previous slide"></button>
+  <button class="nav-button next" onclick="nextSlide()" aria-label="Next slide"></button>
+</div>
+
         <!-- Navigation Dots -->
         <div class="slider-nav">
             <button class="nav-dot active" onclick="goToSlide(0)"></button>
@@ -357,6 +363,22 @@
     </section>
     
     <script>
+
+// Add this function to your existing JavaScript
+function prevSlide() {
+    previousSlide = currentSlide;
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+    resetInterval(); // Reset the auto-slide timer when manually navigating
+}
+
+// Update your event listeners
+document.querySelector('.nav-button.prev').addEventListener('click', prevSlide);
+document.querySelector('.nav-button.next').addEventListener('click', () => {
+    nextSlide();
+    resetInterval();
+});
+
      // Replace the existing JavaScript with this updated version
 const slides = document.querySelectorAll('.slide');
 const dots = document.querySelectorAll('.nav-dot');
@@ -469,67 +491,66 @@ showSlide(0);
       </section>
 
 <!-- Curriculum -->
-<section class="curriculum">
-  <div class="curriculum-header">
-    <h1>Our Curriculum Offerings</h1>
-    <p>Explore a wide range of internationally recognized programs.</p>
-  </div>
-  <div class="row">
-    <div class="curriculum-col">
-      <div class="front">
-        <h3>IGCSE</h3>
-      </div>
-      <div class="back">
+<section class="ant-curriculum-section">
+  <div class="ant-curriculum-container">
+    <div class="ant-curriculum-header">
+      <h1>Our Curriculum Offerings</h1>
+      <p>Explore a wide range of internationally recognized programs tailored to diverse academic needs</p>
+    </div>
+    
+    <div class="ant-curriculum-grid">
+      <div class="ant-curriculum-card">
+        <h2>International General Certificate of Secondary Education (IGCSE)</h2>
         <ul>
           <li>Edexcel</li>
           <li>Cambridge</li>
         </ul>
       </div>
-    </div>
-    <div class="curriculum-col">
-      <div class="front">
-        <h3>IAS/IAL</h3>
-      </div>
-      <div class="back">
+
+      <div class="ant-curriculum-card">
+        <h2>International Advanced Subsidiary and Advanced Level (IAS/IAL)</h2>
         <ul>
           <li>Edexcel</li>
           <li>Cambridge</li>
         </ul>
       </div>
-    </div>
-    <div class="curriculum-col">
-      <div class="front">
-        <h3>IB</h3>
-      </div>
-      <div class="back">
+
+      <div class="ant-curriculum-card">
+        <h2>International Baccalaureate (IB)</h2>
         <ul>
-          <li>PYP</li>
-          <li>MYP</li>
-          <li>DP SL</li>
-          <li>DP HL</li>
+          <li>Primary Years Programme (PYP)</li>
+          <li>Middle Years Programme (MYP)</li>
+          <li>Diploma Programme (DP)</li>
+            <ul class="ant-nested-list">
+              <li>Standard Level (SL)</li>
+              <li>Higher Level (HL)</li>
+            </ul>
+          
         </ul>
       </div>
-    </div>
-    <div class="curriculum-col">
-      <div class="front">
-        <h3>GCSE</h3>
-      </div>
-      <div class="back">
+
+      <div class="ant-curriculum-card">
+        <h2>General Certificate of Secondary Education (GCSE)</h2>
         <ul>
           <li>Edexcel</li>
           <li>AQA</li>
         </ul>
       </div>
-    </div>
-    <div class="curriculum-col">
-      <div class="front">
-        <h3>AS/AL</h3>
-      </div>
-      <div class="back">
+
+      <div class="ant-curriculum-card">
+        <h2>Advanced Subsidiary and Advanced Level (AS/AL)</h2>
         <ul>
           <li>Edexcel</li>
           <li>Cambridge</li>
           <li>OCR</li>
+        </ul>
+      </div>
+
+      <div class="ant-curriculum-card">
+        <h2>More Currculams to Come Soon</h2>
+        <ul>
+          <li>Visit us later for more curriculams or request your preferred curriculam through our contact support.</li>
+          
         </ul>
       </div>
     </div>
@@ -839,121 +860,122 @@ showSlide(0);
       
 
 
-      <section class="section features" id="features" aria-label="features">
+      <section class="features" id="features">
         <div class="container">
-      
-          <p class="section-subtitle text-center">-Why Choose Us-</p>
-      
-          <h2 class="h2 section-title text-center">Reasons to Choose Us</h2>
-      
-          <ul class="grid-list">
-      
-            <li>
-              <div class="features-card">
-                <div class="card-inner">
-                  <div class="card-front">
-                    <div class="card-number">01</div>
-                    <img src="images/PeronLine.png" alt="Personalized Learning Experience">
-                    <h3 class="card-title">Personalized Learning Experience</h3>
-                  </div>
-                  <div class="card-back">
-                    <p class="card-text">
-                      We offer one-on-one and small group classes tailored to each student's unique needs, learning styles, and strengths, ensuring effective and engaging lessons that promote academic success.
-                    </p>
-                  </div>
+            <p class="section-subtitle">-Why Choose Us-</p>
+            <h2 class="section-title">Reasons to Choose Us</h2>
+            
+            <div class="features-grid">
+                <!-- Card 1: Personalized Learning -->
+                <div class="feature-card" style="--card-index: 0;">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="card-number">01</span>
+                            <div class="image-wrapper">
+                                <img src="./images/PeronLine.png" alt="Personalized Learning Experience">
+                            </div>
+                            <h3 class="card-title">Personalized Learning Experience</h3>
+                        </div>
+                        <div class="card-back">
+                            <p class="card-text">
+                                We offer one-on-one and small group classes tailored to each student's unique needs, learning styles, and strengths, ensuring effective and engaging lessons that promote academic success.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </li>
-      
-            <li>
-              <div class="features-card">
-                <div class="card-inner">
-                  <div class="card-front">
-                    <div class="card-number">02</div>
-                    <img src="images/Experttutors.png" alt="Expert Tutors">
-                    <h3 class="card-title">Expert Tutors</h3>
-                  </div>
-                  <div class="card-back">
-                    <p class="card-text">
-                      Our tutors are highly qualified and experienced in delivering customized lessons for a variety of curricula, including Cambridge, Edexcel, and IB, ensuring a high-quality educational experience.
-                    </p>
-                  </div>
+    
+                <!-- Card 2: Expert Tutors -->
+                <div class="feature-card" style="--card-index: 1;">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="card-number">02</span>
+                            <div class="image-wrapper">
+                                <img src="./images/Experttutors.png" alt="Expert Tutors">
+                            </div>
+                            <h3 class="card-title">Expert Tutors</h3>
+                        </div>
+                        <div class="card-back">
+                            <p class="card-text">
+                                Our tutors are highly qualified and experienced in delivering customized lessons for a variety of curricula, including Cambridge, Edexcel, and IB, ensuring a high-quality educational experience.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </li>
-      
-            <li>
-              <div class="features-card">
-                <div class="card-inner">
-                  <div class="card-front">
-                    <div class="card-number">03</div>
-                    <img src="images/TailoredSup.png" alt="Tailored Support Program">
-                    <h3 class="card-title">Tailored Support Program</h3>
-                  </div>
-                  <div class="card-back">
-                    <p class="card-text">
-                      We provide a personalized support program that adapts to each student's individual learning requirements, helping them overcome challenges and achieve their academic goals.
-                    </p>
-                  </div>
+    
+                <!-- Card 3: Tailored Support -->
+                <div class="feature-card" style="--card-index: 2;">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="card-number">03</span>
+                            <div class="image-wrapper">
+                                <img src="./images/TailoredSup.png" alt="Tailored Support Program">
+                            </div>
+                            <h3 class="card-title">Tailored Support Program</h3>
+                        </div>
+                        <div class="card-back">
+                            <p class="card-text">
+                                We provide a personalized support program that adapts to each student's individual learning requirements, helping them overcome challenges and achieve their academic goals.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </li>
-      
-            <li>
-              <div class="features-card">
-                <div class="card-inner">
-                  <div class="card-front">
-                    <div class="card-number">04</div>
-                    <img src="images/Globalreach.png" alt="Global Reach">
-                    <h3 class="card-title">Global Reach</h3>
-                  </div>
-                  <div class="card-back">
-                    <p class="card-text">
-                      iMaster Online Academy offers accessible education to students worldwide, breaking geographical barriers and providing high-quality learning opportunities for all.
-                    </p>
-                  </div>
+    
+                <!-- Card 4: Global Reach -->
+                <div class="feature-card" style="--card-index: 3;">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="card-number">04</span>
+                            <div class="image-wrapper">
+                                <img src="./images/Globalreach.png" alt="Global Reach">
+                            </div>
+                            <h3 class="card-title">Global Reach</h3>
+                        </div>
+                        <div class="card-back">
+                            <p class="card-text">
+                                iMaster Online Academy offers accessible education to students worldwide, breaking geographical barriers and providing high-quality learning opportunities for all.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </li>
-      
-            <li>
-              <div class="features-card">
-                <div class="card-inner">
-                  <div class="card-front">
-                    <div class="card-number">05</div>
-                    <img src="images/Curriculamal.png" alt="Curriculum-Aligned Education">
-                    <h3 class="card-title">Curriculum-Aligned Education</h3>
-                  </div>
-                  <div class="card-back">
-                    <p class="card-text">
-                      Our lessons are designed to align with internationally recognized curricula, ensuring students receive a comprehensive and structured learning experience.
-                    </p>
-                  </div>
+    
+                <!-- Card 5: Curriculum-Aligned -->
+                <div class="feature-card" style="--card-index: 4;">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="card-number">05</span>
+                            <div class="image-wrapper">
+                                <img src="./images/Curriculamal.png" alt="Curriculum-Aligned Education">
+                            </div>
+                            <h3 class="card-title">Curriculum-Aligned Education</h3>
+                        </div>
+                        <div class="card-back">
+                            <p class="card-text">
+                                Our lessons are designed to align with internationally recognized curricula, ensuring students receive a comprehensive and structured learning experience.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </li>
-      
-            <li>
-              <div class="features-card">
-                <div class="card-inner">
-                  <div class="card-front">
-                    <div class="card-number">06</div>
-                    <img src="images/engagingon.png" alt="Engaging Platform">
-                    <h3 class="card-title">Engaging Platform</h3>
-                  </div>
-                  <div class="card-back">
-                    <p class="card-text">
-                      Our online platform fosters critical thinking and creativity, preparing students for success in the modern, interconnected world through engaging and interactive learning experiences.
-                    </p>
-                  </div>
+    
+                <!-- Card 6: Engaging Platform -->
+                <div class="feature-card" style="--card-index: 5;">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="card-number">06</span>
+                            <div class="image-wrapper">
+                                <img src="./images/engagingon.png" alt="Engaging Platform">
+                            </div>
+                            <h3 class="card-title">Engaging Platform</h3>
+                        </div>
+                        <div class="card-back">
+                            <p class="card-text">
+                                Our online platform fosters critical thinking and creativity, preparing students for success in the modern, interconnected world through engaging and interactive learning experiences.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </li>
-      
-          </ul>
-      
+            </div>
         </div>
-      </section>
+    </section>
       
 
 
