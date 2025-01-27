@@ -59,6 +59,9 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Fredoka+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
 
 </head>
 
@@ -69,151 +72,186 @@
     - #HEADER
   -->
 
-  <header class="header" data-header>
-    <div class="container">
-
-      <a href="index.html" class="logo">
-        <img src="images/Newlogo.png" alt="iMaster Logo" class="logo-img">
-        
-      </a>
-      
-      <!-- <a href="#" class="logo">iMaster</a> -->
-
-      <nav class="navbar" data-navbar>
-
-        <div class="wrapper">
-          <img src="images/Newlogo.png" alt="iMaster Logo" class="logo-img">
-
-          <!-- <a href="#" class="logo">iMaster</a> -->
-
-          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
-            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
-          </button>
-        </div>
-
-        <ul class="navbar-list primary-navbar">
-          <li>
-            <a href="index.html" class="navbar-link-active" data-nav-link>Home</a>
-          </li>
-        
-          <li>
-            <a href="about.html" class="navbar-link" data-nav-link>About Us</a>
-          </li>
-
-        
-          <li>
-            <a href="requestdemo.html" class="navbar-link" data-nav-link>Request Demo</a>
-          </li>
-
-          <li>
-            <a href="blog.html" class="navbar-link" data-nav-link>Blog</a>
-          </li>
-
-          <li>
-            <a href="testimonial.html" class="navbar-link" data-nav-link>Testimonials</a>
-          </li>
-        
-          <li class="dropdown">
-            <a href="contact.html" class="navbar-link" data-nav-link>Contact Us</a>
-            <ul class="dropdown-menu">
-              <li><a href="careers.html" class="navbar-link">Careers</a></li>
-            </ul>
-          </li>
-        
-          
-        </ul>
-        
-        
-        
-        
-
-      </nav>
-
-      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
-        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
-      </button>
-
-      <a href="loginhome.html" class="btn-outline">Login</a>
-
-      <div class="overlay" data-nav-toggler data-overlay></div>
-
+  <nav class="imaster-navigation">
+    <div class="nav-container">
+      <div class="logo">
+        <a href="index.html">
+            <img src="images/Newlogo.png" alt="iMaster Logo">
+        </a>
     </div>
+    
 
+        <div class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
-    <div class="secondary-navbar">
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
-  <ul class="menu">
-    <li class="dropdown">
-      <a href="#" class="dropdown-toggle">Explore Curriculums</a>
-      <div class="dropdown-menu">
-        <div class="column">
-          <h4>IGCSE</h4>
-          <ul>
-            <li>IGCSE Edexcel</li>
-            <li>IGCSE Cambridge</li>
-          </ul>
-        </div>
-        <div class="column">
-          <h4>AS/AL</h4>
-          <ul>
-            <li>AS/AL Edexcel</li>
-            <li>AS/AL Cambridge</li>
-            <li>AS/AL OCR</li>
-          </ul>
-        </div>
-        <div class="column">
-          <h4>IB & Others</h4>
-          <ul>
-            <li>IB PYP</li>
-            <li>IB MYP</li>
-            <li>IB DP SL</li>
-            <li>IB DP HL</li>
-            <li>GCSE Edexcel</li>
-            <li>GCSE AQA</li>
-          </ul>
-        </div>
-      </div>
-    </li>
-    <li class="dropdown">
-      <a href="#" class="dropdown-toggle">Explore Subjects</a>
-      <div class="dropdown-menu">
-        <div class="column">
-          <ul>
-            <li>Science</li>
-            <li>Chemistry</li>
-            <li>Physics</li>
-            <li>Biology</li>
-            <li>ICT / CS</li>
-          </ul>
-        </div>
-        <div class="column">
-          <ul>
-            <li>Mathematics</li>
-            <li>Pure Mathematics</li>
-            <li>Further Mathematics</li>
-            <li>Business Studies</li>
-            <li>Economics</li>
-          </ul>
-        </div>
-        <div class="column">
-          <ul>
-            <li>English Language</li>
-            <li>English Literature</li>
-            <li>French</li>
-            <li>Psychology</li>
-          </ul>
-        </div>
-      </div>
-    </li>
-  </ul>
-  <div class="border-wrapper">
-    <!-- Your content here -->
-  </div>
-</div>
+        <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <a href="index.html" class="nav-link">
+                    Home 
+                    <span class="dropdown-indicator">▼</span>
+                </a>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="testimonial.html">Testimonials</a></li>
+                    </ul>
+                </div>
+            </li>
 
-  
-  
-  </header>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">
+                    iMaster 
+                    <span class="dropdown-indicator">▼</span>
+                </a>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="about.html">Company</a></li>
+                        <li>Online Academy</li>
+                        <li>iMaster Flex</li>
+                        <li>iMaster Assist</li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">
+                    Subjects 
+                    <span class="dropdown-indicator">▼</span>
+                </a>
+                <div class="dropdown-menu">
+                    <div class="columns">
+                        <div class="column">
+                            <h4>Science</h4>
+                            <ul>
+                                <li>Chemistry</li>
+                                <li>Physics</li>
+                                <li>Biology</li>
+                                <li>ICT / CS</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h4>Mathematics</h4>
+                            <ul>
+                                <li>Pure Mathematics</li>
+                                <li>Further Mathematics</li>
+                                <li>Business Studies</li>
+                                <li>Economics</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h4>Languages & Others</h4>
+                            <ul>
+                                <li>English Language</li>
+                                <li>English Literature</li>
+                                <li>French</li>
+                                <li>Psychology</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">
+                    Curriculum 
+                    <span class="dropdown-indicator">▼</span>
+                </a>
+                <div class="dropdown-menu">
+                    <div class="columns">
+                        <div class="column">
+                            <h4>IGCSE</h4>
+                            <ul>
+                                <li>IGCSE Edexcel</li>
+                                <li>IGCSE Cambridge</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h4>AS/AL</h4>
+                            <ul>
+                                <li>AS/AL Edexcel</li>
+                                <li>AS/AL Cambridge</li>
+                                <li>AS/AL OCR</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h4>IB & Others</h4>
+                            <ul>
+                                <li>IB PYP</li>
+                                <li>IB MYP</li>
+                                <li>IB DP SL</li>
+                                <li>IB DP HL</li>
+                                <li>GCSE Edexcel</li>
+                                <li>GCSE AQA</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a href="requestdemo.html" class="nav-link">Free Demo</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">Pricing</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="blog.html" class="nav-link">Blog</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="contact.html" class="nav-link">Contact</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="loginhome.html" class="cta-button">Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        // Mobile menu toggle
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Dropdown interactions for mobile
+        dropdowns.forEach(dropdown => {
+            dropdown.addEventListener('click', (e) => {
+                if (window.innerWidth <= 1024) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('open');
+                }
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Responsive dropdown handling
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1024) {
+                navMenu.classList.remove('active');
+                dropdowns.forEach(dropdown => dropdown.classList.remove('open'));
+            }
+        });
+    });
+</script>
+
 
 
 
@@ -228,55 +266,60 @@
 
       <section class="section hero" id="home" aria-label="hero">
         <!-- Slide 1 -->
-<div class="slide active">
-  <div class="container">
-      <div class="hero-content">
-          <p class="hero-subtitle has-before">Welcome to iMaster EdTech LTD</p>
-          <h1 class="h1 hero-title">Powering Education with Innovation</h1>
-          <p class="hero-text">
-              We offer three comprehensive educational services designed to meet diverse learning needs:
-          </p>
-          
-          <div class="services-grid">
-              <div class="service-item">
-                  <h3 class="service-title">iMaster Online Academy</h3>
-                  <p class="service-description">
-                      Live, interactive online classes conducted by expert tutors covering all global curriculums and subjects. Experience personalized learning with our dedicated educators.
+        <div class="slide active">
+          <div class="container">
+              <div class="hero-content">
+                  <p class="hero-subtitle has-before">Welcome to iMaster EdTech LTD</p>
+                  <h1 class="h1 hero-title">Powering Education with Innovation</h1>
+                  <p class="hero-text">
+                      We offer three comprehensive educational services designed to meet diverse learning needs:
                   </p>
-              </div>
-
-              <div class="service-item">
-                  <h3 class="service-title">iMaster Self Study Courses</h3>
-                  <p class="service-description">
-                      Access high-quality pre-recorded video lessons from expert tutors, allowing flexible learning at your own pace. Every subject and lesson is broken down for easy understanding.
-                  </p>
-              </div>
-
-              <div class="service-item">
-                  <h3 class="service-title">iMaster Homework Support</h3>
-                  <p class="service-description">
-                      Get expert assistance with school projects and homework from our experienced tutors, ensuring you understand and excel in your assignments.
-                  </p>
-              </div>
-          </div>
-
-          <!-- <div class="btn-group">
-              <a href="requestdemo.html" class="btn btn-primary">Request a Demo Session</a>
-              <button class="flex-btn">
-                  <div class="btn-icon">
-                      <ion-icon name="play" aria-hidden="true"></ion-icon>
+                  
+                  <div class="services-grid">
+                      <div class="service-item">
+                          <div class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
+                                  <path d="M12 2L1.8 6v12l10.2 4 10.2-4V6L12 2zm0 2.1l8.8 3.4v9L12 20.9l-8.8-3.4v-9l8.8-3.4zM12 5.5L6.3 7.9v4.3l5.7 2.2 5.7-2.2V7.9L12 5.5z"></path>
+                              </svg>
+                          </div>
+                          <h3 class="service-title">iMaster Online Academy</h3>
+                          <p class="service-description">
+                              Live, interactive online classes conducted by expert tutors covering all global curriculums and subjects. Experience personalized learning with our dedicated educators.
+                          </p>
+                      </div>
+        
+                      <div class="service-item">
+                          <div class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
+                                  <path d="M3 5v14h18V5H3zm16 12H5V7h14v10zM7 9h4v6H7V9z"></path>
+                              </svg>
+                          </div>
+                          <h3 class="service-title">iMaster Flex</h3>
+                          <p class="service-description">
+                              Access high-quality pre-recorded video lessons from expert tutors, allowing flexible learning at your own pace. Every subject and lesson is broken down for easy understanding.
+                          </p>
+                      </div>
+        
+                      <div class="service-item">
+                          <div class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
+                                  <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm-9 8c0-2.5 4-4 9-4s9 1.5 9 4v1H3v-1z"></path>
+                              </svg>
+                          </div>
+                          <h3 class="service-title">iMaster Assist</h3>
+                          <p class="service-description">
+                              Get expert assistance with school projects and homework from our experienced tutors, ensuring you understand and excel in your assignments.
+                          </p>
+                      </div>
                   </div>
-                  <span class="span">How it works</span>
-              </button>
-          </div> -->
-      </div>
-
-      <figure class="hero-banner has-before img-holder" style="--width: 650; --height: 650;">
-          <img src="images/learnpic.jpg" width="650" height="650" alt="hero banner" class="img-cover">
-      </figure>
-  </div>
-</div>
-
+              </div>
+        
+              <figure class="hero-banner has-before img-holder" style="--width: 650; --height: 650;">
+                  <img src="images/learnpic.jpg" width="650" height="650" alt="hero banner" class="img-cover">
+              </figure>
+          </div>
+        </div>
+        
         <!-- Slide 2 -->
         <div class="slide">
             <div class="container">
@@ -284,8 +327,11 @@
                     <p class="hero-subtitle has-before">Welcome to iMaster Online Academy</p>
                     <h1 class="h1 hero-title">iMaster Online Academy</h1>
                     <p class="hero-text">
-                      Experience live, interactive classes with expert tutors who specialize in global curriculums like Cambridge, Edexcel, and IB. Our personalized approach ensures you receive focused attention to master subjects such as Chemistry, Physics, Biology, and Mathematics. Engage with our tutors in real-time for a truly immersive learning experience.
+                      Learn at your own pace with access to high-quality pre-recorded video lessons. Our self-study courses break down complex concepts into easy-to-digest modules, allowing you to revisit lessons anytime. Perfect for exam preparation or mastering new subjects independently, you control your learning journey. 
+                      <div class="popping-text">Global Curriculums like Cambridge, Edexcel, and IB</div> are supported, ensuring a comprehensive learning experience for all students.
                     </p>
+                    
+                    
                     <div class="btn-group">
                         <a href="requestdemo.html" class="btn btn-primary">Request a Demo Session</a>
                         <button class="flex-btn">
@@ -304,52 +350,87 @@
 
         <!-- Slide 3 -->
         <div class="slide">
-            <div class="container">
-                <div class="hero-content">
-                    <p class="hero-subtitle has-before">Welcome to iMaster Self Study Courses</p>
-                    <h1 class="h1 hero-title">iMaster Self Study Courses</h1>
-                    <p class="hero-text">
-                      Learn at your own pace with access to high-quality pre-recorded video lessons. Our self-study courses break down complex concepts into easy-to-digest modules, allowing you to revisit lessons anytime. Perfect for exam preparation or mastering new subjects independently, you control your learning journey.
-                    </p>
-                    <div class="btn-group">
-                        <button class="flex-btn">
-                            <div class="btn-icon">
-                                <ion-icon name="play" aria-hidden="true"></ion-icon>
-                            </div>
-                            <span class="span">How it works</span>
-                        </button>
-                    </div>
-                </div>
-                <figure class="hero-banner has-before img-holder" style="--width: 650; --height: 650;">
-                    <img src="images/selflean.png" width="650" height="650" alt="hero banner" class="img-cover">
-                </figure>
-            </div>
-        </div>
-
+          <div class="container">
+              <div class="hero-content">
+                  <p class="hero-subtitle has-before">Welcome to iMaster Flex</p>
+                  <h1 class="h1 hero-title">iMaster Flex</h1>
+                  <ul class="hero-text feature-list">
+                      <li>
+                          <strong>Comprehensive Recorded Lessons:</strong> Access engaging, curriculum-aligned recorded lessons.
+                      </li>
+                      <li>
+                          <strong>Interactive Worksheets:</strong> Reinforce concepts with structured, practice-oriented worksheets.
+                      </li>
+                      <li>
+                          <strong>Supplementary Resources:</strong> Explore notes, study guides, and topic summaries.
+                      </li>
+                      <li>
+                          <strong>Flexible Learning:</strong> Study at your convenience with no fixed schedules.
+                      </li>
+                      <li>
+                          <strong>Progress Tracking:</strong> Monitor your progress with quizzes and feedback tools.
+                      </li>
+                      <li>
+                          <strong>Access Anytime, Anywhere:</strong> Learn whenever and wherever you want.
+                      </li>
+                      <li>
+                          <strong>Ideal for Revisions:</strong> Perfect for revisiting tough concepts and exam preparation.
+                      </li>
+                  </ul>
+                  <div class="btn-group">
+                      <button class="flex-btn">
+                          <div class="btn-icon">
+                              <ion-icon name="play" aria-hidden="true"></ion-icon>
+                          </div>
+                          <span class="span">How it works</span>
+                      </button>
+                  </div>
+              </div>
+              <figure class="hero-banner has-before img-holder" style="--width: 650; --height: 650;">
+                  <img src="images/selflean.png" width="650" height="650" alt="hero banner" class="img-cover">
+              </figure>
+          </div>
+      </div>
+      
         <!-- Slide 4 -->
         <div class="slide">
-            <div class="container">
-                <div class="hero-content">
-                    <p class="hero-subtitle has-before">Welcome to iMaster Homework Support</p>
-                    <h1 class="h1 hero-title">iMaster Homework Support</h1>
-                    <p class="hero-text">
-                      Get expert assistance with your homework and projects. Whether you're struggling with a tough problem or need guidance on completing assignments, our experienced tutors are here to help. Improve your understanding, boost your grades, and build confidence in tackling academic challenges.
-                    </p>
-                    <div class="btn-group">
-                        <a href="requestdemo.html" class="btn btn-primary">Request Homework Support</a>
-                        <button class="flex-btn">
-                            <div class="btn-icon">
-                                <ion-icon name="play" aria-hidden="true"></ion-icon>
-                            </div>
-                            <span class="span">How it works</span>
-                        </button>
-                    </div>
-                </div>
-                <figure class="hero-banner has-before img-holder" style="--width: 650; --height: 650;">
-                    <img src="images/homework.png" width="650" height="650" alt="hero banner" class="img-cover">
-                </figure>
-            </div>
-        </div>
+          <div class="container">
+              <div class="hero-content">
+                  <p class="hero-subtitle has-before">Welcome to iMaster Assist</p>
+                  <h1 class="h1 hero-title">Get Help In</h1>
+                  <ul class="hero-text feature-list">
+                      <li>
+                          <strong>Corrections and Feedback:</strong> Get past/test papers reviewed with tips and practice questions.
+                      </li>
+                      <li>
+                          <strong>IA and EE Reviews:</strong> Expert guidance for IB Internal Assessments and Extended Essays.
+                      </li>
+                      <li>
+                          <strong>Homework Assistance:</strong> Step-by-step solutions with clear explanations.
+                      </li>
+                      <li>
+                          <strong>Study Resources:</strong> Access notes, flashcards, and topic summaries.
+                      </li>
+                      <li>
+                          <strong>Project Support:</strong> Help with academic presentations and posters.
+                      </li>
+                  </ul>
+                  <div class="btn-group">
+                      <a href="requestdemo.html" class="btn btn-primary">Request Homework Support</a>
+                      <button class="flex-btn">
+                          <div class="btn-icon">
+                              <ion-icon name="play" aria-hidden="true"></ion-icon>
+                          </div>
+                          <span class="span">How it works</span>
+                      </button>
+                  </div>
+              </div>
+              <figure class="hero-banner has-before img-holder" style="--width: 650; --height: 650;">
+                  <img src="images/homework.png" width="650" height="650" alt="hero banner" class="img-cover">
+              </figure>
+          </div>
+      </div>
+      
 
         <!-- Add this right after your slides and before the dot navigation -->
 <div class="slider-nav-buttons">
@@ -611,6 +692,51 @@ document.addEventListener('DOMContentLoaded', function() {
       <h1>Our Curriculum Offerings</h1>
       <p>Explore a wide range of internationally recognized programs tailored to diverse academic needs</p>
     </div>
+
+    <!-- Curriculum Logo Banner -->
+    <div class="curriculum-logo-banner">
+      <div class="curriculum-logo-track">
+          <!-- Duplicate logos to create continuous scrolling effect -->
+          <div class="curriculum-logo-item">
+              <img src="images/PearsonLogo.png" alt="Pearson Logo">
+          </div>
+          <div class="curriculum-logo-item">
+              <img src="images/edexcel Logo.png" alt="Edexcel Logo">
+          </div>
+          <div class="curriculum-logo-item">
+              <img src="images/CambridgeLogo.png" alt="Cambridge Logo">
+          </div>
+          <div class="curriculum-logo-item">
+              <img src="images/AQALogo.png" alt="AQA Logo">
+          </div>
+          <div class="curriculum-logo-item">
+              <img src="images/IBLogo.png" alt="IB Logo">
+          </div>
+          <div class="curriculum-logo-item">
+              <img src="images/OCRLogo.png" alt="OCR Logo">
+          </div>
+          
+          <!-- Repeat the logos again for continuous scrolling -->
+          <div class="curriculum-logo-item">
+              <img src="images/PearsonLogo.png" alt="Pearson Logo">
+          </div>
+          <div class="curriculum-logo-item">
+              <img src="images/edexcel Logo.png" alt="Edexcel Logo">
+          </div>
+          <div class="curriculum-logo-item">
+              <img src="images/CambridgeLogo.png" alt="Cambridge Logo">
+          </div>
+          <div class="curriculum-logo-item">
+              <img src="images/AQALogo.png" alt="AQA Logo">
+          </div>
+          <div class="curriculum-logo-item">
+              <img src="images/IBLogo.png" alt="IB Logo">
+          </div>
+          <div class="curriculum-logo-item">
+              <img src="images/OCRLogo.png" alt="OCR Logo">
+          </div>
+      </div>
+  </div>
     
     <div class="ant-curriculum-grid">
       <div class="ant-curriculum-card">
@@ -1574,7 +1700,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         <div class="footer-brand">
 
-          <a href="#" class="logo">iMaster Online Academy</a>
+          <a href="#" class="logo">iMaster EdTech</a>
 
           <p class="footer-text">
             At iMaster, we offer personalized one-on-one and small group classes tailored to your unique needs. Join us and experience the difference of education designed just for you!
@@ -1683,26 +1809,26 @@ KINGDOM
             <ul class="social-list">
 
               <li>
-                <a href="#" class="social-link">
+                <a href="https://www.facebook.com/iMasterOnline" class="social-link">
                   <ion-icon name="logo-facebook"></ion-icon>
                 </a>
               </li>
 
               <li>
-                <a href="#" class="social-link">
-                  <ion-icon name="logo-twitter"></ion-icon>
+                <a href="https://www.linkedin.com/company/imaster-online-acdemy/" class="social-link">
+                  <ion-icon name="logo-linkedin"></ion-icon>
                 </a>
               </li>
 
               <li>
-                <a href="#" class="social-link">
+                <a href="https://www.instagram.com/imaster_edtech/" class="social-link">
                   <ion-icon name="logo-instagram"></ion-icon>
                 </a>
               </li>
 
               <li>
-                <a href="#" class="social-link">
-                  <ion-icon name="logo-pinterest"></ion-icon>
+                <a href="https://www.youtube.com/@iMaster_Online_Academy" class="social-link">
+                  <ion-icon name="logo-youtube"></ion-icon>
                 </a>
               </li>
 

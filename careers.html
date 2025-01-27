@@ -228,155 +228,150 @@
     - #HEADER
   -->
 
-  <header class="header" data-header>
-    <div class="container">
-
-      <a href="index.html" class="logo">
-        <img src="images/Newlogo.png" alt="iMaster Logo" class="logo-img">
-        
-      </a>
-      
-      <!-- <a href="#" class="logo">iMaster</a> -->
-
-      <nav class="navbar" data-navbar>
-
-        <div class="wrapper">
-          <img src="images/Newlogo.png" alt="iMaster Logo" class="logo-img">
-
-          <!-- <a href="#" class="logo">iMaster</a> -->
-
-          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
-            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
-          </button>
-        </div>
-
-        <ul class="navbar-list primary-navbar">
-          <li>
-            <a href="index.html" class="navbar-link" data-nav-link>Home</a>
-          </li>
-        
-          <li>
-            <a href="about.html" class="navbar-link" data-nav-link>About Us</a>
-          </li>
-
-        
-          <li>
-            <a href="requestdemo.html" class="navbar-link" data-nav-link>Request Demo</a>
-          </li>
-
-          <li>
-            <a href="blog.html" class="navbar-link" data-nav-link>Blog</a>
-          </li>
-
-          <li>
-            <a href="testimonial.html" class="navbar-link" data-nav-link>Testimonials</a>
-          </li>
-        
-          <li class="dropdown">
-            <a href="contact.html" class="navbar-link-active" data-nav-link>Contact Us</a>
-            <ul class="dropdown-menu">
-              <li><a href="careers.html" class="navbar-link">Careers</a></li>
-            </ul>
-          </li>
-        
-          
-        </ul>
-        
-        
-        
-        
-
-      </nav>
-
-      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
-        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
-      </button>
-
-      <a href="loginhome.html" class="btn-outline">Login</a>
-
-      <div class="overlay" data-nav-toggler data-overlay></div>
-
+  <nav class="imaster-navigation">
+    <div class="nav-container">
+      <div class="logo">
+        <a href="index.html">
+            <img src="images/Newlogo.png" alt="iMaster Logo">
+        </a>
     </div>
+    
+
+        <div class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <a href="index.html" class="nav-link">
+                    Home 
+                    <span class="dropdown-indicator">▼</span>
+                </a>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="testimonial.html">Testimonials</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">
+                    iMaster 
+                    <span class="dropdown-indicator">▼</span>
+                </a>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="about.html">Company</a></li>
+                        <li>Online Academy</li>
+                        <li>iMaster Flex</li>
+                        <li>iMaster Assist</li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">
+                    Subjects 
+                    <span class="dropdown-indicator">▼</span>
+                </a>
+                <div class="dropdown-menu">
+                    <div class="columns">
+                        <div class="column">
+                            <h4>Science</h4>
+                            <ul>
+                                <li>Chemistry</li>
+                                <li>Physics</li>
+                                <li>Biology</li>
+                                <li>ICT / CS</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h4>Mathematics</h4>
+                            <ul>
+                                <li>Pure Mathematics</li>
+                                <li>Further Mathematics</li>
+                                <li>Business Studies</li>
+                                <li>Economics</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h4>Languages & Others</h4>
+                            <ul>
+                                <li>English Language</li>
+                                <li>English Literature</li>
+                                <li>French</li>
+                                <li>Psychology</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">
+                    Curriculum 
+                    <span class="dropdown-indicator">▼</span>
+                </a>
+                <div class="dropdown-menu">
+                    <div class="columns">
+                        <div class="column">
+                            <h4>IGCSE</h4>
+                            <ul>
+                                <li>IGCSE Edexcel</li>
+                                <li>IGCSE Cambridge</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h4>AS/AL</h4>
+                            <ul>
+                                <li>AS/AL Edexcel</li>
+                                <li>AS/AL Cambridge</li>
+                                <li>AS/AL OCR</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h4>IB & Others</h4>
+                            <ul>
+                                <li>IB PYP</li>
+                                <li>IB MYP</li>
+                                <li>IB DP SL</li>
+                                <li>IB DP HL</li>
+                                <li>GCSE Edexcel</li>
+                                <li>GCSE AQA</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a href="requestdemo.html" class="nav-link">Free Demo</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">Pricing</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="blog.html" class="nav-link">Blog</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="contact.html" class="nav-link">Contact</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="loginhome.html" class="cta-button">Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
 
-    <div class="secondary-navbar">
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
-  <ul class="menu">
-    <li class="dropdown">
-      <a href="#" class="dropdown-toggle">Explore Curriculums</a>
-      <div class="dropdown-menu">
-        <div class="column">
-          <h4>IGCSE</h4>
-          <ul>
-            <li>IGCSE Edexcel</li>
-            <li>IGCSE Cambridge</li>
-          </ul>
-        </div>
-        <div class="column">
-          <h4>AS/AL</h4>
-          <ul>
-            <li>AS/AL Edexcel</li>
-            <li>AS/AL Cambridge</li>
-            <li>AS/AL OCR</li>
-          </ul>
-        </div>
-        <div class="column">
-          <h4>IB & Others</h4>
-          <ul>
-            <li>IB PYP</li>
-            <li>IB MYP</li>
-            <li>IB DP SL</li>
-            <li>IB DP HL</li>
-            <li>GCSE Edexcel</li>
-            <li>GCSE AQA</li>
-          </ul>
-        </div>
-      </div>
-    </li>
-    <li class="dropdown">
-      <a href="#" class="dropdown-toggle">Explore Subjects</a>
-      <div class="dropdown-menu">
-        <div class="column">
-          <ul>
-            <li>Science</li>
-            <li>Chemistry</li>
-            <li>Physics</li>
-            <li>Biology</li>
-            <li>ICT / CS</li>
-          </ul>
-        </div>
-        <div class="column">
-          <ul>
-            <li>Mathematics</li>
-            <li>Pure Mathematics</li>
-            <li>Further Mathematics</li>
-            <li>Business Studies</li>
-            <li>Economics</li>
-          </ul>
-        </div>
-        <div class="column">
-          <ul>
-            <li>English Language</li>
-            <li>English Literature</li>
-            <li>French</li>
-            <li>Psychology</li>
-          </ul>
-        </div>
-      </div>
-    </li>
-  </ul>
-  <div class="border-wrapper">
-    <!-- Your content here -->
-  </div>
-</div>
-
-  
-  
-  </header>
-
-
-
-<br><br><br><br><br>
+<br><br><br>
 
 
 <div class="banner">
