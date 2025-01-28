@@ -351,7 +351,7 @@
 
 .imaster-navigation {
   --primary-color: #4a4aff;
-  --secondary-color: #ff6b6b;
+  --secondary-color: #e9ed82;
   --accent-color: #4ecdc4;
   --text-color: #2c3e50;
   --background-color: linear-gradient(135deg, #f6f8f9 0%, #e5ebee 100%);
@@ -507,7 +507,7 @@
 
 .imaster-navigation .cta-button {
   background: var(--secondary-color);
-  color: white;
+  color: var(--text-color);
   padding: 10px 20px;
   border-radius: 25px;
   text-decoration: none;
@@ -570,7 +570,118 @@
   }
 }
 
+/* Mobile Menu Toggle Button */
+.imaster-navigation .mobile-menu-toggle {
+  display: none;
+  width: 30px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+  z-index: 1001;
+}
 
+.imaster-navigation .mobile-menu-toggle span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: var(--text-color);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.imaster-navigation .mobile-menu-toggle span:nth-child(1) { top: 0; }
+.imaster-navigation .mobile-menu-toggle span:nth-child(2) { top: 10px; }
+.imaster-navigation .mobile-menu-toggle span:nth-child(3) { top: 20px; }
+
+/* Active state for hamburger to X animation */
+.imaster-navigation .mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 10px;
+}
+
+.imaster-navigation .mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.imaster-navigation .mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 10px;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 1024px) {
+  .imaster-navigation .mobile-menu-toggle {
+    display: block;
+  }
+
+  .imaster-navigation .nav-menu {
+    display: none;
+    position: fixed;
+    top: 80px; /* Height of header */
+    right: -100%;
+    width: 85%;
+    max-width: 400px;
+    height: calc(100vh - 80px);
+    background: white;
+    overflow-y: auto;
+    transition: right 0.3s ease;
+    padding: 20px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .imaster-navigation .nav-menu.active {
+    display: block;
+    right: 0;
+  }
+
+  .imaster-navigation .nav-item {
+    margin: 0;
+    width: 100%;
+  }
+
+  .imaster-navigation .nav-link {
+    padding: 15px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  /* Mobile Dropdown Styles */
+  .imaster-navigation .dropdown-menu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    padding: 0 0 0 20px;
+    animation: none;
+    background: transparent;
+  }
+
+  .imaster-navigation .dropdown-menu .columns {
+    flex-direction: column;
+  }
+
+  .imaster-navigation .dropdown-menu .column {
+    margin: 10px 0;
+  }
+
+  .imaster-navigation .dropdown.active .dropdown-menu {
+    display: block;
+  }
+
+  /* Adjust CTA button for mobile */
+  .imaster-navigation .cta-button {
+    margin-top: 20px;
+    text-align: center;
+    display: block;
+  }
+}
+
+/* Prevent body scroll when menu is open */
+body.menu-open {
+  overflow: hidden;
+}
 
 
 
@@ -3806,5 +3917,328 @@ Curriculum Section Styling
     .faq-card .card-action.active + .card-content { max-height: 200px; }
   
   }
+/*  */
+  /* iMaster Flex Page */
+/*  */
+  .flex-page {
+    font-family: 'Poppins', sans-serif;
+    --primary: #357588;
+    --secondary: #f8c630;
+    --text-dark: #2c3e50;
+    overflow-x: hidden;
+}
 
-  
+.flex-hero {
+    background: linear-gradient(135deg, var(--primary) 0%, #2a5d6d 100%);
+    color: white;
+    padding: 120px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.flex-hero::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+.flex-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.flex-title {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards;
+}
+
+.flex-subtitle {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards 0.3s;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 80px 0;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.feature-title {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.feature-text {
+    color: #666;
+    line-height: 1.6;
+}
+
+.cta-section {
+    background: linear-gradient(135deg, #f6f9fc 0%, #edf1f7 100%);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(53, 117, 136, 0.3);
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .flex-title {
+        font-size: 2.5rem;
+    }
+}
+
+
+/*  */
+  /* iMaster Pricing Page */
+/*  */
+
+.im-pricing-2024 {
+  --primary: teal;
+  --secondary: #d2f50b;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --bg-light: #f8fafc;
+  background: linear-gradient(135deg, var(--bg-light) 0%, #fff 100%);
+  padding: 4rem 1rem;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.im-pricing-2024 * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.im-pricing-2024 .service-block {
+  max-width: 1200px;
+  margin: 0 auto 6rem;
+}
+
+.im-pricing-2024 .service-block:last-child {
+  margin-bottom: 0;
+}
+
+.im-pricing-2024 .service-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.im-pricing-2024 .launch-badge {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: table;
+  margin: 0 auto 2rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.im-pricing-2024 .plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+/* Modified card styles to use flexbox for button alignment */
+.im-pricing-2024 .plan-card {
+  background: white;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.im-pricing-2024 .plan-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15);
+}
+
+.im-pricing-2024 .plan-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.im-pricing-2024 .plan-card:hover::before {
+  transform: scaleX(1);
+}
+
+.im-pricing-2024 .plan-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.im-pricing-2024 .plan-price {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.im-pricing-2024 .plan-price span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* Modified features list to allow for flex grow */
+.im-pricing-2024 .features-list {
+  list-style: none;
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+  flex-grow: 1;
+}
+
+.im-pricing-2024 .features-list li {
+  margin-bottom: 1rem;
+  padding-left: 1.75rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.im-pricing-2024 .features-list li:last-child {
+  margin-bottom: 0;
+}
+
+.im-pricing-2024 .features-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+.im-pricing-2024 .plan-button {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.im-pricing-2024 .plan-button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.3);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 768px) {
+  .im-pricing-2024 {
+      padding: 2rem 1rem;
+  }
+
+  .im-pricing-2024 .service-title {
+      font-size: 2rem;
+  }
+
+  .im-pricing-2024 .plans-grid {
+      gap: 1.5rem;
+  }
+}

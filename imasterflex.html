@@ -51,115 +51,175 @@
   -->
   <link rel="preload" as="image" href="/images/hero-banner.png">
 
-  <style>
-/* body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-} */
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
-.login-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 100px;
-}
+<style>
+            .flex-platform {
+            --primary: #4a90e2;
+            --secondary: #50e3c2;
+            --accent: #d0021b;
+            --background: #f3f5f9;
+            --text: #333333;
+            font-family: 'Poppins', sans-serif;
+        }
 
-.login-card {
-    background: linear-gradient(135deg, #00bfae, #009c91);
-    color: white;
-    border-radius: 20px;
-    width: 350px;
-    height: 200px;
-    padding: 40px;
-    text-align: center;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.5s ease, box-shadow 0.3s ease, background 0.6s ease;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-}
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #3469a3 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            color: white;
+            overflow: hidden;
+        }
 
-.login-card:hover {
-    transform: translateY(-20px) rotate(5deg);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
+        .hero-section h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease;
+        }
 
-.login-card:hover .icon {
-    transform: scale(1.1) rotate(10deg);
-}
+        .hero-section p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            animation: fadeInDown 1s ease 0.2s;
+        }
 
-.login-card:hover h3 {
-    transform: translateY(-10px);
-    opacity: 0.9;
-}
+        .hero-section .cta-button {
+            background: var(--secondary);
+            padding: 15px 40px;
+            color: var(--text);
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: transform 0.3s ease;
+            animation: fadeInDown 1s ease 0.4s;
+        }
 
-.icon {
-    background-color: white;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin: 0 auto 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease;
-}
+        .hero-section .cta-button:hover {
+            transform: scale(1.1);
+        }
 
-.icon img {
-    width: 50px;
-    height: 50px;
-    transition: transform 0.3s ease;
-}
+        .features-section {
+            padding: 80px 20px;
+            background: var(--background);
+        }
 
-h3 {
-    font-size: 28px;
-    font-weight: bold;
-    margin: 0;
-    letter-spacing: 1px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
 
-/* Adding Animated Gradient Background */
-@keyframes gradient-animation {
-    0% {
-        background: linear-gradient(135deg, #00bfae, #009c91);
-    }
-    50% {
-        background: linear-gradient(135deg, #008c7f, #00bfae);
-    }
-    100% {
-        background: linear-gradient(135deg, #00bfae, #009c91);
-    }
-}
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
 
-.login-card {
-    animation: gradient-animation 6s infinite ease-in-out;
-}
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
 
-.choose-login {
-    text-align: center;
-    margin-top: 50px;
-    animation: fadeIn 2s ease-out;
-}
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
 
-.choose-login h2 {
-    font-size: 36px;
-    color: #009c91;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin: 0;
-}
+        .feature-card p {
+            color: var(--text);
+        }
 
+        .flex-benefits {
+            padding: 80px 20px;
+            background: white;
+            text-align: center;
+        }
 
-  </style>
+        .benefits-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .benefit-card {
+            padding: 30px;
+            border: 1px solid var(--primary);
+            border-radius: 15px;
+        }
+
+        .benefit-card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .benefit-card p {
+            color: var(--text);
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #3469a3 100%);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-section .cta-button {
+            background: var(--secondary);
+            padding: 15px 40px;
+            color: var(--text);
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-section .cta-button:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .features-container, .benefits-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 
 
 <body>
 
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v21.0"></script>
   <!-- 
     - #HEADER
   -->
@@ -306,35 +366,85 @@ h3 {
     </div>
 </nav>
 
+      
+      
+  
 
 
-<br>
-<div class="choose-login">
-    <h2>Choose Your Login</h2>
-</div>
+<br><br> 
+
+<body class="flex-page">
+    <section class="flex-hero">
+        <div class="flex-container">
+            <h1 class="flex-title">iMaster Flex</h1>
+            <p class="flex-subtitle">Access high-quality pre-recorded video lessons from expert tutors, allowing flexible learning at your own pace. Every subject and lesson is broken down for easy understanding.</p>
+        </div>
+    </section>
+
+    <section class="flex-container">
+        <div class="features-grid">
+            <div class="feature-card" data-aos="fade-up">
+                <div class="feature-icon">📚</div>
+                <h3 class="feature-title">Comprehensive Recorded Lessons</h3>
+                <p class="feature-text">Access engaging, curriculum-aligned recorded lessons anytime. Learn at your own pace with expertly crafted content.</p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon">📝</div>
+                <h3 class="feature-title">Interactive Worksheets</h3>
+                <p class="feature-text">Reinforce your learning with structured, practice-oriented worksheets designed to test and improve your understanding.</p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon">📖</div>
+                <h3 class="feature-title">Supplementary Resources</h3>
+                <p class="feature-text">Access comprehensive notes, study guides, and topic summaries to enhance your learning experience.</p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up">
+                <div class="feature-icon">⏰</div>
+                <h3 class="feature-title">Flexible Learning</h3>
+                <p class="feature-text">Study at your convenience with no fixed schedules. Perfect for busy students and working professionals.</p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon">📊</div>
+                <h3 class="feature-title">Progress Tracking</h3>
+                <p class="feature-text">Monitor your learning journey with integrated quizzes and detailed feedback tools.</p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon">🎯</div>
+                <h3 class="feature-title">Ideal for Revisions</h3>
+                <p class="feature-text">Perfect for revisiting tough concepts and preparing for exams with comprehensive review materials.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="flex-container">
+            <h2 data-aos="fade-up">Ready to Start Learning?</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Join iMaster Flex today and experience the future of learning.</p>
+            <a href="#" class="cta-button" data-aos="fade-up" data-aos-delay="200">Get Started Now</a>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
 
 
-<div class="login-container">
-  <a href="https://merithub.com/login" class="login-card" id="student-card">
-      <div class="icon">
-          <img src="images/studenticon.png" alt="Student Icon">
-      </div>
-      <h3>Login as Student</h3>
+
+<!-- whatsapp button -->
+<a href="https://wa.me/+447761967052" target="_blank" class="whatsapp-button">
+    <img src="images/Whatsappicon.png" alt="WhatsApp" />
   </a>
-  <a href="https://merithub.com/login" class="login-card" id="tutor-card">
-      <div class="icon">
-          <img src="images/tutoricon.png" alt="Tutor Icon">
-      </div>
-      <h3>Login as Tutor</h3>
-  </a>
-</div>
-
-
-
-<br>
-
-
-
 
   <!-- 
     - #FOOTER
@@ -511,6 +621,8 @@ KINGDOM
 
   </footer>
 
+
+
   <!-- 
     - custom js link
   -->
@@ -528,13 +640,74 @@ KINGDOM
 
 
 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script type="text/javascript">
+    // Initialize EmailJS with your public key
+    (function() {
+      emailjs.init("f5gwCIoX9EQpaVr7i"); // Replace with your public key
+    })();
+  
+    // Form submission handler
+    document.getElementById("demoRequestForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent the default form submission behavior
+  
+      const serviceID = "service_ik7j9op"; // Replace with your Service ID
+      const templateID = "template_9cghgvc"; // Replace with your Template ID
+  
+      const formData = {
+        fullName: document.getElementById("fullName").value,
+        email: document.getElementById("email").value,
+        grade: document.getElementById("grade").value,
+        subject: document.getElementById("subject").value,
+        phone: document.getElementById("phone").value,
+        notes: document.getElementById("notes").value,
+      };
+
+      // Show loading spinner with SweetAlert
+      Swal.fire({
+        title: 'Sending your request...',
+        text: 'Please wait while we send your demo request.',
+        imageUrl: 'https://sweetalert2.github.io/images/loading.gif', // Optional custom spinner
+        showConfirmButton: false,
+        allowOutsideClick: false, // Disable closing the popup while the request is being sent
+        didOpen: () => {
+          Swal.showLoading(); // Start the spinner
+        },
+      });
+
+      // Send email via EmailJS
+      emailjs.send(serviceID, templateID, formData).then(
+        (response) => {
+          // Hide the spinner and show success message
+          Swal.fire({
+            title: "Success!",
+            text: "Demo request sent successfully!",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+          console.log("SUCCESS:", response.status, response.text);
+        },
+        (error) => {
+          // Hide the spinner and show error message
+          Swal.fire({
+            title: "Error!",
+            text: "Failed to send the demo request. Please try again.",
+            icon: "error",
+            confirmButtonText: "Try Again",
+          });
+          console.error("ERROR:", error);
+        }
+      );
+    });
+</script>
+
+<!-- SweetAlert2 CDN -->
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
 
 
 
-<!-- whatsapp button -->
-<a href="https://wa.me/+447761967052" target="_blank" class="whatsapp-button">
-    <img src="images/Whatsappicon.png" alt="WhatsApp" />
-  </a>
   
 
 </body>

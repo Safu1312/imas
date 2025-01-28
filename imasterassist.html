@@ -51,115 +51,19 @@
   -->
   <link rel="preload" as="image" href="/images/hero-banner.png">
 
-  <style>
-/* body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-} */
-
-.login-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 100px;
-}
-
-.login-card {
-    background: linear-gradient(135deg, #00bfae, #009c91);
-    color: white;
-    border-radius: 20px;
-    width: 350px;
-    height: 200px;
-    padding: 40px;
-    text-align: center;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.5s ease, box-shadow 0.3s ease, background 0.6s ease;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-}
-
-.login-card:hover {
-    transform: translateY(-20px) rotate(5deg);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-.login-card:hover .icon {
-    transform: scale(1.1) rotate(10deg);
-}
-
-.login-card:hover h3 {
-    transform: translateY(-10px);
-    opacity: 0.9;
-}
-
-.icon {
-    background-color: white;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin: 0 auto 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease;
-}
-
-.icon img {
-    width: 50px;
-    height: 50px;
-    transition: transform 0.3s ease;
-}
-
-h3 {
-    font-size: 28px;
-    font-weight: bold;
-    margin: 0;
-    letter-spacing: 1px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* Adding Animated Gradient Background */
-@keyframes gradient-animation {
-    0% {
-        background: linear-gradient(135deg, #00bfae, #009c91);
-    }
-    50% {
-        background: linear-gradient(135deg, #008c7f, #00bfae);
-    }
-    100% {
-        background: linear-gradient(135deg, #00bfae, #009c91);
-    }
-}
-
-.login-card {
-    animation: gradient-animation 6s infinite ease-in-out;
-}
-
-.choose-login {
-    text-align: center;
-    margin-top: 50px;
-    animation: fadeIn 2s ease-out;
-}
-
-.choose-login h2 {
-    font-size: 36px;
-    color: #009c91;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin: 0;
-}
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
 
-  </style>
+
+
 </head>
 
 
 
 <body>
 
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v21.0"></script>
   <!-- 
     - #HEADER
   -->
@@ -305,36 +209,104 @@ h3 {
         </ul>
     </div>
 </nav>
+      
+      
+  
+
+
+<br><br> 
+
+<body class="flex-page">
+    <section class="flex-hero">
+        <div class="flex-container">
+            <h1 class="flex-title">iMaster Assist</h1>
+            <p class="flex-subtitle">
+                Get expert assistance with school projects and homework from experienced tutors, ensuring you understand and excel in your assignments.
+            </p>
+        </div>
+    </section>
+
+    <section class="flex-container">
+        <div class="features-grid">
+            <div class="feature-card" data-aos="fade-up">
+                <div class="feature-icon">✅</div>
+                <h3 class="feature-title">Corrections and Feedback</h3>
+                <p class="feature-text">
+                    Get your past/test papers reviewed by experts with tips and tailored practice questions for better results.
+                </p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon">📜</div>
+                <h3 class="feature-title">IA and EE Reviews</h3>
+                <p class="feature-text">
+                    Receive expert guidance on IB Internal Assessments and Extended Essays to improve quality and clarity.
+                </p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon">📖</div>
+                <h3 class="feature-title">Homework Assistance</h3>
+                <p class="feature-text">
+                    Step-by-step solutions with detailed explanations to help you understand and tackle complex problems.
+                </p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up">
+                <div class="feature-icon">📚</div>
+                <h3 class="feature-title">Study Resources</h3>
+                <p class="feature-text">
+                    Access curated notes, flashcards, and topic summaries designed to simplify your learning experience.
+                </p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon">🎨</div>
+                <h3 class="feature-title">Project Support</h3>
+                <p class="feature-text">
+                    Expert help with academic presentations, posters, and project execution, ensuring high-quality results.
+                </p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon">⏱️</div>
+                <h3 class="feature-title">Deadline-Oriented Support</h3>
+                <p class="feature-text">
+                    Regular progress monitoring and dedicated support to ensure you meet academic deadlines with ease.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="flex-container">
+            <h2 data-aos="fade-up">Need Help With Assignments?</h2>
+            <p data-aos="fade-up" data-aos-delay="100">
+                Join iMaster Assist and get step-by-step expert guidance for your homework and projects today.
+            </p>
+            <a href="#" class="cta-button" data-aos="fade-up" data-aos-delay="200">Get Assistance Now</a>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
 
 
 
-<br>
-<div class="choose-login">
-    <h2>Choose Your Login</h2>
-</div>
 
 
-<div class="login-container">
-  <a href="https://merithub.com/login" class="login-card" id="student-card">
-      <div class="icon">
-          <img src="images/studenticon.png" alt="Student Icon">
-      </div>
-      <h3>Login as Student</h3>
+
+<!-- whatsapp button -->
+<a href="https://wa.me/+447761967052" target="_blank" class="whatsapp-button">
+    <img src="images/Whatsappicon.png" alt="WhatsApp" />
   </a>
-  <a href="https://merithub.com/login" class="login-card" id="tutor-card">
-      <div class="icon">
-          <img src="images/tutoricon.png" alt="Tutor Icon">
-      </div>
-      <h3>Login as Tutor</h3>
-  </a>
-</div>
-
-
-
-<br>
-
-
-
 
   <!-- 
     - #FOOTER
@@ -511,6 +483,8 @@ KINGDOM
 
   </footer>
 
+
+
   <!-- 
     - custom js link
   -->
@@ -528,13 +502,74 @@ KINGDOM
 
 
 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script type="text/javascript">
+    // Initialize EmailJS with your public key
+    (function() {
+      emailjs.init("f5gwCIoX9EQpaVr7i"); // Replace with your public key
+    })();
+  
+    // Form submission handler
+    document.getElementById("demoRequestForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent the default form submission behavior
+  
+      const serviceID = "service_ik7j9op"; // Replace with your Service ID
+      const templateID = "template_9cghgvc"; // Replace with your Template ID
+  
+      const formData = {
+        fullName: document.getElementById("fullName").value,
+        email: document.getElementById("email").value,
+        grade: document.getElementById("grade").value,
+        subject: document.getElementById("subject").value,
+        phone: document.getElementById("phone").value,
+        notes: document.getElementById("notes").value,
+      };
+
+      // Show loading spinner with SweetAlert
+      Swal.fire({
+        title: 'Sending your request...',
+        text: 'Please wait while we send your demo request.',
+        imageUrl: 'https://sweetalert2.github.io/images/loading.gif', // Optional custom spinner
+        showConfirmButton: false,
+        allowOutsideClick: false, // Disable closing the popup while the request is being sent
+        didOpen: () => {
+          Swal.showLoading(); // Start the spinner
+        },
+      });
+
+      // Send email via EmailJS
+      emailjs.send(serviceID, templateID, formData).then(
+        (response) => {
+          // Hide the spinner and show success message
+          Swal.fire({
+            title: "Success!",
+            text: "Demo request sent successfully!",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+          console.log("SUCCESS:", response.status, response.text);
+        },
+        (error) => {
+          // Hide the spinner and show error message
+          Swal.fire({
+            title: "Error!",
+            text: "Failed to send the demo request. Please try again.",
+            icon: "error",
+            confirmButtonText: "Try Again",
+          });
+          console.error("ERROR:", error);
+        }
+      );
+    });
+</script>
+
+<!-- SweetAlert2 CDN -->
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
 
 
 
-<!-- whatsapp button -->
-<a href="https://wa.me/+447761967052" target="_blank" class="whatsapp-button">
-    <img src="images/Whatsappicon.png" alt="WhatsApp" />
-  </a>
   
 
 </body>
