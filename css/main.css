@@ -3939,8 +3939,8 @@ Curriculum Section Styling
 
 .cta-button {
     display: inline-block;
-    padding: 15px 40px;
-    background: var(--primary);
+    padding: 5px 10px;
+    background: #215d6E;
     color: white;
     text-decoration: none;
     border-radius: 30px;
