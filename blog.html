@@ -71,6 +71,71 @@
     font-size: 24px; /* Slightly larger heading text */
 }
 
+/* Social Links Section */
+.connect-with-us {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+.connect-with-us h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-buttons a i {
+    font-size: 1.5rem;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+/* Hover Effects */
+.social-buttons a:hover {
+    transform: scale(1.1);
+}
+
+.social-buttons a[href*="facebook"]:hover { background-color: #1877f2; color: #fff; }
+.social-buttons a[href*="linkedin"]:hover { background-color: #0077b5; color: #fff; }
+.social-buttons a[href*="instagram"]:hover { background-color: #e4405f; color: #fff; }
+.social-buttons a[href*="youtube"]:hover { background-color: #ff0000; color: #fff; }
+.social-buttons a[href*="tiktok"]:hover { background-color: #000000; color: #fff; }
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .social-buttons {
+        gap: 10px;
+    }
+
+    .social-buttons a {
+        width: 40px;
+        height: 40px;
+    }
+
+    .social-buttons a i {
+        font-size: 1.3rem;
+    }
+}
+
+
   </style>
 
 </head>
@@ -286,29 +351,35 @@
 
 <br><br> 
 <!-- Social Media Section -->
-<div class="social-media-container">
-    <h2 class="follow-us-text">Follow Us On Social Media</h2>
-    <div class="social-icons">
-        <a href="https://www.facebook.com/iMasterOnline" target="_blank" class="social-icon facebook">
-            <img src="images/fbicon.png" alt="Facebook">
-        </a>
-        <a href="https://www.instagram.com/imaster_online_academy/" target="_blank" class="social-icon instagram">
-            <img src="images/instaicon.png" alt="Instagram">
-        </a>
-        <a href="https://www.linkedin.com/company/imaster-edtech/" target="_blank" class="social-icon linkedin">
-            <img src="images/linkedinicon.png" alt="LinkedIn">
-        </a>
-        <a href="https://www.tiktok.com/@imaster370?_t=8mvBWeF1BYt&_r=1" target="_blank" class="social-icon tiktok">
-            <img src="images/tiktokicon.png" alt="TikTok">
-        </a>
-        <a href="https://www.youtube.com/@iMaster_Online_Academy" target="_blank" class="social-icon youtube">
-            <img src="images/youtubeicon.png" alt="YouTube">
-        </a>
-    </div>
+<!-- Social Links -->
+<div class="connect-with-us">
+  <h3>Follow Us On Social Media For The Latest Updates</h3>
+  <div class="social-buttons">
+      <a href="https://www.facebook.com/iMasterOnline" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.linkedin.com/company/imaster-online-acdemy/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/imaster_edtech/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@iMaster_Online_Academy" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.tiktok.com/@imaster370" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+  </div>
 </div>
 
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const socialLinks = document.querySelectorAll(".social-buttons a");
 
+    socialLinks.forEach(link => {
+        link.addEventListener("mouseover", () => {
+            link.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.2)";
+        });
+
+        link.addEventListener("mouseout", () => {
+            link.style.boxShadow = "none";
+        });
+    });
+});
+
+</script>
 
 
 
