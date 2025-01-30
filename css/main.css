@@ -2039,7 +2039,7 @@ body.menu-open {
 
 .feature-card {
   position: relative;
-  background: #D3D3D3 ;
+  background: white ;
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -3900,7 +3900,7 @@ Curriculum Section Styling
 }
 
 .feature-card {
-    background: #D3D3D3 ;
+    background: white ;
     border-radius: 20px;
     padding: 40px 30px;
     text-align: center;
