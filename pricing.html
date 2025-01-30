@@ -52,6 +52,7 @@
   <link rel="preload" as="image" href="/images/hero-banner.png">
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
         
@@ -158,18 +159,20 @@
                 <div class="dropdown-menu">
                     <div class="columns">
                         <div class="column">
-                            <h4>IGCSE</h4>
+                            <h4>IGCSE/GCSE</h4>
                             <ul>
-                                <li>IGCSE Edexcel</li>
-                                <li>IGCSE Cambridge</li>
+                                <li>Edexcel</li>
+                                <li>Cambridge</li>
+                                <li>AQA</li>
                             </ul>
                         </div>
                         <div class="column">
-                            <h4>AS/AL</h4>
+                            <h4>AS/AL & IAS/IAL </h4>
                             <ul>
-                                <li>AS/AL Edexcel</li>
-                                <li>AS/AL Cambridge</li>
-                                <li>AS/AL OCR</li>
+                                <li>Edexcel</li>
+                                <li>Cambridge</li>
+                                <li>OCR</li>
+                                <li>AQA</li>
                             </ul>
                         </div>
                         <div class="column">
@@ -179,8 +182,7 @@
                                 <li>IB MYP</li>
                                 <li>IB DP SL</li>
                                 <li>IB DP HL</li>
-                                <li>GCSE Edexcel</li>
-                                <li>GCSE AQA</li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -210,7 +212,58 @@
     </div>
 </nav>
 
-      
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    // Mobile menu toggle
+    mobileMenuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+
+    // Dropdown interactions for mobile
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1024) {
+                const submenu = dropdown.querySelector('.dropdown-menu');
+
+                // Toggle only if clicking on a dropdown link (not normal links)
+                if (submenu && !e.target.closest('.dropdown-menu a')) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('open');
+                }
+            }
+        });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+            navMenu.classList.remove('active');
+        }
+    });
+
+    // Ensure normal links still work on mobile
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1024 && !e.target.closest('.dropdown')) {
+                navMenu.classList.remove('active'); // Close menu after clicking a link
+            }
+        });
+    });
+
+    // Responsive dropdown handling
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 1024) {
+            navMenu.classList.remove('active');
+            dropdowns.forEach(dropdown => dropdown.classList.remove('open'));
+        }
+    });
+});
+
+</script>     
       
   
 
@@ -379,174 +432,71 @@
   -->
 
   <footer class="footer">
-
-    <div class="footer-top section">
-      <div class="container">
-
-        <div class="footer-brand">
-
-          <a href="index.html" class="logo">iMaster EdTech</a>
-
-          <p class="footer-text">
-            At iMaster, we offer personalized one-on-one and small group classes tailored to your unique needs. Join us and experience the difference of education designed just for you!
-          </p>
-
-          
-
-        </div>
-<!-- 
-        <ul class="footer-list">
-
-          <li>
-            <p class="footer-list-title">Courses</p>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Strategy & Research</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Web Development</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Web Solution</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Digital Merketing</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">App Design</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">App Development</a>
-          </li>
-
-        </ul> -->
-
-        <ul class="footer-list">
-
-          <li>
-            <p class="footer-list-title">iMaster</p>
-          </li>
-
-          <li>
-            <a href="index.html" class="footer-link">Home</a>
-          </li>
-
-          <li>
-            <a href="about.html" class="footer-link">About Us</a>
-          </li>
-
-          <li>
-            <a href="requestdemo.html" class="footer-link">Request Demo</a>
-          </li>
-
-          <li>
-            <a href="blog.html" class="footer-link">Our Blog</a>
-          </li>
-
-          <li>
-            <a href="testimonial.html" class="footer-link">Testimonials</a>
-          </li>
-
-          <li>
-            <a href="careers.html" class="footer-link">Careers</a>
-          </li>
-
-          <li>
-            <a href="contact.html" class="footer-link">Contact Us</a>
-          </li>
-
-        </ul>
-
-        <ul class="footer-list">
-
-          <li>
-            <p class="footer-list-title">Contact Us</p>
-          </li>
-
-          <li class="footer-item">
-            <ion-icon name="location" aria-hidden="true"></ion-icon>
-
-            <address class="contact-link address">
-              75, Shelton Street, Covent Garden, London, WC2H 9JQ, UNITED
-KINGDOM
-            </address>
-          </li>
-
-          <li class="footer-item">
-            <ion-icon name="call" aria-hidden="true"></ion-icon>
-
-            <a href="tel:+447761967052" class="contact-link">+447761967052</a>
-          </li>
-
-          <li class="footer-item">
-            <ion-icon name="mail" aria-hidden="true"></ion-icon>
-
-            <a href="mailto:info@hoolix.com" class="contact-link">support@imaster.uk</a>
-          </li>
-
-          <li class="footer-item">
-            <ul class="social-list">
-
-              <li>
-                <a href="https://www.facebook.com/iMasterOnline" class="social-link">
-                  <ion-icon name="logo-facebook"></ion-icon>
-                </a>
-              </li>
-
-              <li>
-                <a href="https://www.linkedin.com/company/imaster-online-acdemy/" class="social-link">
-                  <ion-icon name="logo-linkedin"></ion-icon>
-                </a>
-              </li>
-
-              <li>
-                <a href="https://www.instagram.com/imaster_edtech/" class="social-link">
-                  <ion-icon name="logo-instagram"></ion-icon>
-                </a>
-              </li>
-
-              <li>
-                <a href="https://www.youtube.com/@iMaster_Online_Academy" class="social-link">
-                  <ion-icon name="logo-youtube"></ion-icon>
-                </a>
-              </li>
-
-            </ul>
-          </li>
-
-        </ul>
-
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="container">
-
-        <p class="copyright">
-          &copy; 2024 iMaster | All Rights Reserved by <a href="#" class="copyright-link">iMaster EdTech</a>
+    <div class="footer-container">
+      <!-- Company Info -->
+      <div class="footer-section company-info">
+        <h2 class="company-name">iMaster EdTech</h2>
+        <p class="company-description">
+          At iMaster, we offer personalized one-on-one and small group classes tailored to your unique needs. Join us and experience the difference of education designed just for you!
         </p>
-
-        <ul class="footer-bottom-list">
-
-          <li>
-            <a href="#" class="footer-bottom-link">Privacy Policy</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-bottom-link">Terms of Use</a>
-          </li>
-
+      </div>
+  
+      <!-- Quick Links -->
+      <div class="footer-section quick-links">
+        <h3 class="footer-heading">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="requestdemo.html">Request Demo</a></li>
+          <li><a href="blog.html">Our Blog</a></li>
+          <li><a href="testimonial.html">Testimonials</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
-
+      </div>
+  
+      <!-- Contact Info -->
+      <div class="footer-section contact-info">
+        <h3 class="footer-heading">Contact Us</h3>
+        <ul class="contact-details">
+          <li>
+            <span class="icon">📍</span>
+            <span>75, Shelton Street, Covent Garden, London, WC2H 9JQ, UK</span>
+          </li>
+          <li>
+            <span class="icon">📞</span>
+            <a href="tel:+447761967052">+44 776 196 7052</a>
+          </li>
+          <li>
+            <span class="icon">✉️</span>
+            <a href="mailto:support@imaster.uk">support@imaster.uk</a>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- Social Links -->
+      <div class="footer-section social-links">
+        <h3 class="footer-heading">Follow Us</h3>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/iMasterOnline" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.linkedin.com/company/imaster-online-acdemy/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/imaster_edtech/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@iMaster_Online_Academy" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.tiktok.com/@imaster370" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
       </div>
     </div>
-
+  
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-container">
+        <p class="copyright">&copy; 2025 iMaster EdTech. All Rights Reserved.</p>
+        <div class="legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
   </footer>
 
 

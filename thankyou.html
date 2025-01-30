@@ -97,14 +97,14 @@
       margin-top: 20px;
     }
     .contact-info a {
-      color: #2980b9;
+      color: teal;
       text-decoration: none;
       font-weight: bold;
     }
     .thank-you-container .btn {
       padding: 10px 20px;
       font-size: 18px;
-      background-color: #2980b9;
+      background-color: teal;
       color: white;
       border: none;
       border-radius: 4px;
@@ -217,18 +217,20 @@
                 <div class="dropdown-menu">
                     <div class="columns">
                         <div class="column">
-                            <h4>IGCSE</h4>
+                            <h4>IGCSE/GCSE</h4>
                             <ul>
-                                <li>IGCSE Edexcel</li>
-                                <li>IGCSE Cambridge</li>
+                                <li>Edexcel</li>
+                                <li>Cambridge</li>
+                                <li>AQA</li>
                             </ul>
                         </div>
                         <div class="column">
-                            <h4>AS/AL</h4>
+                            <h4>AS/AL & IAS/IAL </h4>
                             <ul>
-                                <li>AS/AL Edexcel</li>
-                                <li>AS/AL Cambridge</li>
-                                <li>AS/AL OCR</li>
+                                <li>Edexcel</li>
+                                <li>Cambridge</li>
+                                <li>OCR</li>
+                                <li>AQA</li>
                             </ul>
                         </div>
                         <div class="column">
@@ -238,8 +240,7 @@
                                 <li>IB MYP</li>
                                 <li>IB DP SL</li>
                                 <li>IB DP HL</li>
-                                <li>GCSE Edexcel</li>
-                                <li>GCSE AQA</li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -268,11 +269,59 @@
         </ul>
     </div>
 </nav>
-  
 
-      </nav>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const dropdowns = document.querySelectorAll('.dropdown');
 
+    // Mobile menu toggle
+    mobileMenuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
 
+    // Dropdown interactions for mobile
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1024) {
+                const submenu = dropdown.querySelector('.dropdown-menu');
+
+                // Toggle only if clicking on a dropdown link (not normal links)
+                if (submenu && !e.target.closest('.dropdown-menu a')) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('open');
+                }
+            }
+        });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+            navMenu.classList.remove('active');
+        }
+    });
+
+    // Ensure normal links still work on mobile
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1024 && !e.target.closest('.dropdown')) {
+                navMenu.classList.remove('active'); // Close menu after clicking a link
+            }
+        });
+    });
+
+    // Responsive dropdown handling
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 1024) {
+            navMenu.classList.remove('active');
+            dropdowns.forEach(dropdown => dropdown.classList.remove('open'));
+        }
+    });
+});
+
+</script>
       <br><br><br><br><br>
       
      
