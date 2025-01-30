@@ -3949,6 +3949,7 @@ Curriculum Section Styling
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    margin-left: 10px;
 }
 
 .cta-button:hover {
