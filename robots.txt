@@ -1,0 +1,23 @@
+# Allow all bots to crawl everything
+User-agent: *
+Disallow:
+
+# Block Googlebot from crawling /admin/ directory (if you have an admin area)
+User-agent: Googlebot
+Disallow: /admin/
+
+# Block bots from crawling the /login/ page (for security reasons)
+User-agent: *
+Disallow: /login/
+
+# Allow Bingbot to crawl /private/ directory (if applicable)
+User-agent: Bingbot
+Allow: /private/
+
+# Block bots from crawling the /thank-you/ or /checkout/ pages (if applicable)
+User-agent: *
+Disallow: /thank-you/
+Disallow: /checkout/
+
+# Sitemap location to help bots index your pages
+Sitemap: https://www.safsal.site/sitemap.xml
