@@ -320,9 +320,29 @@
                   </div>
               </div>
         
-              <figure class="hero-banner has-before img-holder" style="--width: 650; --height: 650;">
-                  <img src="images/learnpic.jpg" width="650" height="650" alt="hero banner" class="img-cover">
-              </figure>
+              <figure class="hero-banner has-before img-holder" style="--width: 650; --height: 650; margin-left: 10px">
+                <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+                <dotlottie-player 
+                    src="https://lottie.host/5920698d-706c-4e9b-8586-8a89c918db9c/JKbG32grlW.lottie" 
+                    background="transparent" 
+                    speed="1" 
+                    style="width: 140%; height: 140%;" 
+                    loop 
+                    autoplay 
+                    class="lottie-animation">
+                </dotlottie-player>
+            </figure>
+            
+            <style>
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .lottie-animation {
+                    width: 100% !important;
+                    height: 100% !important;
+                }
+            }
+            </style>
+            
           </div>
         </div>
         
