@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS Tutorial - iMaster EdTech</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f9;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #357588;
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        video {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .accordion {
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .accordion:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .panel {
+            display: none;
+            padding: 10px 20px;
+            background: #f9f9f9;
+            border-left: 4px solid #007bff;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        ul {
+            padding-left: 20px;
+            list-style-type: square;
+        }
+
+        .panel ul li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>LMS Tutorial For Tutors - iMaster EdTech</h1>
+        <p>Follow the video tutorial and the step-by-step guide below to navigate the LMS system efficiently.</p>
+
+        <!-- Single Tutorial Video -->
+        <div class="video-container">
+            <video controls>
+                <source src="videos/lmstutorial.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Section 1 -->
+        <button class="accordion">📌 LMS Navigation Instructions</button>
+        <div class="panel">
+            <ul>
+                <li>Click on <b>Home</b></li>
+                <li>Select <b>“iMaster EdTech”</b> Account</li>
+                <li>Go to the <b>Sessions Tab</b></li>
+                <li>View upcoming & past lessons, recordings, and summaries.</li>
+            </ul>
+        </div>
+
+        <!-- Section 2 -->
+        <button class="accordion">🎥 Joining a Session</button>
+        <div class="panel">
+            <ul>
+                <li>Go to <b>Upcoming Sessions</b> → Select your session</li>
+                <li>Click on <b>View</b> → <b>Go to Session</b></li>
+                <li>Test <b>Audio, Video, and Speaker</b> → Save settings</li>
+                <li>Click <b>Audio/Video</b> to go live</li>
+                <li><b>Important:</b> Students cannot join until you go live.</li>
+            </ul>
+        </div>
+
+        <!-- Section 3 -->
+        <button class="accordion">📝 Whiteboard Tools & Features</button>
+        <div class="panel">
+            <ul>
+                <li><b>Pencil</b>: Writing/drawing</li>
+                <li><b>Marker</b>: Highlighting</li>
+                <li><b>Text Button</b>: Type notes or sticky notes</li>
+                <li><b>Image Upload</b>: Attach PDFs, images</li>
+                <li><b>Calculator & Shapes</b>: Access measurement tools</li>
+                <li><b>Undo/Redo</b>: Fix mistakes easily</li>
+            </ul>
+        </div>
+
+        <!-- Section 4 -->
+        <button class="accordion">🖥️ Screen Sharing & Attachments</button>
+        <div class="panel">
+            <ul>
+                <li><b>Screen Share</b>: Upload documents & PDFs</li>
+                <li><b>YouTube Videos</b>: Paste link in screen share</li>
+                <li><b>Click Share</b>: Ensure students can see the content</li>
+            </ul>
+        </div>
+
+        <!-- Section 5 -->
+        <button class="accordion">⏳ Exiting & Time Management</button>
+        <div class="panel">
+            <ul>
+                <li>Click <b>Exit</b> → Choose <b>Leave</b> or <b>End Session</b></li>
+                <li>Sessions can be extended by 15 minutes if needed</li>
+                <li>If a student requests extra time, inform them of credit deductions</li>
+            </ul>
+        </div>
+
+        <!-- Section 6 -->
+        <button class="accordion">📅 Setting Availability</button>
+        <div class="panel">
+            <ul>
+                <li>Go to <b>Calendar</b> → Click on <b>Availability</b></li>
+                <li>Set your available times and apply them to multiple days</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>For more help, contact support.</p>
+        </footer>
+    </div>
+
+    <script>
+        let acc = document.getElementsByClassName("accordion");
+
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                let panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
