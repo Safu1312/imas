@@ -54,12 +54,58 @@
 <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Fredoka+One&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
 
-
+<style>
+    .popup-container {
+            display: flex;
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            gap: 15px;
+            align-items: center;
+            z-index: 1000;
+        }
+        .popup-content img {
+            width: auto;
+            height: auto;
+            max-width: 400px;
+            max-height: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px gray;
+        }
+        .close-btn {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            cursor: pointer;
+            font-size: 22px;
+            font-weight: bold;
+            background: white;
+            border-radius: 50%;
+            padding: 5px 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+        @media (max-width: 768px) {
+            .popup-container {
+                flex-direction: column;
+                align-items: center;
+                top: 5%;
+                max-width: 80%;
+            }
+            .popup-content img {
+                max-height: 150px;
+            }
+        }
+</style>
 </head>
 
 <body>
 
-  
+ 
   <!-- 
     - #HEADER
   -->
@@ -266,11 +312,36 @@
   <main>
     <article>
 
+       <!-- 
+        - #popup
+      -->
+
+      <div class="popup-container" id="popup">
+        <span class="close-btn" onclick="closePopup()">✖</span>
+        <div class="popup-content">
+            <img src="images/popup1.jpg" alt="Popup Image 1">
+        </div>
+        <div class="popup-content">
+            <img src="images/popup2.jpg" alt="Popup Image 2">
+        </div>
+        <div class="popup-content">
+            <img src="images/popup3.JPG" alt="Popup Image 3">
+        </div>
+    </div>
+    
+    <script>
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+
       <!-- 
         - #HERO
       -->
 
       <section class="section hero" id="home" aria-label="hero">
+
+        
         <!-- Slide 1 -->
         <div class="slide active">
           <div class="container">
