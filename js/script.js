@@ -17,6 +17,43 @@ const addEventOnElem = function (elem, type, callback) {
 }
 
 
+//js for FAQ
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const faqButtons = document.querySelectorAll("[data-accordion-action]");
+
+    faqButtons.forEach(button => {
+      button.addEventListener("click", function () {
+        const content = this.nextElementSibling;
+        const isOpen = content.style.maxHeight && content.style.maxHeight !== "0px";
+
+        // Close all FAQs first
+        document.querySelectorAll(".card-content").forEach(item => {
+          item.style.maxHeight = "0px";
+          item.style.padding = "0 15px";
+        });
+
+        document.querySelectorAll(".action-icon .open").forEach(icon => {
+          icon.style.display = "block";
+        });
+
+        document.querySelectorAll(".action-icon .close").forEach(icon => {
+          icon.style.display = "none";
+        });
+
+        // Open the clicked FAQ if it wasn't open
+        if (!isOpen) {
+          content.style.maxHeight = content.scrollHeight + "px";
+          content.style.padding = "10px 15px";
+          this.querySelector(".open").style.display = "none";
+          this.querySelector(".close").style.display = "block";
+        }
+      });
+    });
+  });
+
+
 
 /**
  * navbar toggle
