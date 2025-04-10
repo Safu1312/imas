@@ -100,6 +100,50 @@
                 max-height: 150px;
             }
         }
+
+        /* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+
 </style>
 </head>
 
@@ -418,33 +462,74 @@
           </div>
         </div>
         
-        <!-- Slide 2 -->
-        <div class="slide">
-            <div class="container">
-                <div class="hero-content">
-                    <p class="hero-subtitle has-before">Welcome to iMaster Online Academy</p> 
-                    <h1 class="h1 hero-title">iMaster Online Academy</h1>
-                    <p class="hero-text">
-                      Join interactive live classes led by expert tutors and get real-time guidance. Missed a session? Access recorded lessons anytime to review and reinforce your learning. Perfect for exam prep and mastering new subjects, our flexible approach ensures quality education on your schedule.
-                      <div class="popping-text">Global Curriculums like Cambridge, Edexcel, and IB</div> <br>are supported, ensuring a comprehensive learning experience for all students.
-                    </p>
-                    
-                    
-                    <div class="btn-group">
-                        <a href="requestdemo.html" class="btn btn-primary">Request a Demo Session</a>
-                        <button class="flex-btn">
-                            <div class="btn-icon">
-                                <ion-icon name="play" aria-hidden="true"></ion-icon>
-                            </div>
-                            <span class="span">How it works</span>
-                        </button>
-                    </div>
-                </div>
-                <figure class="hero-banner has-before img-holder" style="--width: 650; --height: 650;">
-                    <img src="images/onlearning.png" width="650" height="650" alt="hero banner" class="img-cover">
-                </figure>
-            </div>
-        </div>
+        <!-- Modal Structure -->
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <video id="videoPlayer" controls>
+          <source src="images/imasteronlinevideo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+  </div>
+</div>
+
+<!-- Slide 2 -->
+<div class="slide">
+  <div class="container">
+      <div class="hero-content">
+          <p class="hero-subtitle has-before">Welcome to iMaster Online Academy</p> 
+          <h1 class="h1 hero-title">iMaster Online Academy</h1>
+          <p class="hero-text">
+              Join interactive live classes led by expert tutors and get real-time guidance. Missed a session? Access recorded lessons anytime to review and reinforce your learning. Perfect for exam prep and mastering new subjects, our flexible approach ensures quality education on your schedule.
+              <div class="popping-text">Global Curriculums like Cambridge, Edexcel, and IB</div> <br>are supported, ensuring a comprehensive learning experience for all students.
+          </p>
+          
+          <div class="btn-group">
+              <a href="requestdemo.html" class="btn btn-primary">Request a Demo Session</a>
+              <button class="flex-btn" id="showVideoButton">
+                  <div class="btn-icon">
+                      <ion-icon name="play" aria-hidden="true"></ion-icon>
+                  </div>
+                  <span class="span">How it works</span>
+              </button>
+          </div>
+      </div>
+      <figure class="hero-banner has-before img-holder" style="--width: 650; --height: 650;">
+          <img src="images/onlearning.png" width="650" height="650" alt="hero banner" class="img-cover">
+      </figure>
+  </div>
+</div>
+
+<script>
+  // Get elements
+const videoModal = document.getElementById('videoModal');
+const showVideoButton = document.getElementById('showVideoButton');
+const closeModal = document.getElementById('closeModal');
+const videoPlayer = document.getElementById('videoPlayer');
+
+// Open video modal when button is clicked
+showVideoButton.addEventListener('click', () => {
+    videoModal.style.display = "block";  // Show the modal
+    videoPlayer.play();  // Start video automatically
+});
+
+// Close video modal when the close button is clicked
+closeModal.addEventListener('click', () => {
+    videoModal.style.display = "none";  // Hide the modal
+    videoPlayer.pause();  // Pause the video
+    videoPlayer.currentTime = 0;  // Reset video to start
+});
+
+// Close modal if clicked outside the modal content
+window.addEventListener('click', (event) => {
+    if (event.target === videoModal) {
+        videoModal.style.display = "none";
+        videoPlayer.pause();
+        videoPlayer.currentTime = 0;
+    }
+});
+
+</script>
 
         <!-- Slide 3 -->
         <div class="slide">
