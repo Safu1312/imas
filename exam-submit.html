@@ -110,6 +110,14 @@
             text-align: center;
             display: none;
         }
+
+        .hidden {
+    display: none !important;
+    /* Remove these lines as they can cause issues */
+    /* position: absolute;
+    left: -9999px;
+    visibility: hidden; */
+}
     </style>
 </head>
 <body>
@@ -119,7 +127,7 @@
     <div id="successMessage" class="success-message">Form submitted successfully! Thank you.</div>
     <div id="errorMessage" class="error-message">There was an error submitting the form. Please try again.</div>
     
-    <form id="examDetailsForm">
+    <form id="examDetailsForm" novalidate>
         <div class="form-section">
             <label for="tutorName" class="required">Tutor's Full Name</label>
             <input type="text" id="tutorName" name="tutorName" required>
@@ -156,19 +164,19 @@
           <h3>Add Student</h3>
           <div>
               <label for="studentName" class="required">Student's Name</label>
-              <input type="text" id="studentName" name="studentName" required>
+              <input type="text" id="studentName" name="studentName" >
           </div>
           <div>
               <label for="gradeLevel" class="required">Grade/Year Level</label>
-              <input type="text" id="gradeLevel" name="gradeLevel" required>
+              <input type="text" id="gradeLevel" name="gradeLevel" >
           </div>
           <div>
               <label for="subjects" class="required">Subjects (separate with commas)</label>
-              <input type="text" id="subjects" name="subjects" required>
+              <input type="text" id="subjects" name="subjects" >
           </div>
           <div>
               <label for="examBoard" class="required">Exam Board</label>
-              <select id="examBoard" name="examBoard" required>
+              <select id="examBoard" name="examBoard" >
                   <option value="">Select an exam board</option>
                   <option value="Cambridge (CAIE)">Cambridge (CAIE)</option>
                   <option value="Edexcel">Edexcel</option>
@@ -180,15 +188,15 @@
           </div>
           <div>
               <label for="examDate" class="required">Exam Sitting (Month/Year)</label>
-              <input type="text" id="examDate" name="examDate" placeholder="e.g., May/2025" required>
+              <input type="text" id="examDate" name="examDate" placeholder="e.g., May/2025" >
           </div>
           <div>
               <label for="paperDetails" class="required">Paper Codes and Details</label>
-              <input type="text" id="paperDetails" name="paperDetails" placeholder="e.g., IGCSE MATH 0580/42 - Extended Paper 4" required>
+              <input type="text" id="paperDetails" name="paperDetails" placeholder="e.g., IGCSE MATH 0580/42 - Extended Paper 4" >
           </div>
           <div>
               <label for="entryLevel" class="required">Level of Entry</label>
-              <select id="entryLevel" name="entryLevel" required>
+              <select id="entryLevel" name="entryLevel" >
                   <option value="">Select a level</option>
                   <option value="Core">Core</option>
                   <option value="Extended">Extended</option>
@@ -212,223 +220,296 @@
         </div>
     </form>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-          const addStudentBtn = document.getElementById('addStudentBtn');
-          const studentFormTemplate = document.getElementById('studentFormTemplate');
-          const studentTableBody = document.getElementById('studentTableBody');
-          const saveStudentBtn = document.getElementById('saveStudentBtn');
-          const cancelStudentBtn = document.getElementById('cancelStudentBtn');
-          const examDetailsForm = document.getElementById('examDetailsForm');
-          const loadingIndicator = document.getElementById('loading');
-          const successMessage = document.getElementById('successMessage');
-          const errorMessage = document.getElementById('errorMessage');
-          
-          // Your Google Apps Script URL
-          const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzk8v2VGFVzucNw83V7PGe2EH9_V1IfU60yQHGEIQZy16vm5XvJAtPVvV3qrMUJo_rp/exec';
-          
-          let editingRowIndex = null;
-          
-          // Show the student form
-          addStudentBtn.addEventListener('click', function() {
-              clearStudentForm();
-              studentFormTemplate.classList.remove('hidden');
-              addStudentBtn.disabled = true;
-          });
-          
-          // Cancel adding a student
-          cancelStudentBtn.addEventListener('click', function() {
-              studentFormTemplate.classList.add('hidden');
-              addStudentBtn.disabled = false;
-              editingRowIndex = null;
-          });
-          
-          // Save student details to table
-          saveStudentBtn.addEventListener('click', function() {
-              const studentName = document.getElementById('studentName').value;
-              const gradeLevel = document.getElementById('gradeLevel').value;
-              const subjects = document.getElementById('subjects').value;
-              const examBoard = document.getElementById('examBoard').value;
-              const examDate = document.getElementById('examDate').value;
-              const paperDetails = document.getElementById('paperDetails').value;
-              const entryLevel = document.getElementById('entryLevel').value;
-              
-              // Simple validation
-              if (!studentName || !gradeLevel || !subjects || !examBoard || !examDate || !paperDetails || !entryLevel) {
-                  alert('Please fill in all required fields');
-                  return;
-              }
-              
-              if (editingRowIndex !== null) {
-                  // Update existing row
-                  const row = studentTableBody.rows[editingRowIndex];
-                  updateTableRow(row, studentName, gradeLevel, subjects, examBoard, examDate, paperDetails, entryLevel);
-              } else {
-                  // Add new row
-                  addStudentToTable(studentName, gradeLevel, subjects, examBoard, examDate, paperDetails, entryLevel);
-              }
-              
-              // Hide form and reset
-              studentFormTemplate.classList.add('hidden');
-              addStudentBtn.disabled = false;
-              clearStudentForm();
-              editingRowIndex = null;
-          });
-          
-          // Form submission handler - FIXED version that avoids CORS issues
-          examDetailsForm.addEventListener('submit', function(event) {
-              // Prevent the default form submission
-              event.preventDefault();
-              
-              // Hide any previous messages
-              successMessage.style.display = 'none';
-              errorMessage.style.display = 'none';
-              
-              // Get form data
-              const formData = {
-                  tutor: document.getElementById('tutorName').value,
-                  students: [],
-                  notes: document.getElementById('additionalNotes').value
-              };
-              
-              // Get all student data from table
-              const rows = studentTableBody.querySelectorAll('tr');
-              
-              if (rows.length === 0) {
-                  alert('Please add at least one student before submitting');
-                  return;
-              }
-              
-              rows.forEach(row => {
-                  const cells = row.querySelectorAll('td');
-                  formData.students.push({
-                      name: cells[0].textContent,
-                      grade: cells[1].textContent,
-                      subjects: cells[2].textContent,
-                      examBoard: cells[3].textContent,
-                      examDate: cells[4].textContent,
-                      paperDetails: cells[5].textContent,
-                      entryLevel: cells[6].textContent
-                  });
-              });
-              
-              // Show loading indicator
-              loadingIndicator.style.display = 'block';
-              
-              // Create a form element
-              const form = document.createElement('form');
-              form.method = 'POST';
-              form.action = SCRIPT_URL;
-              form.target = '_blank';  // This opens the response in a new tab
-              
-              // Create hidden input to hold our data
-              const hiddenField = document.createElement('input');
-              hiddenField.type = 'hidden';
-              hiddenField.name = 'data';
-              hiddenField.value = JSON.stringify(formData);
-              form.appendChild(hiddenField);
-              
-              // Add form to body and submit
-              document.body.appendChild(form);
-              form.submit();
-              
-              // Clean up
-              document.body.removeChild(form);
-              
-              // Show success and reset form (after a delay to look like it's processing)
-              setTimeout(() => {
-                  loadingIndicator.style.display = 'none';
-                  successMessage.style.display = 'block';
-                  
-                  // Reset form
-                  document.getElementById('tutorName').value = '';
-                  document.getElementById('additionalNotes').value = '';
-                  studentTableBody.innerHTML = '';
-              }, 1500);
-          });
-          
-          // Function to add a student to the table
-          function addStudentToTable(name, grade, subjects, examBoard, examDate, paperDetails, entryLevel) {
-              const row = document.createElement('tr');
-              
-              // Add cells with student data
-              row.innerHTML = `
-                  <td>${name}</td>
-                  <td>${grade}</td>
-                  <td>${subjects}</td>
-                  <td>${examBoard}</td>
-                  <td>${examDate}</td>
-                  <td>${paperDetails}</td>
-                  <td>${entryLevel}</td>
-                  <td class="action-cell">
-                      <button type="button" class="edit-btn">Edit</button>
-                      <button type="button" class="delete-btn">Delete</button>
-                  </td>
-              `;
-              
-              // Add row to table
-              studentTableBody.appendChild(row);
-              
-              // Add event listeners for edit and delete buttons
-              setupRowButtons(row);
-          }
-          
-          // Update existing table row
-          function updateTableRow(row, name, grade, subjects, examBoard, examDate, paperDetails, entryLevel) {
-              const cells = row.querySelectorAll('td');
-              cells[0].textContent = name;
-              cells[1].textContent = grade;
-              cells[2].textContent = subjects;
-              cells[3].textContent = examBoard;
-              cells[4].textContent = examDate;
-              cells[5].textContent = paperDetails;
-              cells[6].textContent = entryLevel;
-          }
-          
-          // Setup edit and delete buttons for a row
-          function setupRowButtons(row) {
-              const editBtn = row.querySelector('.edit-btn');
-              const deleteBtn = row.querySelector('.delete-btn');
-              
-              editBtn.addEventListener('click', function() {
-                  const cells = row.querySelectorAll('td');
-                  
-                  // Find row index
-                  const rows = Array.from(studentTableBody.querySelectorAll('tr'));
-                  editingRowIndex = rows.indexOf(row);
-                  
-                  // Fill form with existing data
-                  document.getElementById('studentName').value = cells[0].textContent;
-                  document.getElementById('gradeLevel').value = cells[1].textContent;
-                  document.getElementById('subjects').value = cells[2].textContent;
-                  document.getElementById('examBoard').value = cells[3].textContent;
-                  document.getElementById('examDate').value = cells[4].textContent;
-                  document.getElementById('paperDetails').value = cells[5].textContent;
-                  document.getElementById('entryLevel').value = cells[6].textContent;
-                  
-                  // Show form for editing
-                  studentFormTemplate.classList.remove('hidden');
-                  addStudentBtn.disabled = true;
-              });
-              
-              deleteBtn.addEventListener('click', function() {
-                  if (confirm('Are you sure you want to remove this student?')) {
-                      row.remove();
-                  }
-              });
-          }
-          
-          // Clear student form fields
-          function clearStudentForm() {
-              document.getElementById('studentName').value = '';
-              document.getElementById('gradeLevel').value = '';
-              document.getElementById('subjects').value = '';
-              document.getElementById('examBoard').value = '';
-              document.getElementById('examDate').value = '';
-              document.getElementById('paperDetails').value = '';
-              document.getElementById('entryLevel').value = '';
-          }
-      });
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const addStudentBtn = document.getElementById('addStudentBtn');
+    const studentFormTemplate = document.getElementById('studentFormTemplate');
+    const studentTableBody = document.getElementById('studentTableBody');
+    const saveStudentBtn = document.getElementById('saveStudentBtn');
+    const cancelStudentBtn = document.getElementById('cancelStudentBtn');
+    const examDetailsForm = document.getElementById('examDetailsForm');
+    const loadingIndicator = document.getElementById('loading');
+    const successMessage = document.getElementById('successMessage');
+    const errorMessage = document.getElementById('errorMessage');
+    
+    // Your Google Apps Script URL
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzk8v2VGFVzucNw83V7PGe2EH9_V1IfU60yQHGEIQZy16vm5XvJAtPVvV3qrMUJo_rp/exec';
+    
+    let editingRowIndex = null;
+    
+// Show the student form
+addStudentBtn.addEventListener('click', function() {
+    clearStudentForm();
+    studentFormTemplate.classList.remove('hidden');
+    addStudentBtn.disabled = true;
+    // Scroll to the form
+    studentFormTemplate.scrollIntoView({ behavior: 'smooth' });
+});
+
+
+// Hide the student form
+cancelStudentBtn.addEventListener('click', function() {
+    studentFormTemplate.classList.add('hidden');
+    addStudentBtn.disabled = false;
+    editingRowIndex = null;
+    // Remove required attributes when hiding the form
+    document.getElementById('studentName').required = false;
+    document.getElementById('gradeLevel').required = false;
+    // ... remove for all required fields
+});
+    
+    // Cancel adding a student
+    cancelStudentBtn.addEventListener('click', function() {
+        studentFormTemplate.classList.add('hidden');
+        addStudentBtn.disabled = false;
+        editingRowIndex = null;
+    });
+    
+// Save student details to table
+saveStudentBtn.addEventListener('click', function() {
+    // Use our custom validation instead of browser validation
+    if (!validateStudentForm()) return;
+    
+    const studentName = document.getElementById('studentName').value;
+    const gradeLevel = document.getElementById('gradeLevel').value;
+    const subjects = document.getElementById('subjects').value;
+    const examBoard = document.getElementById('examBoard').value;
+    const examDate = document.getElementById('examDate').value;
+    const paperDetails = document.getElementById('paperDetails').value;
+    const entryLevel = document.getElementById('entryLevel').value;
+    
+    if (editingRowIndex !== null) {
+        // Update existing row
+        const row = studentTableBody.rows[editingRowIndex];
+        updateTableRow(row, studentName, gradeLevel, subjects, examBoard, examDate, paperDetails, entryLevel);
+    } else {
+        // Add new row
+        addStudentToTable(studentName, gradeLevel, subjects, examBoard, examDate, paperDetails, entryLevel);
+    }
+    
+    // Hide form and reset
+    studentFormTemplate.classList.add('hidden');
+    addStudentBtn.disabled = false;
+    clearStudentForm();
+    editingRowIndex = null;
+});
+    
+// Form submission handler
+examDetailsForm.addEventListener('submit', async function(event) {
+    event.preventDefault();
+    
+    // Hide any previous messages
+    successMessage.style.display = 'none';
+    errorMessage.style.display = 'none';
+    
+    // Validate tutor name
+    if (!document.getElementById('tutorName').value.trim()) {
+        showError('Please enter your name as the tutor');
+        document.getElementById('tutorName').focus();
+        return;
+    }
+    
+    // Get all student data from table
+    const rows = studentTableBody.querySelectorAll('tr');
+    
+    if (rows.length === 0) {
+        showError('Please add at least one student before submitting');
+        return;
+    }
+    
+    // Define formData here before using it
+    const formData = {
+        tutor: document.getElementById('tutorName').value.trim(),
+        students: [],
+        notes: document.getElementById('additionalNotes').value.trim()
+    };
+    
+    // Now we can safely use formData in our forEach
+    rows.forEach(row => {
+        const cells = row.querySelectorAll('td');
+        formData.students.push({
+            name: cells[0].textContent.trim(),
+            grade: cells[1].textContent.trim(),
+            subjects: cells[2].textContent.trim(),
+            examBoard: cells[3].textContent.trim(),
+            examDate: cells[4].textContent.trim(),
+            paperDetails: cells[5].textContent.trim(),
+            entryLevel: cells[6].textContent.trim()
+        });
+    });
+    
+    // Show loading indicator
+    loadingIndicator.style.display = 'block';
+    
+    try {
+        const response = await fetch(SCRIPT_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
+        
+        const result = await response.text();
+        loadingIndicator.style.display = 'none';
+        
+        if (response.ok) {
+            showSuccess('Form submitted successfully!');
+            // Reset form
+            document.getElementById('tutorName').value = '';
+            document.getElementById('additionalNotes').value = '';
+            studentTableBody.innerHTML = '';
+        } else {
+            showError('Error submitting form: ' + result);
+        }
+    } catch (error) {
+        loadingIndicator.style.display = 'none';
+        showError('Network error: ' + error.message);
+        console.error('Error:', error);
+    }
+});
+    
+    // Function to add a student to the table
+    function addStudentToTable(name, grade, subjects, examBoard, examDate, paperDetails, entryLevel) {
+        const row = document.createElement('tr');
+        
+        // Add cells with student data
+        row.innerHTML = `
+            <td>${name}</td>
+            <td>${grade}</td>
+            <td>${subjects}</td>
+            <td>${examBoard}</td>
+            <td>${examDate}</td>
+            <td>${paperDetails}</td>
+            <td>${entryLevel}</td>
+            <td class="action-cell">
+                <button type="button" class="edit-btn">Edit</button>
+                <button type="button" class="delete-btn">Delete</button>
+            </td>
+        `;
+        
+        // Add row to table
+        studentTableBody.appendChild(row);
+        
+        // Add event listeners for edit and delete buttons
+        setupRowButtons(row);
+    }
+    
+    // Update existing table row
+    function updateTableRow(row, name, grade, subjects, examBoard, examDate, paperDetails, entryLevel) {
+        const cells = row.querySelectorAll('td');
+        cells[0].textContent = name;
+        cells[1].textContent = grade;
+        cells[2].textContent = subjects;
+        cells[3].textContent = examBoard;
+        cells[4].textContent = examDate;
+        cells[5].textContent = paperDetails;
+        cells[6].textContent = entryLevel;
+    }
+    
+    // Setup edit and delete buttons for a row
+    function setupRowButtons(row) {
+        const editBtn = row.querySelector('.edit-btn');
+        const deleteBtn = row.querySelector('.delete-btn');
+        
+        editBtn.addEventListener('click', function() {
+            const cells = row.querySelectorAll('td');
+            
+            // Find row index
+            const rows = Array.from(studentTableBody.querySelectorAll('tr'));
+            editingRowIndex = rows.indexOf(row);
+            
+            // Fill form with existing data
+            document.getElementById('studentName').value = cells[0].textContent;
+            document.getElementById('gradeLevel').value = cells[1].textContent;
+            document.getElementById('subjects').value = cells[2].textContent;
+            document.getElementById('examBoard').value = cells[3].textContent;
+            document.getElementById('examDate').value = cells[4].textContent;
+            document.getElementById('paperDetails').value = cells[5].textContent;
+            document.getElementById('entryLevel').value = cells[6].textContent;
+            
+            // Show form for editing
+            studentFormTemplate.classList.remove('hidden');
+            addStudentBtn.disabled = true;
+            studentFormTemplate.scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        deleteBtn.addEventListener('click', function() {
+            if (confirm('Are you sure you want to remove this student?')) {
+                row.remove();
+                // If we were editing this row, cancel editing
+                if (editingRowIndex !== null) {
+                    studentFormTemplate.classList.add('hidden');
+                    addStudentBtn.disabled = false;
+                    editingRowIndex = null;
+                }
+            }
+        });
+    }
+    
+    // Clear student form fields
+    function clearStudentForm() {
+        document.getElementById('studentName').value = '';
+        document.getElementById('gradeLevel').value = '';
+        document.getElementById('subjects').value = '';
+        document.getElementById('examBoard').selectedIndex = 0;
+        document.getElementById('examDate').value = '';
+        document.getElementById('paperDetails').value = '';
+        document.getElementById('entryLevel').selectedIndex = 0;
+    }
+    
+    // Validate student form
+    function validateStudentForm() {
+        const requiredFields = [
+            { id: 'studentName', name: 'Student Name' },
+            { id: 'gradeLevel', name: 'Grade/Year Level' },
+            { id: 'subjects', name: 'Subjects' },
+            { id: 'examDate', name: 'Exam Date' },
+            { id: 'paperDetails', name: 'Paper Details' }
+        ];
+        
+        for (const field of requiredFields) {
+            const element = document.getElementById(field.id);
+            if (!element.value.trim()) {
+                alert(`Please fill in the ${field.name} field`);
+                element.focus();
+                return false;
+            }
+        }
+        
+        if (document.getElementById('examBoard').value === '') {
+            alert('Please select an exam board');
+            document.getElementById('examBoard').focus();
+            return false;
+        }
+        
+        if (document.getElementById('entryLevel').value === '') {
+            alert('Please select a level of entry');
+            document.getElementById('entryLevel').focus();
+            return false;
+        }
+        
+        return true;
+    }
+    
+    // Show success message
+    function showSuccess(message) {
+        successMessage.textContent = message;
+        successMessage.style.display = 'block';
+        setTimeout(() => {
+            successMessage.style.display = 'none';
+        }, 5000);
+    }
+    
+    // Show error message
+    function showError(message) {
+        errorMessage.textContent = message;
+        errorMessage.style.display = 'block';
+        setTimeout(() => {
+            errorMessage.style.display = 'none';
+        }, 5000);
+    }
+});
   </script>
 </body>
 </html>
