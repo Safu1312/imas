@@ -3,21 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Exam Details Submission Form</title>
+    <title>Student Exam Details Submission</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
         h1 {
+            color: #333;
             text-align: center;
-            color: #2c3e50;
         }
-        .form-section {
+        .form-container {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .tutor-details {
             margin-bottom: 30px;
+        }
+        .student-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .student-table th, .student-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .student-table th {
+            background-color: #f2f2f2;
+        }
+        .form-row {
+            margin-bottom: 15px;
         }
         label {
             display: block;
@@ -27,423 +48,294 @@
         input[type="text"], select, textarea {
             width: 100%;
             padding: 8px;
-            margin-bottom: 15px;
             border: 1px solid #ddd;
             border-radius: 4px;
             box-sizing: border-box;
         }
-        textarea {
-            height: 100px;
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
         }
         button {
-            background-color: #3498db;
+            background-color: #4CAF50;
             color: white;
-            border: none;
             padding: 10px 15px;
+            border: none;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 16px;
+            margin: 0 10px;
         }
         button:hover {
-            background-color: #2980b9;
+            background-color: #45a049;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
+        .remove-btn {
+            background-color: #f44336;
         }
-        table, th, td {
-            border: 1px solid #ddd;
+        .remove-btn:hover {
+            background-color: #d32f2f;
         }
-        th, td {
-            padding: 12px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .action-cell {
-            text-align: center;
-        }
-        .required::after {
+        .required:after {
             content: " *";
             color: red;
         }
-        .student-form {
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-        .hidden {
-            display: none;
-        }
-        .submit-section {
-            text-align: center;
-            margin-top: 30px;
-        }
-        .note {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 20px;
-        }
-        #loading {
-            display: none;
-            text-align: center;
-            margin: 20px 0;
-        }
-        .success-message {
-            background-color: #d4edda;
-            color: #155724;
+        #status-message {
+            margin-top: 20px;
             padding: 10px;
             border-radius: 4px;
-            margin: 20px 0;
             text-align: center;
             display: none;
         }
-        .error-message {
-            background-color: #f8d7da;
-            color: #721c24;
-            padding: 10px;
-            border-radius: 4px;
-            margin: 20px 0;
-            text-align: center;
-            display: none;
+        .success {
+            background-color: #dff0d8;
+            color: #3c763d;
         }
-
-        .hidden {
-    display: none !important;
-    /* Remove these lines as they can cause issues */
-    /* position: absolute;
-    left: -9999px;
-    visibility: hidden; */
-}
+        .error {
+            background-color: #f2dede;
+            color: #a94442;
+        }
     </style>
 </head>
 <body>
-    <h1>Student Exam Details Submission Form V3</h1>
-    <p class="note">Please fill out the following details for each student you are tutoring. You can add multiple students using the table below. <br> Scroll down after clicking the Add Student Button. </p>
-    
-    <div id="successMessage" class="success-message">Form submitted successfully! Thank you.</div>
-    <div id="errorMessage" class="error-message">There was an error submitting the form. Please try again.</div>
-    
-    <form 
-    action="https://formsubmit.co/safwansaleem0@gmail.com" 
-    method="POST"
-    id="examDetailsForm"
-  >
-    <input type="hidden" name="_subject" value="New Exam Submission">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_autoresponse" value="Thank you for your submission!">
-    
-    <!-- Your existing form fields (keep all your current inputs) -->
-    <div class="form-section">
-      <label for="tutorName" class="required">Tutor's Full Name</label>
-      <input type="text" id="tutorName" name="tutorName" required>
-    </div>
-    
-    <!-- Student table section remains the same -->
-    <div class="form-section">
-      <h2>Student Details</h2>
-      <table id="studentsTable">...</table>
-      <button type="button" id="addStudentBtn">+ Add Student</button>
-    </div>
-    
-    <!-- Additional notes -->
-    <div class="form-section">
-      <label for="additionalNotes">Additional Notes</label>
-      <textarea id="additionalNotes" name="additionalNotes"></textarea>
-    </div>
-    
-    <!-- Submit button -->
-    <div class="submit-section">
-      <button type="submit" id="submitForm">Submit All Details</button>
-    </div>
-  </form>
+    <h1>Student Exam Details Submission Form</h1>
+    <div class="form-container">
+        <form id="exam-details-form">
+            <div class="tutor-details">
+                <h2>Tutor Information</h2>
+                <div class="form-row">
+                    <label for="tutor-name" class="required">Tutor's Full Name</label>
+                    <input type="text" id="tutor-name" name="tutor-name" required>
+                </div>
+            </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    const addStudentBtn = document.getElementById('addStudentBtn');
-    const studentFormTemplate = document.getElementById('studentFormTemplate');
-    const studentTableBody = document.getElementById('studentTableBody');
-    const saveStudentBtn = document.getElementById('saveStudentBtn');
-    const cancelStudentBtn = document.getElementById('cancelStudentBtn');
-    const examDetailsForm = document.getElementById('examDetailsForm');
-    const loadingIndicator = document.getElementById('loading');
-    const successMessage = document.getElementById('successMessage');
-    const errorMessage = document.getElementById('errorMessage');
-    
-    // Your Google Apps Script URL
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzLLtL5AvFhHU6IYeG_IOBz4sHtS8yDwhJM0I1qy0kfK-DebH7LPLksFlI-WE1GZKHN/exec';
-    
-    let editingRowIndex = null;
-    
-    // Show the student form
-    addStudentBtn.addEventListener('click', function() {
-        clearStudentForm();
-        studentFormTemplate.classList.remove('hidden');
-        addStudentBtn.disabled = true;
-        studentFormTemplate.scrollIntoView({ behavior: 'smooth' });
-    });
-    
-    // Cancel adding a student
-    cancelStudentBtn.addEventListener('click', function() {
-        studentFormTemplate.classList.add('hidden');
-        addStudentBtn.disabled = false;
-        editingRowIndex = null;
-    });
-    
-    // Save student details to table
-    saveStudentBtn.addEventListener('click', function() {
-        if (!validateStudentForm()) return;
-        
-        const studentName = document.getElementById('studentName').value;
-        const gradeLevel = document.getElementById('gradeLevel').value;
-        const subjects = document.getElementById('subjects').value;
-        const examBoard = document.getElementById('examBoard').value;
-        const examDate = document.getElementById('examDate').value;
-        const paperDetails = document.getElementById('paperDetails').value;
-        const entryLevel = document.getElementById('entryLevel').value;
-        
-        if (editingRowIndex !== null) {
-            // Update existing row
-            const row = studentTableBody.rows[editingRowIndex];
-            updateTableRow(row, studentName, gradeLevel, subjects, examBoard, examDate, paperDetails, entryLevel);
-        } else {
-            // Add new row
-            addStudentToTable(studentName, gradeLevel, subjects, examBoard, examDate, paperDetails, entryLevel);
-        }
-        
-        // Hide form and reset
-        studentFormTemplate.classList.add('hidden');
-        addStudentBtn.disabled = false;
-        clearStudentForm();
-        editingRowIndex = null;
-    });
-    
-    // Form submission handler using iframe workaround for CORS
-    examDetailsForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        // Hide any previous messages
-        successMessage.style.display = 'none';
-        errorMessage.style.display = 'none';
-        
-        // Validate tutor name
-        if (!document.getElementById('tutorName').value.trim()) {
-            showError('Please enter your name as the tutor');
-            document.getElementById('tutorName').focus();
-            return;
-        }
-        
-        // Get all student data from table
-        const rows = studentTableBody.querySelectorAll('tr');
-        
-        if (rows.length === 0) {
-            showError('Please add at least one student before submitting');
-            return;
-        }
-        
-        // Prepare form data
-        const formData = {
-            tutor: document.getElementById('tutorName').value.trim(),
-            students: [],
-            notes: document.getElementById('additionalNotes').value.trim()
-        };
-        
-        rows.forEach(row => {
-            const cells = row.querySelectorAll('td');
-            formData.students.push({
-                name: cells[0].textContent.trim(),
-                grade: cells[1].textContent.trim(),
-                subjects: cells[2].textContent.trim(),
-                examBoard: cells[3].textContent.trim(),
-                examDate: cells[4].textContent.trim(),
-                paperDetails: cells[5].textContent.trim(),
-                entryLevel: cells[6].textContent.trim()
+            <h2>Student Details</h2>
+            <p>Add details for each student you are tutoring</p>
+            
+            <table id="student-table" class="student-table">
+                <thead>
+                    <tr>
+                        <th>Student's Name</th>
+                        <th>Grade/Year Level</th>
+                        <th>Subjects</th>
+                        <th>Exam Board</th>
+                        <th>Exam Sitting</th>
+                        <th>Paper Codes</th>
+                        <th>Level of Entry</th>
+                        <th>Notes</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="student-rows">
+                    <tr class="student-row">
+                        <td>
+                            <input type="text" name="student-name[]" class="student-name" required>
+                        </td>
+                        <td>
+                            <input type="text" name="grade-level[]" class="grade-level" required>
+                        </td>
+                        <td>
+                            <input type="text" name="subjects[]" class="subjects" required>
+                        </td>
+                        <td>
+                            <select name="exam-board[]" class="exam-board" required>
+                                <option value="">Select...</option>
+                                <option value="Cambridge (CAIE)">Cambridge (CAIE)</option>
+                                <option value="Edexcel">Edexcel</option>
+                                <option value="AQA">AQA</option>
+                                <option value="OCR">OCR</option>
+                                <option value="IB">IB</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="month" name="exam-sitting[]" class="exam-sitting" required>
+                        </td>
+                        <td>
+                            <input type="text" name="paper-codes[]" class="paper-codes" required>
+                        </td>
+                        <td>
+                            <select name="level-entry[]" class="level-entry" required>
+                                <option value="">Select...</option>
+                                <option value="Core">Core</option>
+                                <option value="Extended">Extended</option>
+                                <option value="AS">AS</option>
+                                <option value="A2">A2</option>
+                                <option value="HL">HL (Higher Level)</option>
+                                <option value="SL">SL (Standard Level)</option>
+                                <option value="N/A">Not Applicable</option>
+                            </select>
+                        </td>
+                        <td>
+                            <textarea name="notes[]" class="notes" rows="2"></textarea>
+                        </td>
+                        <td>
+                            <button type="button" class="remove-btn" onclick="removeStudent(this)">Remove</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="buttons">
+                <button type="button" id="add-student">Add Another Student</button>
+                <button type="submit" id="submit-form">Submit All Students</button>
+            </div>
+            
+            <div id="status-message"></div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add student row
+            document.getElementById('add-student').addEventListener('click', function() {
+                const tbody = document.getElementById('student-rows');
+                const firstRow = document.querySelector('.student-row');
+                const newRow = firstRow.cloneNode(true);
+                
+                // Clear the input fields in the new row
+                newRow.querySelectorAll('input, textarea').forEach(input => {
+                    input.value = '';
+                });
+                newRow.querySelectorAll('select').forEach(select => {
+                    select.selectedIndex = 0;
+                });
+                
+                tbody.appendChild(newRow);
+            });
+
+            // Form submission
+            document.getElementById('exam-details-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show processing message
+                const statusMessage = document.getElementById('status-message');
+                statusMessage.textContent = 'Processing submissions...';
+                statusMessage.className = '';
+                statusMessage.style.display = 'block';
+                
+                // Get form data
+                const tutorName = document.getElementById('tutor-name').value;
+                const studentRows = document.querySelectorAll('.student-row');
+                
+                // Counter for tracking submissions
+                let submissionCount = 0;
+                let successCount = 0;
+                
+                // Process each student row and submit to Google Forms
+                studentRows.forEach((row, index) => {
+                    const studentName = row.querySelector('.student-name').value;
+                    const gradeLevel = row.querySelector('.grade-level').value;
+                    const subjects = row.querySelector('.subjects').value;
+                    const examBoard = row.querySelector('.exam-board').value;
+                    const examSitting = row.querySelector('.exam-sitting').value;
+                    const paperCodes = row.querySelector('.paper-codes').value;
+                    const levelEntry = row.querySelector('.level-entry').value;
+                    const notes = row.querySelector('.notes').value;
+                    
+                    // Submit to Google Forms
+                    submitToGoogleForm(
+                        tutorName,
+                        studentName,
+                        gradeLevel,
+                        subjects,
+                        examBoard,
+                        examSitting,
+                        paperCodes,
+                        levelEntry,
+                        notes,
+                        function(success) {
+                            submissionCount++;
+                            if (success) successCount++;
+                            
+                            // Update status when all submissions are complete
+                            if (submissionCount === studentRows.length) {
+                                if (successCount === studentRows.length) {
+                                    statusMessage.textContent = 'All student details have been submitted successfully!';
+                                    statusMessage.className = 'success';
+                                } else {
+                                    statusMessage.textContent = `${successCount} out of ${studentRows.length} submissions were successful. Some entries may not have been recorded.`;
+                                    statusMessage.className = 'error';
+                                }
+                            }
+                        }
+                    );
+                });
             });
         });
-        
-        // Show loading indicator
-        loadingIndicator.style.display = 'block';
-        
-        // Create a hidden iframe for submission
-        const iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.name = 'hiddenFrame';
-        document.body.appendChild(iframe);
-        
-        // Create a form
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = SCRIPT_URL;
-        form.target = 'hiddenFrame';
-        form.style.display = 'none';
-        
-        // Add data as hidden input
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = 'data';
-        input.value = JSON.stringify(formData);
-        form.appendChild(input);
-        
-        // Add form to page and submit
-        document.body.appendChild(form);
-        form.submit();
-        
-        // Listen for response from iframe
-        window.addEventListener('message', function handleMessage(event) {
-            if (event.data === 'success') {
-                loadingIndicator.style.display = 'none';
-                showSuccess('Form submitted successfully!');
-                document.getElementById('tutorName').value = '';
-                document.getElementById('additionalNotes').value = '';
-                studentTableBody.innerHTML = '';
-            } else if (event.data === 'error') {
-                loadingIndicator.style.display = 'none';
-                showError('Error submitting form. Please try again later.');
+
+        // Remove student row
+        function removeStudent(button) {
+            const studentRows = document.querySelectorAll('.student-row');
+            // Don't remove if it's the only row
+            if (studentRows.length > 1) {
+                button.closest('tr').remove();
+            } else {
+                alert('You must have at least one student.');
             }
+        }
+
+        // Function to submit data to Google Form using iframe method
+        function submitToGoogleForm(tutorName, studentName, gradeLevel, subjects, examBoard, examSitting, paperCodes, levelEntry, notes, callback) {
+            // Create a hidden iframe
+            const iframeId = 'hidden-form-' + Math.random().toString(36).substr(2, 9);
+            const iframe = document.createElement('iframe');
+            iframe.setAttribute('id', iframeId);
+            iframe.setAttribute('name', iframeId);
+            iframe.setAttribute('style', 'display:none;');
+            document.body.appendChild(iframe);
             
-            // Clean up
-            document.body.removeChild(form);
-            document.body.removeChild(iframe);
-            window.removeEventListener('message', handleMessage);
-        });
-    });
-    
-    // Function to add a student to the table
-    function addStudentToTable(name, grade, subjects, examBoard, examDate, paperDetails, entryLevel) {
-        const row = document.createElement('tr');
-        
-        row.innerHTML = `
-            <td>${name}</td>
-            <td>${grade}</td>
-            <td>${subjects}</td>
-            <td>${examBoard}</td>
-            <td>${examDate}</td>
-            <td>${paperDetails}</td>
-            <td>${entryLevel}</td>
-            <td class="action-cell">
-                <button type="button" class="edit-btn">Edit</button>
-                <button type="button" class="delete-btn">Delete</button>
-            </td>
-        `;
-        
-        studentTableBody.appendChild(row);
-        setupRowButtons(row);
-    }
-    
-    // Update existing table row
-    function updateTableRow(row, name, grade, subjects, examBoard, examDate, paperDetails, entryLevel) {
-        const cells = row.querySelectorAll('td');
-        cells[0].textContent = name;
-        cells[1].textContent = grade;
-        cells[2].textContent = subjects;
-        cells[3].textContent = examBoard;
-        cells[4].textContent = examDate;
-        cells[5].textContent = paperDetails;
-        cells[6].textContent = entryLevel;
-    }
-    
-    // Setup edit and delete buttons for a row
-    function setupRowButtons(row) {
-        const editBtn = row.querySelector('.edit-btn');
-        const deleteBtn = row.querySelector('.delete-btn');
-        
-        editBtn.addEventListener('click', function() {
-            const cells = row.querySelectorAll('td');
-            const rows = Array.from(studentTableBody.querySelectorAll('tr'));
-            editingRowIndex = rows.indexOf(row);
+            // Wait for iframe to load
+            iframe.onload = function() {
+                const doc = iframe.contentDocument || iframe.contentWindow.document;
+                doc.open();
+                
+                // Create a form inside the iframe
+                const formHtml = `
+                    <!DOCTYPE html>
+                    <html>
+                    <head><title>Form Submission</title></head>
+                    <body>
+                        <form id="dynamic-form" method="POST" action="https://docs.google.com/forms/d/e/1FAIpQLSdUu5d6IFucgfbpe6IxNhcKubRC9gT3VVNjaSXsFeDVff9jfA/formResponse" target="_self">
+                            <input name="entry.51596919" value="${tutorName.replace(/"/g, '&quot;')}">
+                            <input name="entry.476357443" value="${studentName.replace(/"/g, '&quot;')}">
+                            <input name="entry.1945595969" value="${gradeLevel.replace(/"/g, '&quot;')}">
+                            <input name="entry.1661209076" value="${subjects.replace(/"/g, '&quot;')}">
+                            <input name="entry.208292540" value="${examBoard.replace(/"/g, '&quot;')}">
+                            <input name="entry.1248966711" value="${examSitting.replace(/"/g, '&quot;')}">
+                            <input name="entry.917066437" value="${paperCodes.replace(/"/g, '&quot;')}">
+                            <input name="entry.411880905" value="${levelEntry.replace(/"/g, '&quot;')}">
+                            <input name="entry.285733124" value="${notes.replace(/"/g, '&quot;')}">
+                        </form>
+                        <script>
+                            document.getElementById('dynamic-form').submit();
+                            window.top.postMessage('form-submitted', '*');
+                        </script>
+                    </body>
+                    </html>
+                `;
+                
+                doc.write(formHtml);
+                doc.close();
+            };
             
-            document.getElementById('studentName').value = cells[0].textContent;
-            document.getElementById('gradeLevel').value = cells[1].textContent;
-            document.getElementById('subjects').value = cells[2].textContent;
-            document.getElementById('examBoard').value = cells[3].textContent;
-            document.getElementById('examDate').value = cells[4].textContent;
-            document.getElementById('paperDetails').value = cells[5].textContent;
-            document.getElementById('entryLevel').value = cells[6].textContent;
-            
-            studentFormTemplate.classList.remove('hidden');
-            addStudentBtn.disabled = true;
-            studentFormTemplate.scrollIntoView({ behavior: 'smooth' });
-        });
-        
-        deleteBtn.addEventListener('click', function() {
-            if (confirm('Are you sure you want to remove this student?')) {
-                row.remove();
-                if (editingRowIndex !== null) {
-                    studentFormTemplate.classList.add('hidden');
-                    addStudentBtn.disabled = false;
-                    editingRowIndex = null;
+            // Handle success message from iframe
+            window.addEventListener('message', function messageHandler(event) {
+                if (event.data === 'form-submitted') {
+                    window.removeEventListener('message', messageHandler);
+                    setTimeout(() => {
+                        document.body.removeChild(iframe);
+                        if (callback) callback(true);
+                    }, 1000);
                 }
-            }
-        });
-    }
-    
-    // Clear student form fields
-    function clearStudentForm() {
-        document.getElementById('studentName').value = '';
-        document.getElementById('gradeLevel').value = '';
-        document.getElementById('subjects').value = '';
-        document.getElementById('examBoard').selectedIndex = 0;
-        document.getElementById('examDate').value = '';
-        document.getElementById('paperDetails').value = '';
-        document.getElementById('entryLevel').selectedIndex = 0;
-    }
-    
-    // Validate student form
-    function validateStudentForm() {
-        const requiredFields = [
-            { id: 'studentName', name: 'Student Name' },
-            { id: 'gradeLevel', name: 'Grade/Year Level' },
-            { id: 'subjects', name: 'Subjects' },
-            { id: 'examDate', name: 'Exam Date' },
-            { id: 'paperDetails', name: 'Paper Details' }
-        ];
-        
-        for (const field of requiredFields) {
-            const element = document.getElementById(field.id);
-            if (!element.value.trim()) {
-                alert(`Please fill in the ${field.name} field`);
-                element.focus();
-                return false;
-            }
+            });
+            
+            // Set timeout in case the message isn't received
+            setTimeout(() => {
+                if (document.body.contains(iframe)) {
+                    document.body.removeChild(iframe);
+                    if (callback) callback(true); // Assume success if timeout
+                }
+            }, 5000);
         }
-        
-        if (document.getElementById('examBoard').value === '') {
-            alert('Please select an exam board');
-            document.getElementById('examBoard').focus();
-            return false;
-        }
-        
-        if (document.getElementById('entryLevel').value === '') {
-            alert('Please select a level of entry');
-            document.getElementById('entryLevel').focus();
-            return false;
-        }
-        
-        return true;
-    }
-    
-    // Show success message
-    function showSuccess(message) {
-        successMessage.textContent = message;
-        successMessage.style.display = 'block';
-        setTimeout(() => {
-            successMessage.style.display = 'none';
-        }, 5000);
-    }
-    
-    // Show error message
-    function showError(message) {
-        errorMessage.textContent = message;
-        errorMessage.style.display = 'block';
-        setTimeout(() => {
-            errorMessage.style.display = 'none';
-        }, 5000);
-    }
-});
-  </script>
+    </script>
 </body>
 </html>
