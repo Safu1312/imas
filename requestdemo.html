@@ -64,7 +64,24 @@ label {
   font-weight: bold;
 }
 
+.recaptcha-container {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center; /* center it horizontally */
+}
 
+.g-recaptcha {
+  transform: scale(0.95); /* optional: slightly smaller */
+  transform-origin: 0 0;
+}
+
+/* Optional: If you want to match input fields */
+.recaptcha-container {
+  padding: 10px;
+  background: #f9f9f9; /* light background like your input fields */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
 
   </style>
 
@@ -402,8 +419,9 @@ label {
       <input type="hidden" name="_next" value="https://imaster.uk/thankyou">
       <input type="hidden" name="_subject" value="New Demo Session Request">
 
+      <div class="recaptcha-container">
       <div class="g-recaptcha" data-sitekey="6LcdPScrAAAAANzvrW_2liIT19aM_ljYimlmBtTE"></div>
-
+    </div>
 
       <button type="submit" class="submit-btn">Request a Demo Session</button>
     </form>
