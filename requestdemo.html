@@ -309,6 +309,7 @@ label {
       <label for="school">Current School</label>
 <input type="text" id="school" name="Current School" placeholder="Enter the name of your school" required>
 
+<input type="hidden" name="_captcha" value="false">
 
 
       <label for="level">Level</label>
@@ -401,10 +402,23 @@ label {
       <input type="hidden" name="_next" value="https://imaster.uk/thankyou">
       <input type="hidden" name="_subject" value="New Demo Session Request">
 
+      <div class="g-recaptcha" data-sitekey="6LcdPScrAAAAANzvrW_2liIT19aM_ljYimlmBtTE"></div>
+
+
       <button type="submit" class="submit-btn">Request a Demo Session</button>
     </form>
   </div>
 </section>
+
+<script>
+  document.getElementById('demoRequestForm').addEventListener('submit', function(event) {
+      if (grecaptcha.getResponse() === '') {
+          event.preventDefault();
+          alert('Please complete the CAPTCHA.');
+      }
+  });
+  </script>
+  
 
   
 
@@ -512,6 +526,7 @@ label {
 <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 
   
