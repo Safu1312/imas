@@ -9,6 +9,7 @@
   <title>iMaster - Request Demo</title>
   <meta name="description" content="Request a demo of iMaster EdTech’s personalized online tutoring services. Experience expert-led lessons in Cambridge, Edexcel, and IB curricula. Get a free demo today and start learning!">
   <meta name="keywords" content="iMaster demo, online tutoring demo, request a demo, Cambridge tutoring demo, Edexcel tutoring demo, IB tutoring demo, personalized tutoring, free demo, online tutoring preview">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
   <!-- 
@@ -331,7 +332,7 @@ label {
 
       <label for="level">Level</label>
       <select id="level" name="Level" required>
-        <option value="Primary">Select Your Level</option>
+        <option value="SelectLevel">Select Your Level</option>
         <option value="Primary">Primary</option>
         <option value="Lower-Secondary">Lower Secondary</option>
         <option value="Secondary">Secondary (IGCSE/GCSE)</option>
@@ -430,13 +431,39 @@ label {
 
 <script>
   document.getElementById('demoRequestForm').addEventListener('submit', function(event) {
-      if (grecaptcha.getResponse() === '') {
-          event.preventDefault();
-          alert('Please complete the CAPTCHA.');
-      }
+    if (grecaptcha.getResponse() === '') {
+      event.preventDefault(); // Prevent form submission
+  
+      Swal.fire({
+        icon: 'warning',
+        title: 'CAPTCHA Required',
+        text: 'Please complete the CAPTCHA before submitting.',
+      });
+    }
   });
   </script>
   
+  
+  <script>
+    document.getElementById("demoRequestForm").addEventListener("submit", function(event) {
+      var gender = document.getElementById("gender").value;
+      var level = document.getElementById("level").value;
+      var grade = document.getElementById("grade").value;
+      var curriculum = document.getElementById("curriculum").value;
+      var subject = document.getElementById("subject").value;
+      
+      if (gender === "SelectGender" || level === "selectLevel" || grade === "select" || curriculum === "selectcu" || subject === "selectsub") {
+        event.preventDefault(); // Stop form submission
+    
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Please select valid options for Gender, Level, Grade, Curriculum, and Subject!',
+        });
+      }
+    });
+    </script>
+    
 
   
 
