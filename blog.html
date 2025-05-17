@@ -124,6 +124,43 @@
     }
 }
 
+.blog-pdf-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.blog-pdf-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.pdf-viewer {
+  margin: 20px 0;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.btn-download {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: teal;
+  color: black;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-download:hover {
+  background-color: rgb(4, 58, 58);
+}
 
   </style>
 
@@ -371,6 +408,22 @@
 
 </script>
 
+<!-- Blog - Latest News PDF Viewer -->
+<section class="blog-pdf-section">
+  <h2>📢 Latest News - UK GCSE Grading Overhaul in 2025</h2>
+
+  <!-- PDF Viewer -->
+  <div class="pdf-viewer">
+    <iframe src="blog/GCSE_New Grading.pdf" width="100%" height="800px"></iframe>
+  </div>
+
+  <!-- Download Button -->
+  <div class="download-link">
+    <a href="blog/GCSE_New Grading.pdf" download class="btn-download">⬇️ Download PDF</a>
+  </div>
+</section>
+
+
 
 
 
@@ -380,7 +433,7 @@
 
 <!-- Facebook Feed Container -->
 <div class="fb-page-container">
-    <h2>Follow Us on Facebook</h2>
+    <h2>Follow Us on Facebook For The Latest Updates</h2>
     <div class="fb-page" 
          data-href="https://www.facebook.com/iMasterOnline" 
          data-tabs="timeline" 
