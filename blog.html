@@ -125,41 +125,102 @@
 }
 
 .blog-pdf-section {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #f4f4f4;
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.blog-pdf-section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
 }
 
+.blog-pdf-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+.caption-container {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.caption {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #444;
+  text-align: justify;
+}
+
+.caption .more-text {
+  display: none;
+}
+
+.caption.expanded .more-text {
+  display: inline;
+}
+
+.read-more-btn {
+  display: block;
+  margin: 10px 0 0;
+  font-size: 0.95rem;
+  background: none;
+  border: none;
+  color: teal;
+  cursor: pointer;
+  padding: 0;
+}
+
+.read-more-btn:hover {
+  text-decoration: underline;
+}
+
 .pdf-viewer {
-  margin: 20px 0;
-  border: 2px solid #ccc;
+  margin: 30px 0;
+  border: 2px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
+}
+
+.download-link {
+  text-align: center;
+  margin-top: 20px;
 }
 
 .btn-download {
   display: inline-block;
   padding: 12px 24px;
   font-size: 1rem;
-  background-color: teal;
-  color: black;
+  background-color: rgb(2, 164, 164);
+  color: #fff;
   border-radius: 8px;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 .btn-download:hover {
-  background-color: rgb(4, 58, 58);
+  background-color: teal;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .blog-pdf-section {
+    padding: 20px;
+  }
+
+  .blog-pdf-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .caption {
+    font-size: 1rem;
+  }
+
+  .pdf-viewer iframe {
+    height: 400px;
+  }
 }
 
   </style>
@@ -408,21 +469,49 @@
 
 </script>
 
-<!-- Blog - Latest News PDF Viewer -->
+<!-- Latest News Blog Section -->
 <section class="blog-pdf-section">
-  <h2>📢 Latest News - UK GCSE Grading Overhaul in 2025</h2>
+  <!-- Heading -->
+  <h2>📢 UK GCSE Grading Overhaul in 2025 📢</h2>
+
+  <!-- Caption with toggle -->
+  <div class="caption-container">
+    <p id="caption-text" class="caption short">
+      Starting in the 2025/26 academic year, the UK will transition from the 9–1 numerical GCSE grading system 
+      to a new A++ to F letter-based scale. This change aims to simplify grade interpretation, reduce student 
+      stress, and align more closely with international standards.
+
+      <span class="more-text">
+        <br><br>
+        Students beginning their GCSE in September 2025 will be the first to experience this new system.
+        <br><br>
+        Educators, parents, and students should stay informed and prepared for this significant shift in the 
+        assessment landscape.
+      </span>
+    </p>
+    <button class="read-more-btn" onclick="toggleCaption()">Read More</button>
+  </div>
 
   <!-- PDF Viewer -->
   <div class="pdf-viewer">
-    <iframe src="blog/GCSE_New Grading.pdf" width="100%" height="800px"></iframe>
+    <iframe src="blog/GCSE_New Grading.pdf" width="100%" height="600px"></iframe>
   </div>
 
   <!-- Download Button -->
   <div class="download-link">
-    <a href="blog/GCSE_New Grading.pdf" download class="btn-download">⬇️ Download PDF</a>
+    <a href="blog/GCSE_New Grading.pdf" download class="btn-download">Download PDF</a>
   </div>
 </section>
 
+
+<script>
+  function toggleCaption() {
+    const caption = document.getElementById('caption-text');
+    const button = document.querySelector('.read-more-btn');
+    caption.classList.toggle('expanded');
+    button.textContent = caption.classList.contains('expanded') ? 'Show Less' : 'Read More';
+  }
+</script>
 
 
 
