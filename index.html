@@ -144,6 +144,85 @@ video {
     height: auto;
 }
 
+
+ /* New video popup
+
+ /* Overlay background */
+    .video-popup-modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Modal content */
+    .video-popup-content {
+      position: relative;
+      background-color: #000;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    /* Close button */
+    .video-popup-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    /* Portrait video style */
+    .video-popup-video {
+      width: 100%;
+      height: auto;
+      max-height: 80vh;
+      display: block;
+    }
+
+    /* Register button */
+    .video-popup-register-btn {
+      width: 90%;
+      margin: 15px auto 20px;
+      padding: 12px;
+      font-size: 16px;
+      background-color: teal;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .video-popup-register-btn:hover {
+      background-color: #218838;
+    }
+
+    @media (max-width: 500px) {
+      .video-popup-content {
+        max-width: 95%;
+      }
+
+      .video-popup-register-btn {
+        font-size: 15px;
+      }
+
+      .video-popup-close {
+        font-size: 20px;
+        top: 8px;
+        right: 12px;
+      }
+    }
 </style>
 </head>
 
@@ -360,6 +439,48 @@ video {
        <!-- 
         - #popup
       -->
+
+     <div id="videoPopupModal" class="video-popup-modal">
+  <div class="video-popup-content">
+    <span class="video-popup-close" onclick="closePopup()">&times;</span>
+    <video id="videoPopupPlayer" class="video-popup-video" autoplay muted controls playsinline>
+      <source src="videos/Promotion_video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <button class="video-popup-register-btn" onclick="window.location.href='requestdemo.html'">
+      Register Now
+    </button>
+  </div>
+</div>
+
+<script>
+  window.onload = function () {
+    const modal = document.getElementById("videoPopupModal");
+    const content = document.querySelector(".video-popup-content");
+    const video = document.getElementById("videoPopupPlayer");
+
+    modal.style.display = "flex";
+
+    // Close if clicked outside the video content
+    modal.addEventListener("click", function () {
+      modal.style.display = "none";
+      video.pause();
+    });
+
+    // Prevent closing when clicking inside the content box
+    content.addEventListener("click", function (e) {
+      e.stopPropagation();
+    });
+  };
+
+  // Close via the X button
+  function closePopup() {
+    const modal = document.getElementById("videoPopupModal");
+    const video = document.getElementById("videoPopupPlayer");
+    modal.style.display = "none";
+    video.pause();
+  }
+</script>
 
    
 
