@@ -14,7 +14,7 @@
     }
 
     header {
-      background-color: #4f46e5;
+      background-color: #357588;
       color: white;
       padding: 1.5rem 1rem;
       text-align: center;
@@ -34,6 +34,7 @@
       padding: 1rem;
       max-width: 900px;
       margin: 0 auto;
+      position: relative;
     }
 
     iframe {
@@ -43,10 +44,36 @@
       background: transparent;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: none; /* Initially hidden */
+    }
+
+    .loader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 800px;
+    }
+
+    .spinner {
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid #357588;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     @media (max-width: 768px) {
       iframe {
+        height: 1000px;
+      }
+
+      .loader {
         height: 1000px;
       }
 
@@ -65,14 +92,34 @@
   <header>
     <h1>Tutor Slot Booking</h1>
     <p class="description">
-      Please choose one available slot between 3:00–5:00 PM or 7:30–9:30 PM from <strong>Monday 21st to Thursday 24th July</strong>.<br>
-      
+      Please choose one available slot between 3:00–5:00 PM or 7:30–9:30 PM from <strong>Monday 21st to Thursday 24th July</strong>.
     </p>
   </header>
 
   <main>
-    <iframe class="airtable-embed" src="https://airtable.com/embed/app3EEqnhrhyHkmWv/pagxOeARuvNyoE8LP/form" frameborder="0" onmousewheel="" width="100%" height="300" style="background: transparent; border: 1px solid #ccc;"></iframe>
+    <!-- Loader -->
+    <div id="loader" class="loader">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- Airtable Embed -->
+    <iframe 
+      class="airtable-embed"
+      id="airtableForm"
+      src="https://airtable.com/embed/app3EEqnhrhyHkmWv/pagxOeARuvNyoE8LP/form"
+      frameborder="0"
+      onmousewheel=""
+      style="background: transparent; border: 1px solid #ccc;"
+      onload="hideLoader()"
+    ></iframe>
   </main>
+
+  <script>
+    function hideLoader() {
+      document.getElementById('loader').style.display = 'none';
+      document.getElementById('airtableForm').style.display = 'block';
+    }
+  </script>
 
 </body>
 </html>
