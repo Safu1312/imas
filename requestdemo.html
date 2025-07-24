@@ -185,6 +185,22 @@ label {
     }
   }
 
+.glow-text {
+  color: #357588;
+  font-size: large;
+  font-weight: bold;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px rgb(179, 255, 0), 0 0 10px rgb(179, 255, 0), 0 0 15px rgb(179, 255, 0);
+  }
+  to {
+    text-shadow: 0 0 10px rgb(179, 255, 0), 0 0 20px rgb(179, 255, 0), 0 0 30px rgb(179, 255, 0);
+  }
+}
+
 
   </style>
 
@@ -400,8 +416,8 @@ label {
 
 <section class="section newdemo" id="demo" aria-label="newdemo">
   <div class="demo-request-form">
-    <h2>Request a Demo Session</h2>
-    <h6>Please complete the form below for the demo session. After you complete the form, someone from the iMaster team will contact you to schedule your demo session.</h6>
+    <h2>Request a Trial Session</h2>
+    <h6>Please complete the form below for the trial session. After you complete the form, someone from the iMaster team will contact you to schedule your trial session. <strong class="glow-text">Enjoy it for free!</strong></h6>
     <form id="demoRequestForm" action="https://formsubmit.co/985b37784c7dc108adccf42bd58e1736" method="POST">
 <iframe data-tally-src="https://tally.so/embed/3X6Yxj?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="1887" frameborder="0" marginheight="0" marginwidth="0" title="
 Request a Demo Session
