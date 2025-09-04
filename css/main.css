@@ -375,8 +375,10 @@
 
 .imaster-navigation .logo img {
   height: 50px;
+  
   transition: transform 0.3s ease;
 }
+
 
 .imaster-navigation .logo img:hover {
   transform: scale(1.05);
